@@ -11,5 +11,16 @@ const mix = require('laravel-mix');
  |
  */
 
+require('laravel-mix-polyfill');
+
+
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/plugins/spectre-0.5.8/src/spectre.scss', 'public/plugins/spectre-0.5.8/spectre.css')
+    .sourceMaps(false, 'inline-source-map')
+    .polyfill({
+        enabled: true,
+        useBuiltIns: "usage",
+        targets: {"firefox": "50", "ie": 11}
+    })
+    .version();
