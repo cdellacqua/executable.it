@@ -2,15 +2,15 @@
 .timeline {
   .timeline-item {
     display: flex;
-    margin-bottom: $unit-6;
+    margin-bottom: $unit-7;
     position: relative;
     &::before {
       background: $border-color;
       content: "";
       height: 100%;
-      left: 11px;
+      left: calc(.7rem - 1px);
       position: absolute;
-      top: $unit-6;
+      top: $unit-7;
       width: 2px;
     }
 
@@ -28,10 +28,10 @@
       border-radius: 50%;
       color: $light-color;
       display: flex;
-      height: $unit-6;
+      height: $unit-7;
       justify-content: center;
       text-align: center;
-      width: $unit-6;
+      width: $unit-7;
       &::before {
         border: $border-width-lg solid $primary-color;
         border-radius: 50%;
@@ -46,7 +46,7 @@
 
       &.icon-lg {
         background: $primary-color;
-        line-height: $line-height;
+        line-height: $unit-7;
         &::before {
           content: none;
         }

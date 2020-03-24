@@ -21,6 +21,8 @@ class CreateSeoTable extends Migration
             $table->string('og_type', 50);
             $table->string('og_url', 500);
             $table->string('og_image', 500);
+            $table->string('og_image_width', 50);
+            $table->string('og_image_height', 50);
             $table->string('twitter_card', 50);
             $table->string('robots', 50);
             $table->string('author', 50);

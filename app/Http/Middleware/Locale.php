@@ -19,6 +19,11 @@ class Locale
         $locale = $request->getPreferredLanguage();
         if ($locale) {
             App::setLocale($locale);
+            if (App::getLocale() === 'it') {
+                setlocale(LC_TIME, 'it_IT.UTF8');
+            } else {
+                setlocale(LC_TIME, 'en_US.UTF8');
+            }
         }
         return $next($request);
     }

@@ -5,6 +5,11 @@ function onDOMLoaded(callback) {
     document.addEventListener('DOMContentLoaded', callback);
 }
 
+onDOMLoaded(() => {
+    // document.querySelector('aside .main-nav').classList.add('reveal-left');
+    // document.querySelector('.catch-you img').classList.add('reveal-right');
+});
+
 // Navigation menu highlighting
 onDOMLoaded(() => {
     document.querySelectorAll('.main-nav').forEach((nav) => {

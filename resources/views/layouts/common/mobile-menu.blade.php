@@ -1,5 +1,5 @@
 <div class="image-container">
-    @component('components.async-img', ['src' => asset('/img/logo-transparent.png'), 'ratio' => 125/500, 'style' => 'max-width: 200px; margin: 0 auto; padding: .5rem 0'])
+    @component('components.async-img', ['src' => asset('/img/logo-transparent.png'), 'ratio' => .26, 'style' => 'max-width: 200px; margin: 0 auto; padding: .5rem 0'])
     @endcomponent
 </div>
 

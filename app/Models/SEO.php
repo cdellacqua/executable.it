@@ -12,6 +12,8 @@ class SEO extends Model
         'og_type',
         'og_url',
         'og_image',
+        'og_image_width',
+        'og_image_height',
         'twitter_card',
         'robots',
         'author',

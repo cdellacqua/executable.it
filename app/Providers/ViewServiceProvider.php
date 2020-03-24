@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\View\Composers\SEOComposer;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 

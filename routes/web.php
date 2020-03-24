@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,15 +27,16 @@ Route::get('/about-me', ['as' => 'about-me', function () {
     return view('pages.about-me');
 }]);
 
-
 Route::get('/maintenance', function () {
     if (\Illuminate\Support\Facades\Request::query('key') !== 'post-deploy-callback') {
         abort('404');
     } else {
         \Illuminate\Support\Facades\Artisan::call('config:clear');
         \Illuminate\Support\Facades\Artisan::call('config:cache');
+
         \Illuminate\Support\Facades\Artisan::call('view:clear');
         \Illuminate\Support\Facades\Artisan::call('view:cache');
+
         \Illuminate\Support\Facades\Artisan::call('migrate');
 
         return response(

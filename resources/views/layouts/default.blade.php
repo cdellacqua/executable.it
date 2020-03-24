@@ -12,6 +12,9 @@
             <aside class="column col-3 hide-lg">
                 @include('layouts.common.desktop-menu')
             </aside>
+            <div class="column col-3 hide-lg">
+                <!-- aside placeholder -->
+            </div>
             <div class="column col-9 col-lg-12">
                 <main>
                     @yield('content')

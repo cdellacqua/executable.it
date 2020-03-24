@@ -21,6 +21,7 @@
     transition: opacity .2s, transform .2s;
     white-space: pre;
     z-index: $zindex-3;
+    text-decoration: none !important;
   }
   &:focus,
   &:hover {

@@ -8,6 +8,7 @@
 @include('layouts.common.head-seo')
 
 <link rel="stylesheet" href="{{ mix('/plugins/spectre-0.5.8/spectre.css') }}">
+<link rel="stylesheet" href="{{ asset('/plugins/fontawesome-free-5.12.1-web/fontawesome.css') }}">
 
 <script src="{{ mix('/js/app.js') }}"></script>
 <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
