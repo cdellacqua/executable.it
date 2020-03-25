@@ -4,11 +4,11 @@
     @include('layouts.common.head')
 </head>
 <body>
-    <div class="show-lg">
+    <div class="show-lg mobile-menu-wrapper">
         @include('layouts.common.mobile-menu')
     </div>
-    <div class="container">
-        <div class="columns">
+    <div class="container" style="margin: 0; padding: 0;">
+        <div class="columns col-gapless">
             <aside class="column col-3 hide-lg">
                 @include('layouts.common.desktop-menu')
             </aside>

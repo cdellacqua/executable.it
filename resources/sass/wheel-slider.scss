@@ -1,0 +1,27 @@
+@import "utils";
+
+.wheel-slider {
+    display: inline-block;
+    position: relative;
+
+    .wheel-initial-width-placeholder {
+        visibility: hidden;
+    }
+
+    .values-wrapper {
+        position: absolute;
+        top: 0;
+        @include transition(transform);
+        .value {
+            display: block;
+            white-space: nowrap;
+            opacity: .2;
+            @include transition(opacity);
+            &.active {
+                opacity: 1;
+            }
+        }
+    }
+
+
+}

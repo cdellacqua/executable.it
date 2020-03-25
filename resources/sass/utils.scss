@@ -1,0 +1,26 @@
+$xl: 1280px;
+$lg: 960px;
+$md: 840px;
+$sm: 600px;
+$xs: 480px;
+
+$under-xl: "(max-width: #{$xl})";
+$under-lg: "(max-width: #{$lg})";
+$under-md: "(max-width: #{$md})";
+$under-sm: "(max-width: #{$sm})";
+$under-xs: "(max-width: #{$xs})";
+
+$animation-duration: .6s;
+
+@mixin transition($props...) {
+    transition-property: $props;
+    transition-duration: $animation-duration;
+}
+
+@mixin stretch() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}

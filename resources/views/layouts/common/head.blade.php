@@ -12,3 +12,7 @@
 
 <script src="{{ mix('/js/app.js') }}"></script>
 <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+
+@if(config('app.env') == 'local')
+    <script src="http://localhost:35729/livereload.js"></script>
+@endif

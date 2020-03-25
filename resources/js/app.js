@@ -1,5 +1,6 @@
 require('./bootstrap');
 require('./async-img');
+require('./wheel-slider');
 
 function onDOMLoaded(callback) {
     document.addEventListener('DOMContentLoaded', callback);
@@ -41,4 +42,13 @@ onDOMLoaded(() => {
     setNavPosition();
 
     window.addEventListener('scroll', setNavPosition);
+});
+
+onDOMLoaded(() => {
+    const firstScroll = document.querySelector('.first-scroll');
+    function firstScrollHeight() {
+        firstScroll.style.minHeight = window.innerHeight - document.querySelector('.mobile-menu-wrapper').offsetHeight + 'px';
+    }
+    firstScrollHeight();
+    window.addEventListener('resize', firstScrollHeight);
 });

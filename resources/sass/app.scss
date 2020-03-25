@@ -1,25 +1,8 @@
+@import "utils";
 @import "async-img";
+@import "wheel-slider";
 @import "../plugins/spectre-0.5.8/src/variables";
 @import "fonts";
-
-$xl: 1280px;
-$lg: 960px;
-$md: 840px;
-$sm: 600px;
-$xs: 480px;
-
-$under-xl: "(max-width: #{$xl})";
-$under-lg: "(max-width: #{$lg})";
-$under-md: "(max-width: #{$md})";
-$under-sm: "(max-width: #{$sm})";
-$under-xs: "(max-width: #{$xs})";
-
-$animation-duration: .6s;
-
-@mixin transition($props...) {
-    transition-property: $props;
-    transition-duration: $animation-duration;
-}
 
 * {
     box-sizing: border-box;
@@ -53,6 +36,9 @@ body {
 }
 
 .main-nav {
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 10px -5px black;
     background: $light-color;
     .step {
         margin: 0;
@@ -61,8 +47,7 @@ body {
     ul.tab-block {
         margin: 0;
         padding: .2rem 0 0;
-        border-bottom: .05rem solid #d4dad8;
-        border-top: .05rem solid #d4dad8;
+        border: none;
     }
 
     &.bottom {
@@ -73,7 +58,6 @@ body {
         bottom: -44px;
 
         ul.tab-block {
-            border-bottom: none;
         }
     }
 }
@@ -85,7 +69,7 @@ body {
 
 main {
     min-height: 80vh;
-    padding: .4rem 0;
+    padding: 0;
 }
 
 aside {
@@ -98,9 +82,10 @@ aside {
 
     .main-nav {
         height: 100%;
-        padding: .2rem;
+        padding: 0;
 
         .menu {
+            transform: none;
             height: 100%;
         }
     }
@@ -113,6 +98,11 @@ section {
     @media #{$under-xl} {
         min-height: auto;
     }
+
+
+    position: relative;
+    overflow: hidden;
+
 }
 
 .menu .menu-item>a {
@@ -164,4 +154,83 @@ section {
         opacity: 1;
         transform: translateX(0%);
     }
+}
+
+.first-scroll {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 50px 0;
+    svg {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: auto;
+        z-index: 1;
+
+        &:first-child {
+            top: 0;
+            fill: $primary-color;
+        }
+
+        &:last-child {
+            bottom: 0;
+            fill: $error-color
+        }
+    }
+    .catch-you {
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        font-weight: bold;
+        z-index: 0;
+
+        .wheel {
+            .wheel-slider {
+                text-align: left;
+                color: $primary-color;
+            }
+        }
+
+        @media #{$under-md} {
+            font-size: 1.7em;
+        }
+
+        @media #{$under-sm} {
+            .wheel {
+                display: flex;
+                flex-flow: row nowrap;
+                align-items: center;
+                justify-content: center;
+            }
+
+            label {
+                display: inline-block;
+                font-size: 1.4em;
+                line-height: 2.5em;
+                white-space: nowrap;
+                text-orientation: mixed;
+                writing-mode: vertical-lr;
+                transform: rotate(-180deg);
+            }
+
+            .wheel-slider {
+
+            }
+        }
+
+        @media #{$under-sm} {
+            label {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+
+.padding {
+    padding: 15px;
 }
