@@ -70,9 +70,9 @@ $unit-16: 3.2rem !default;
 // Font sizes
 $html-font-size: 20px !default;
 $html-line-height: 1.5 !default;
-$font-size: .8rem !default;
-$font-size-sm: .7rem !default;
-$font-size-lg: .9rem !default;
+$font-size: 1rem !default;
+$font-size-sm: .9rem !default;
+$font-size-lg: 1.1rem !default;
 $line-height: 1.2rem !default;
 
 // Sizes
@@ -82,7 +82,7 @@ $layout-spacing-lg: $unit-4 !default;
 $border-radius: $unit-h !default;
 $border-width: $unit-o !default;
 $border-width-lg: $unit-h !default;
-$control-size: $unit-9 !default;
+$control-size: $unit-12 !default;
 $control-size-sm: $unit-7 !default;
 $control-size-lg: $unit-10 !default;
 $control-padding-x: $unit-2 !default;

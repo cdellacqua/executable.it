@@ -1,8 +1,3 @@
-<div class="image-container">
-    @component('components.async-img', ['src' => asset('/img/logo-transparent.png'), 'ratio' => .26, 'style' => 'max-width: 200px; margin: 0 auto; padding: .5rem 0'])
-    @endcomponent
-</div>
-
 <nav class="main-nav">
     <ul class="tab tab-block" data-tooltip="{{ __('Tu sei qui') }}">
         <li class="tab-item">

@@ -1,0 +1,6 @@
+@import "utils";
+
+.expandable {
+    overflow: hidden;
+    @include transition(max-height);
+}

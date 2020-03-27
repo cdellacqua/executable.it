@@ -1,6 +1,7 @@
 require('./bootstrap');
 require('./async-img');
 require('./wheel-slider');
+require('./expandable');
 
 function onDOMLoaded(callback) {
     document.addEventListener('DOMContentLoaded', callback);
@@ -50,5 +51,17 @@ onDOMLoaded(() => {
         firstScroll.style.minHeight = window.innerHeight - document.querySelector('.mobile-menu-wrapper').offsetHeight + 'px';
     }
     firstScrollHeight();
-    window.addEventListener('resize', firstScrollHeight);
+    let oldWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+        if (oldWidth !== window.innerWidth) {
+            firstScrollHeight();
+            oldWidth = window.innerWidthM
+        } // else -> fake resize in Safari/Chrome mobile
+    });
+});
+
+onDOMLoaded(() => {
+    document.querySelectorAll('.form-contact').forEach(form => {
+        form.addEventListener('submit', () => form.querySelector('[type="submit"]').classList.add('disabled', 'loading'))
+    });
 });

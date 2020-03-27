@@ -15,10 +15,14 @@
         .value {
             display: block;
             white-space: nowrap;
-            opacity: .2;
+            opacity: 0;
             @include transition(opacity);
             &.active {
                 opacity: 1;
+
+                ~ .value {
+                    opacity: .2;
+                }
             }
         }
     }

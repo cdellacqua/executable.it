@@ -9,19 +9,16 @@
     </div>
     <div class="container" style="margin: 0; padding: 0;">
         <div class="columns col-gapless">
-            <aside class="column col-3 hide-lg">
+            <aside class="column col-3 col-xl-4 hide-lg">
                 @include('layouts.common.desktop-menu')
             </aside>
-            <div class="column col-3 hide-lg">
+            <div class="column col-3 col-xl-4 hide-lg">
                 <!-- aside placeholder -->
             </div>
-            <div class="column col-9 col-lg-12">
+            <div class="column col-9 col-xl-8 col-lg-12">
                 <main>
                     @yield('content')
                 </main>
-                <footer>
-                    @include('layouts.common.footer')
-                </footer>
             </div>
         </div>
     </div>

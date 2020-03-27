@@ -1,6 +1,4 @@
 @import "utils";
-@import "async-img";
-@import "wheel-slider";
 @import "../plugins/spectre-0.5.8/src/variables";
 @import "fonts";
 
@@ -8,15 +6,31 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Spartan', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     overflow-x: hidden;
+    font-size: 20px;
+    font-weight: 500;
 
     @media #{$under-sm} {
-        font-size: 12px;
+        font-size: 14px;
     }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Spartan', sans-serif;
+}
+
+h2 {
+    display: inline;
+    background: linear-gradient(to top,transparent 5%, rgba($error-color, .1) 5%,rgba($error-color, .1) 37%,transparent 37%);
+
+}
+
+strong {
+    color: $primary-color;
 }
 
 .step.bottom {
@@ -36,23 +50,33 @@ body {
 }
 
 .main-nav {
+    font-weight: bold;
     position: relative;
-    z-index: 1;
+    z-index: 2;
     box-shadow: 0 0 10px -5px black;
     background: $light-color;
+    a:focus {
+        box-shadow: none;
+    }
     .step {
         margin: 0;
+    }
+    .tooltip::after {
+        font-weight: normal;
     }
 
     ul.tab-block {
         margin: 0;
         padding: .2rem 0 0;
         border: none;
+        .tab-item a {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
     }
 
     &.bottom {
         position: fixed;
-        z-index: 1;
         left: 0;
         right: 0;
         bottom: -44px;
@@ -87,6 +111,13 @@ aside {
         .menu {
             transform: none;
             height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+
+            .logo-container {
+
+            }
         }
     }
 }
@@ -156,11 +187,8 @@ section {
     }
 }
 
-.first-scroll {
+section {
     position: relative;
-    display: flex;
-    justify-content: center;
-    padding: 50px 0;
     svg {
         width: 100%;
         position: absolute;
@@ -179,16 +207,65 @@ section {
             fill: $error-color
         }
     }
+    &:nth-child(2n + 1) {
+        svg {
+            &:first-child {
+                fill: $error-color
+            }
+
+            &:last-child {
+                fill: $primary-color;
+            }
+        }
+    }
+
+    &:first-child {
+        svg {
+            &:first-child {
+                fill: $primary-color;
+            }
+
+            &:last-child {
+                fill: $error-color
+            }
+        }
+    }
+}
+
+.first-scroll {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 7vw 2vw;
+
     .catch-you {
         display: flex;
-        flex-flow: row;
+        flex-flow: column;
         justify-content: center;
-        align-items: center;
-        font-size: 2em;
+        font-size: 3vw;
         font-weight: bold;
         z-index: 0;
+        font-family: 'Spartan', sans-serif;
+
+        @media #{$under-xl} {
+            font-size: 2em;
+        }
+
+        .fixed-text-wrapper {
+            margin-bottom: 1em;
+            text-transform: lowercase;
+        }
 
         .wheel {
+            padding-top: .5em;
+            padding-bottom: .5em;
+            text-align: center;
+            h1 {
+                display: inline-block;
+                font: inherit;
+                margin: 0;
+            }
             .wheel-slider {
                 text-align: left;
                 color: $primary-color;
@@ -200,21 +277,15 @@ section {
         }
 
         @media #{$under-sm} {
-            .wheel {
-                display: flex;
-                flex-flow: row nowrap;
-                align-items: center;
-                justify-content: center;
-            }
-
-            label {
+            .fixed-text-wrapper {
                 display: inline-block;
-                font-size: 1.4em;
+                font-size: inherit;
                 line-height: 2.5em;
                 white-space: nowrap;
-                text-orientation: mixed;
-                writing-mode: vertical-lr;
-                transform: rotate(-180deg);
+                h1, label {
+                    font-size: inherit;
+                    line-height: inherit;
+                }
             }
 
             .wheel-slider {
@@ -232,5 +303,43 @@ section {
 
 
 .padding {
-    padding: 15px;
+    padding: 50px 0;
 }
+
+
+footer {
+    font-weight: 400;
+    font-size: .8em;
+    margin: auto -0.4rem -0.4rem;
+    background: $dark-color;
+    color: white;
+    padding: 1em .4rem;
+    text-align: center;
+}
+
+p {
+    font-weight: 500;
+}
+
+
+.btn.btn-lg {
+    font-size: 1.1rem;
+    height: 2.4rem;
+}
+
+
+.form-input {
+    background: white;
+}
+
+.form-switch {
+    font-weight: 400;
+}
+
+label[for] {
+
+}
+
+@import "async-img";
+@import "wheel-slider";
+@import "expandable";
