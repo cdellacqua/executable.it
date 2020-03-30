@@ -1,4 +1,3 @@
-<strong>Executable</strong><br>
+<strong style="color: white;">Executable</strong><br>
 <small>di Carlo Dell'Acqua &ndash; P.IVA IT74528545284</small><br>
-<small>&nbsp;</small>
-<small>&copy;&nbsp;{{ date('Y') }}</small>
+<small>Milano &ndash; &copy;&nbsp;{{ date('Y') }}</small>

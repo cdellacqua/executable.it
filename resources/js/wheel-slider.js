@@ -10,7 +10,7 @@ window.wheelSlider = function (wheel) {
         wheel.appendChild(fixSize);
     }
 
-    const values = wheel.dataset.values.split('|');
+    const values = wheel.getAttribute('data-values').split('|');
     values.map(v => {
         const valueElement = document.createElement('div');
         valueElement.innerHTML = v;
@@ -18,11 +18,13 @@ window.wheelSlider = function (wheel) {
         return valueElement;
     }).forEach(e => wrapper.appendChild(e));
 
-    let i = 0;
+    let i = values.length;
     let delta = 1;
 
     function next() {
-        wrapper.children[i].classList.remove('active');
+        if (i !== -1 && i !== values.length) {
+            wrapper.children[i].classList.remove('active');
+        }
 
         i += delta;
         if (i < 0 || i >= values.length) {
@@ -35,7 +37,7 @@ window.wheelSlider = function (wheel) {
         wrapper.style.transform = `translateY(-${i * 100 / values.length}%)`;
     }
 
-    const delayMs = Number(wheel.dataset.delayMs || '2000');
+    const delayMs = Number(wheel.getAttribute('data-delay-ms') || '2000');
 
     next();
 

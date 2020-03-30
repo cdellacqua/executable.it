@@ -26,17 +26,18 @@ Route::get('/projects', ['as' => 'projects', function () {
 Route::get('/about-me', ['as' => 'about-me', function () {
     return view('pages.about-me');
 }]);
+if (config('app.env') == 'local') {
+    Route::get('/info', function () {
+        phpinfo();
+    });
+}
 
 Route::get('/maintenance', function () {
     if (\Illuminate\Support\Facades\Request::query('key') !== 'post-deploy-callback') {
         abort('404');
     } else {
         \Illuminate\Support\Facades\Artisan::call('config:clear');
-        \Illuminate\Support\Facades\Artisan::call('config:cache');
-
         \Illuminate\Support\Facades\Artisan::call('view:clear');
-        \Illuminate\Support\Facades\Artisan::call('view:cache');
-
         \Illuminate\Support\Facades\Artisan::call('migrate');
 
         return response(

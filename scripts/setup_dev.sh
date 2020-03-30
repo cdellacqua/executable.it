@@ -1,5 +1,5 @@
 #!/bin/bash
 
-./scripts/vagrant_start.sh
+./scripts/laradock_start.sh
 npm run watch
 

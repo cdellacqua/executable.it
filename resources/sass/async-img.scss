@@ -1,20 +1,28 @@
 .async-img-container {
     display: block;
     position: relative;
-    > .async-img {
+    > .async-img-placeholder {
+        position: relative;
         width: 100%;
-        padding-bottom: 100%;
-        background-position: center center;
-        background-size: contain;
-        background-repeat: no-repeat;
-
+        padding-bottom: 25%;
+        overflow: hidden;
+        z-index: 0;
         &.-round {
-            border-radius: 10000px;
+            border-radius: 100vw;
         }
+        > .async-img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 100%;
+            height: auto;
+            z-index: -1;
 
-        animation-duration: .5s;
-        animation-timing-function: ease-in;
-        animation-fill-mode: both;
+            animation-duration: .5s;
+            animation-timing-function: ease-in;
+            animation-fill-mode: both;
+        }
     }
     > i {
         display: none;
@@ -27,28 +35,18 @@
         > i {
             display: block;
         }
-        > i.icon-cross {
-            display: none;
-        }
-        > .async-img {
-            filter: blur(10px);
+        > .async-img-placeholder > .async-img {
+            transform: scale(.97);
+            filter: blur(3px);
         }
     }
     &.-loaded {
         > i {
             display: none;
         }
-        > .async-img {
+        > .async-img-placeholder > .async-img {
             animation-direction: reverse;
             animation-name: blur;
-        }
-    }
-    &.-error {
-        > i {
-            display: none;
-        }
-        > i.icon-cross {
-            display: block;
         }
     }
 }

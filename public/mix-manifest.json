@@ -1,5 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=917891581de1f204834d",
-    "/css/app.css": "/css/app.css?id=e7ccc49c4cfc64d3ec71",
-    "/plugins/spectre-0.5.8/spectre.css": "/plugins/spectre-0.5.8/spectre.css?id=5dd7353d38f0b2fcbf88"
+    "/js/app.js": "/js/app.js?id=6ace524dc900be24c63c",
+    "/js/pages/about-me.js": "/js/pages/about-me.js?id=8170c3352d19b9cc0186",
+    "/css/app.css": "/css/app.css?id=0011bbf8d1d62d1e24c6",
+    "/plugins/spectre-0.5.8/spectre.css": "/plugins/spectre-0.5.8/spectre.css?id=36903e95b7a8aee73f4c",
+    "/js/pages/home.js": "/js/pages/home.js?id=2209bd7ba1540bcdad79"
 }

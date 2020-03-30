@@ -6,16 +6,16 @@
         </div>
         <div class="divider"></div>
         <div class="menu-item">
-            <a class="tooltip-right" href="{{ route('home') }}">{{ __('Home') }}</a>
+            <a class="tooltip-right" href="{{ route('home') }}"><span class="underline">{{ __('Home') }}</span></a>
         </div>
         <div class="menu-item">
-            <a class="tooltip-right" href="{{ route('about-me') }}">{{ __('Chi sono') }}</a>
+            <a class="tooltip-right" href="{{ route('about-me') }}"><span class="underline">{{ __('Chi sono') }}</span></a>
         </div>
         <div class="menu-item">
-            <a class="tooltip-right" href="{{ route('projects') }}">{{ __('Progetti') }}</a>
+            <a class="tooltip-right" href="{{ route('projects') }}"><span class="underline">{{ __('Progetti') }}</span></a>
         </div>
         <div class="menu-item">
-            <a class="tooltip-right" href="{{ route('contact-me') }}">{{ __('Contattami') }}</a>
+            <a class="tooltip-right" href="{{ route('contact-me') }}"><span class="underline">{{ __('Contattami') }}</span></a>
         </div>
         <footer>
             @include('layouts.common.footer')

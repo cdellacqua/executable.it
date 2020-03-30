@@ -12,8 +12,11 @@ const mix = require('laravel-mix');
  */
 
 require('laravel-mix-polyfill');
-var LiveReloadPlugin = require('webpack-livereload-plugin');
 
+const fs = require('fs');
+const path = require('path');
+fs.readdirSync(path.join(__dirname, 'resources', 'js', 'pages'))
+    .forEach(pageJs => mix.js(`resources/js/pages/${pageJs}`, `public/js/pages/${pageJs}`));
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
@@ -32,7 +35,7 @@ mix.js('resources/js/app.js', 'public/js')
     })
     .webpackConfig({
         plugins: [
-            new LiveReloadPlugin()
+            new (require('webpack-livereload-plugin'))()
         ]
     })
     .version();

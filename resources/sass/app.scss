@@ -23,10 +23,29 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Spartan', sans-serif;
 }
 
+h1 {
+    font-weight: bold;
+}
+
+.elevation {
+    text-shadow: .1ch .1em 0 rgba($dark-color, 0.2);
+}
+
 h2 {
+    margin-bottom: 1.5em;
+}
+
+.underline {
     display: inline;
     background: linear-gradient(to top,transparent 5%, rgba($error-color, .1) 5%,rgba($error-color, .1) 37%,transparent 37%);
+}
 
+h1 > .underline {
+    background: linear-gradient(to top,transparent 5%, rgba(yellow, .3) 5%,rgba(yellow, .3) 37%,transparent 37%);
+}
+
+h2 > .underline {
+    background: linear-gradient(to top,transparent 5%, rgba($error-color, .1) 5%,rgba($error-color, .1) 37%,transparent 37%);
 }
 
 strong {
@@ -113,7 +132,23 @@ aside {
             height: 100%;
             display: flex;
             flex-flow: column;
-            justify-content: center;
+            justify-content: flex-start;
+
+
+            .menu-item > a:active, .menu-item > a.active,
+            .menu-item > a:focus, .menu-item > a:hover{
+                background: none;
+            }
+            .menu-item:not(.active) {
+                .underline {
+                    background: none;
+                }
+            }
+            .menu-item.active {
+                .underline {
+                    background: linear-gradient(to top,transparent 5%, rgba($primary-color, .1) 5%,rgba($primary-color, .1) 37%,transparent 37%);
+                }
+            }
 
             .logo-container {
 
@@ -123,14 +158,6 @@ aside {
 }
 
 section {
-
-    min-height: 100vh;
-
-    @media #{$under-xl} {
-        min-height: auto;
-    }
-
-
     position: relative;
     overflow: hidden;
 
@@ -303,7 +330,10 @@ section {
 
 
 .padding {
-    padding: 50px 0;
+    padding: .8rem .8rem;
+    & + & {
+        padding-top: 1.6rem;
+    }
 }
 
 
@@ -339,6 +369,125 @@ p {
 label[for] {
 
 }
+
+.timeline.pulse {
+    .timeline-item {
+        .timeline-icon {
+            animation-name: pulse;
+            animation-duration: .8s;
+            animation-timing-function: ease;
+        }
+        $delay: .1s;
+        &:nth-child(1) .timeline-icon {
+            animation-delay: 0 * $delay;
+        }
+        &:nth-child(2) .timeline-icon {
+            animation-delay: 1 * $delay;
+        }
+        &:nth-child(3) .timeline-icon {
+            animation-delay: 2 * $delay;
+        }
+        &:nth-child(4) .timeline-icon {
+            animation-delay: 3 * $delay;
+        }
+        &:nth-child(5) .timeline-icon {
+            animation-delay: 4 * $delay;
+        }
+        &:nth-child(6) .timeline-icon {
+            animation-delay: 5 * $delay;
+        }
+        &:nth-child(7) .timeline-icon {
+            animation-delay: 6 * $delay;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    33% {
+        transform: scale(1.2);
+    }
+    67% {
+        transform: scale(.93);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.timeline {
+    .timeline-icon {
+        > i {
+            font-size: .7rem;
+        }
+    }
+    .tile-title {
+        .underline {
+            font-size: 1rem;
+            background: linear-gradient(to top, transparent 5%, rgba($primary-color-light, .2) 5%, rgba($primary-color-light, .2) 40%, transparent 40%);
+        }
+    }
+    .tile-subtitle {
+        font-weight: 400;
+        text-transform: lowercase;
+        font-variant: small-caps;
+    }
+}
+
+.form-contact {
+    .form-label {
+        text-align: right;
+        padding-right: 1ch;
+        @media #{$under-sm} {
+            text-align: left;
+        }
+    }
+    .form-switch {
+        padding-right: 0;
+    }
+}
+
+.vertical-center {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.fill-height {
+    min-height: 100vh;
+    &:not(.first-scroll) {
+        @media #{$under-sm} {
+            min-height: 70vh;
+
+            @media (min-height: 700px) {
+                min-height: 50vh;
+            }
+        }
+
+    }
+}
+
+.background {
+    background: linear-gradient(165deg, transparent 0%, rgba(64, 155, 213, 0.2) 0%, rgba(64, 155, 213, 0.2) 9%, transparent 9%),
+        linear-gradient(234deg, transparent 0%, rgba(221, 5, 55, 0.1) 0%, rgba(221, 5, 55, 0.1) 11%, transparent 11%),
+        linear-gradient(191deg, transparent 26%, rgba(221, 5, 55, 0.1) 26%, rgba(221, 5, 55, 0.1) 29%, transparent 29%),
+        linear-gradient(-22.25deg, transparent 65%, rgba(64, 155, 213, 0.2) 65%, rgba(64, 155, 213, 0.2) 74%, transparent 74%),
+        linear-gradient(5deg, transparent 49%, rgba(221, 5, 55, 0.1) 49%, rgba(221, 5, 55, 0.1) 60%, transparent 60%),
+        linear-gradient(15deg, transparent 34%, rgba(64, 155, 213, 0.2) 34%, rgba(64, 155, 213, 0.2) 41%, transparent 41%),
+        linear-gradient(-8deg, transparent 29%, rgba(221, 5, 55, 0.1) 29%, rgba(221, 5, 55, 0.1) 32%, transparent 32%),
+        linear-gradient(6.75deg, transparent 0%, rgba(64, 155, 213, 0.2) 0%, rgba(64, 155, 213, 0.2) 12%, transparent 12%), linear-gradient(-72deg, transparent 0%, rgba(221, 5, 55, 0.1) 0%, rgba(221, 5, 55, 0.1) 19.75%, transparent 19.75%);
+}
+
+.opacity-on-scroll {
+    opacity: 1;
+    @include transition(opacity);
+    &.outside-visible-area {
+        opacity: .5;
+    }
+}
+
 
 @import "async-img";
 @import "wheel-slider";
