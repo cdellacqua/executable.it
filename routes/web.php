@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,36 +16,55 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Default locale redirect for crawlers
+Route::get('/', function () {
+    return redirect(route_locale('home'), 301);
+});
 
-Route::get('/', ['as' => 'home', function () {
-    return view('pages.home');
-}]);
-Route::get('/contact-me', ['as' => 'contact-me', function () {
-    return view('pages.contact-me');
-}]);
-Route::get('/projects', ['as' => 'projects', function () {
-    return view('pages.projects');
-}]);
-Route::get('/about-me', ['as' => 'about-me', function () {
-    return view('pages.about-me');
-}]);
+Route::prefix('{locale}')
+    ->where(['locale' => implode('|', config('app.locales'))])
+    ->middleware(\App\Http\Middleware\RouteLocale::class)
+    ->group(function () {
+        Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+
+        Route::get('/contact-me', ['as' => 'contact-me', 'uses' => 'ContactController@index']);
+        Route::post('/contact-me', ['as' => 'contact-me', 'uses' => 'ContactController@store']);
+        Route::get('/contact-me-tp', ['as' => 'contact-me-tp', 'uses' => 'ContactController@tp']);
+
+        Route::get('/about-me', ['as' => 'about-me', 'uses' => 'AboutController@index']);
+    });
+
+// Development and Debug routes
 if (config('app.env') == 'local') {
     Route::get('/info', function () {
         phpinfo();
     });
 }
 
+// Support shared hosting
 Route::get('/maintenance', function () {
-    if (\Illuminate\Support\Facades\Request::query('key') !== 'post-deploy-callback') {
-        abort('404');
+    if (\Illuminate\Support\Facades\Request::query('key') !== config('maintenance.key')) {
+        abort(404);
     } else {
-        \Illuminate\Support\Facades\Artisan::call('config:clear');
-        \Illuminate\Support\Facades\Artisan::call('view:clear');
-        \Illuminate\Support\Facades\Artisan::call('migrate');
+        return view('maintenance');
+    }
+});
+
+Route::post('/maintenance', function () {
+    if (\Illuminate\Support\Facades\Request::post('key') !== config('maintenance.key')) {
+        abort(404);
+    } else {
+        Artisan::call('config:clear');
+        Artisan::call('view:clear');
+        Artisan::call('migrate');
+
+        if (config('app.env') == 'local') {
+            Artisan::call('db:seed --force');
+        }
 
         return response(
             '[' . \Illuminate\Support\Facades\Date::now()->toISOString() . ']'
-            . ' Optimization & Migration completed'
+            . ' Cache cleared & Migration completed' . (config('app.env') == 'local' ? ' & Seed completed' : '')
         )->header('Content-TYpe', 'text/plain');
     }
 });

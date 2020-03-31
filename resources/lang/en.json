@@ -1,6 +1,49 @@
 {
+    "consulenza,software,sviluppo,development,developer,siti,web,webapp,informatica,landing,page,form,programmazione,programmatore": "consulting,software,development,developer,website,web,webapp,information,it,landing,page,form,programming,programmer",
+    "Servizi di consulenza informatica e realizzazione di applicativi Web": "IT Consulting and Web Development",
+
     "Chi sono": "About me",
     "Tu sei qui": "You are here",
-    "Progetti": "Projects",
-    "Contattami": "Contact me"
+    "Contattami": "Contact me",
+
+    "di Carlo Dell'Acqua": "by Carlo Dell'Acqua",
+    "P.IVA IT74528545284": "VAT IT74528545284",
+
+    "Automazione digitale": "Digital automation",
+    "per": "for",
+    "i cittadini": "citizens",
+    "le imprese": "businesses",
+    "le startup": "startups",
+    "i negozi": "stores",
+    "Verso un mondo sempre più digitale": "Toward a more digital world",
+    "La <q>digital escalation</q> è la trasformazione tecnologica che sempre più rapidamente sta entrando nella vita di tutti i giorni.": "<q>Digital escalation</q> stands for the technological advancements that are entering our lives at increasing speed",
+    "<strong>Cittadini e imprese sono sempre più connessi</strong> e far parte di questa grande rete di comunicazione digitale offre opportunità di crescita e sviluppo in ogni settore.": "<strong>Citizens and businesses are more and more connected</strong> and becoming part of this big communication network will lead to growth and development opportunities in every sector",
+    "Dritto al punto": "Straight to the point",
+    "Software di produttività, gestionali, e-commerce e web app sono alcune tra le <strong>soluzioni</strong> che possiamo sviluppare insieme, <strong>collaborando</strong> per comprendere al meglio le specifiche esigenze della tua attività.<br><br>Ogni cliente ha necessità, budget e tempistiche differenti, per questo è importante studiare una soluzione su misura.": "Productivity tools, management software, e-commerce websites and web apps are some of the solutions that we can develop together, <strong>collaborating</strong> to better understand the specific needs of your business.<br><br>Each client has their own needs, budget and time limits, that's why it's important to plan a solution that fits these requirements.",
+    "Hai un'idea?": "Do you have an idea?",
+    "Se hai un'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un'email all'indirizzo riportato di seguito": "If you have an idea that you want to verify, contact me with this form or send me an email at the address indicated below",
+
+    "Chi sono?": "Who am I?",
+    "Sono uno sviluppatore multipiattaforma": "I'm a multiplatform developer",
+    "Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e mi sono dilettato in progetti basati su microcontrollori, fino ad arrivare all'ambito Web che copre ormai la gran parte dei miei progetti.": "As a developer I've written some Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and now I'm primarily a Web Developer.",
+    "Lo sviluppo web": "Web Development",
+    "Da quando ho cominciato a sviluppare con le tecnologie Web ho avuto modo di testare differenti linguaggi, librerie e framework, a partire da JavaScript e CSS puro in una fase più didattica, passando per i classici jQuery e Bootstrap, fino a iniziare uno sviluppo più strutturato attraverso framework frontend quali React e Angular, insieme all'utilizzo di Webpack per progetti in cui è necessario maggiore controllo.": "Since I started developing with Web-oriented technologies I've had the opportunity to try different programming languages, libraries and frameworks, starting from JavaScript vanilla, jQuery and Bootstrap to the current Web Frameworks like React and Angular and to Webpack, the latter used in projects that need more control due to specific features",
+    "Parallelamente allo studio dello sviluppo Frontend ho iniziato a formarmi sulle tecnologie di Backend, al fine di poter realizzare Web App complete in soluzioni Client Side Rendering e Server Side Rendering.": "While studying frontend technologies I also began my journey into backend development. This way I can create a complete Web Application using both Client Side Rendering or Server Side Rendering",
+    "Ad oggi mi occupo di proporre soluzioni pensate su misura per le esigenze specifiche di ogni cliente, cercando ove possibile di adottare tecnologie e metodologie rodate e robuste, tenendo sempre in considerazione le esigenze e il target a cui ci si rivolge.": "Nowadays I create solutions that fits the specific needs of my clients, trying to choose the right technologies for the job, always keeping in mind the budget and target of my clients.",
+    "Milestones": "Milestones",
+
+    "Nome": "First name",
+    "Cognome": "Last name",
+    "Email": "Email",
+    "Telefono": "Phone",
+    "Messaggio": "Message",
+    "In quest'area puoi illustrarmi brevemente ciò di cui hai bisogno, sarà mia cura ricontattarti appena possibile per poter approfondire il progetto che vuoi realizzare": "In this area you can give me an overview of what you would like to develop or the problem you would like to solve. I'll write you back as soon as possibile to get into the details of the project we could build together",
+    "Acconsento al trattamento dei dati personali per le finalità di contatto": "I agree to share my personal data to contact you",
+    "Invia messaggio": "Send message",
+    "oppure scrivi a": "or write to",
+    "Clicca per copiare": "Click to copy",
+    "Copiato!": "Copied!",
+
+    "Grazie per avermi contattato": "Thank you for contacting me",
+    "Cercherò di rispondere quanto prima al tuo messaggio, a presto!": "I'll reply to your message as soon as possible. Best regards!"
 }

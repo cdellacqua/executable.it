@@ -26,8 +26,10 @@ class SEOComposer
             'seo',
             SEO::query()
                 ->where('path', Request::path())
-                ->firstOrNew([
+                ->where('locale', app()->getLocale())
+                ->firstOrNew([], [
                     'path' => Request::path(),
+                    'locale' => app()->getLocale(),
                     'og_type' => 'website',
                     'og_url' => Request::fullUrl(),
                     'og_image' => asset('/img/og-image.png'),
@@ -36,9 +38,9 @@ class SEOComposer
                     'twitter_card' => 'summary_large_image',
                     'robots' => null,
                     'author' => 'Carlo Dell\'Acqua',
-                    'keywords' => 'consulenza,software,sviluppo,development,developer,siti,web,webapp,informatica,landing,page,form,programmazione,programmatore',
+                    'keywords' => __('consulenza,software,sviluppo,development,developer,siti,web,webapp,informatica,landing,page,form,programmazione,programmatore'),
                     'title' => 'Executable',
-                    'description' => 'Servizi di consulenza informatica e realizzazione di applicativi Web.'
+                    'description' => __('Servizi di consulenza informatica e realizzazione di applicativi Web')
                 ])
         );
     }

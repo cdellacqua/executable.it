@@ -6,11 +6,6 @@ require('./wheel-slider');
 require('./expandable');
 require('./element-scrollY');
 
-// Reveal sidebar
-document.addEventListener('DOMContentLoaded', () => {
-    // document.querySelector('aside .main-nav').classList.add('reveal-left');
-    // document.querySelector('.catch-you img').classList.add('reveal-right');
-});
 
 document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
@@ -51,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const bottomSpacer = document.querySelector('.mobile-bottom-menu-spacer');
     function setNavPosition() {
         const scroll = window.scrollY - navTop.offsetTop;
-        navBottom.style.bottom = Math.min(-navTop.scrollHeight + scroll, 0) + 'px';
-        bottomSpacer.style.height = navTop.scrollHeight + 'px';
+        navBottom.style.bottom = Math.min(-navTop.offsetHeight + scroll, 0) + 'px';
+        bottomSpacer.style.height = navTop.offsetHeight + 'px';
         bottomSpacer.style.display = scroll > 0 ? 'block' : 'none';
     }
 

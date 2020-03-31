@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 
-class Locale
+class RouteLocale
 {
     /**
      * Handle an incoming request.
@@ -16,7 +17,11 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        $locale = $request->getPreferredLanguage();
+        $locale = $request->segment(1, \app()->getLocale()) ? Str::substr($request->segment(1, \app()->getLocale()), 0, 2) : null;
+        if ($locale && !in_array($locale, config('app.locales'))) {
+            $locale = null;
+        }
+
         if ($locale) {
             App::setLocale($locale);
             if (App::getLocale() === 'it') {
@@ -25,6 +30,7 @@ class Locale
                 setlocale(LC_TIME, 'en_US.UTF8');
             }
         }
+
         return $next($request);
     }
 }
