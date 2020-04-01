@@ -52,6 +52,10 @@ strong {
     color: $primary-color;
 }
 
+a {
+    @include transition(color);
+}
+
 .step.bottom {
     .step-item {
         &:not(:first-child)::before {
@@ -70,11 +74,12 @@ strong {
 
 
 .english-flag-background {
-    background-image: linear-gradient(-5deg, #3c3b6e 0%, #3c3b6e 45%, #ffffff 45%, #ffffff 55%, #b22234 55%, #b22234 100%);
+    background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%), linear-gradient(transparent 38%, white 38%, white 42%, red 42%, red 58%, white 58%, white 62%, transparent 62%), linear-gradient(90deg, transparent 44%, white 44%, white 46%, red 46%, red 56%, white 56%, white 58%, transparent 58%), linear-gradient(33deg, transparent 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, transparent 57%), linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
 }
 .italian-flag-background {
-    background-image: linear-gradient(-5deg, #009344 0%, #009344 45%, #ffffff 45%, #ffffff 55%, #ce2b37 55%, #ce2b37 100%);
+    background: linear-gradient(90deg, #009344 0%, #009344 33%, #ffffff 33%, #ffffff 67%, #ce2b37 67%, #ce2b37 100%);
 }
+
 
 .main-nav {
     .links-wrapper {
@@ -110,12 +115,27 @@ strong {
         }
     }
 
-    .change-locale {
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
+    .change-locale-wrapper {
+        position: relative;
+        display: inline-block;
+        padding: 0 .4rem;
+        border-radius: 100vw;
+
+        .change-locale-placeholder {
+            visibility: hidden;
+        }
+
+        .change-locale {
+            position: absolute;
+            top: 1px;
+            right: 1px;
+            bottom: 1px;
+            left: 1px;
+            background: #f6f6f6;
+            border-radius: 100vw;
+        }
     }
+
 
     &:not(.bottom) {
         a.tooltip {

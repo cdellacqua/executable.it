@@ -11,11 +11,11 @@
         </li>
         @if (app()->getLocale() === 'it')
             <li class="tab-item">
-                <a href="{{ route('home', ['locale' => 'en']) }}"><span class="english-flag-background change-locale" >English website</span></a>
+                <a href="{{ route('home', ['locale' => 'en']) }}"><span class="change-locale-wrapper english-flag-background"><span class="change-locale">English website</span><span class="change-locale-placeholder">English website</span></span></a>
             </li>
         @else
             <li class="tab-item">
-                <a href="{{ route('home', ['locale' => 'it']) }}"><span class="italian-flag-background change-locale">Sito italiano</span></a>
+                <a href="{{ route('home', ['locale' => 'it']) }}"><span class="change-locale-wrapper italian-flag-background"><span class="change-locale">Sito italiano</span><span class="change-locale-placeholder">Sito italiano</span></span></a>
             </li>
         @endif
     </ul>

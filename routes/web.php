@@ -21,6 +21,10 @@ Route::get('/', function () {
     return redirect(route_locale('home'), 301);
 });
 
+Route::get('/mail', function () {
+    return new \App\Email\ContactEmail(\App\Models\Contact::query()->firstOrFail());
+});
+
 Route::prefix('{locale}')
     ->where(['locale' => implode('|', config('app.locales'))])
     ->middleware(\App\Http\Middleware\RouteLocale::class)

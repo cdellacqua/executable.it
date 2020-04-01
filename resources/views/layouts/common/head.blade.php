@@ -2,7 +2,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--<meta name="theme-color" content="#000000" /> TODO-->
 <link rel="icon" type="image/png" href="{{ asset('/favicon.png') }}">
 
 @include('layouts.common.head-seo')
@@ -14,5 +13,5 @@
 <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
 
 @if(config('app.env') == 'local')
-    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="{{ config('app.url') }}:35729/livereload.js"></script>
 @endif

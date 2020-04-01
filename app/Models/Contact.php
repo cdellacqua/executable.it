@@ -9,6 +9,7 @@ class Contact extends Model
     protected $table = 'contact';
 
     protected $fillable = [
+        'locale',
         'first_name',
         'last_name',
         'email',
