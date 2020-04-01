@@ -5,11 +5,11 @@
     <table style="margin: 0 auto;">
         @if (config('app.env') !== 'production')
             <tr>
-                <td><h2>Ambiente rilevato diverso da produzione: {{ config('app.env') }}</h2></td>
+                <td style="text-align: center;"><h2>Ambiente rilevato diverso da produzione: {{ config('app.env') }}</h2></td>
             </tr>
         @endif
         <tr>
-            <td><h1>Nuovo contatto dal form di Executable</h1></td>
+            <td style="text-align: center;"><h1>Nuovo contatto dal form di Executable</h1></td>
         </tr>
         <tr>
             <td>

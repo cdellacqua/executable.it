@@ -10,7 +10,7 @@
   .tab-item {
     margin-top: 0;
 
-    a {
+    > a {
       border-bottom: $border-width-lg solid transparent;
       color: inherit;
       display: block;
@@ -22,8 +22,8 @@
         color: $link-color;
       }
     }
-    &.active a,
-    a.active {
+    &.active > a,
+    > a.active {
       border-bottom-color: $primary-color;
       color: $link-color;
     }
@@ -43,7 +43,7 @@
       flex: 1 0 0;
       text-align: center;
 
-      a {
+      > a {
         margin: 0;
       }
 

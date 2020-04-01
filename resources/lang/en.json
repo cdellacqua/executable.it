@@ -4,10 +4,10 @@
 
     "Chi sono": "About me",
     "Tu sei qui": "You are here",
-    "Contattami": "Contact me",
+    "Contatti": "Contacts",
 
     "di Carlo Dell'Acqua": "by Carlo Dell'Acqua",
-    "P.IVA IT74528545284": "VAT IT74528545284",
+    "P.IVA TBD": "VAT TBD",
 
     "Automazione digitale": "Digital automation",
     "per": "for",
@@ -26,6 +26,8 @@
     "Chi sono?": "Who am I?",
     "Sono uno sviluppatore multipiattaforma": "I'm a multiplatform developer",
     "Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e mi sono dilettato in progetti basati su microcontrollori, fino ad arrivare all'ambito Web che copre ormai la gran parte dei miei progetti.": "As a developer I've written some Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and now I'm primarily a Web Developer.",
+    "Profilo GitHub": "GitHub Profile",
+    "Profilo LinkedIn": "LinkedIn Profile",
     "Lo sviluppo web": "Web Development",
     "Da quando ho cominciato a sviluppare con le tecnologie Web ho avuto modo di testare differenti linguaggi, librerie e framework, a partire da JavaScript e CSS puro in una fase più didattica, passando per i classici jQuery e Bootstrap, fino a iniziare uno sviluppo più strutturato attraverso framework frontend quali React e Angular, insieme all'utilizzo di Webpack per progetti in cui è necessario maggiore controllo.": "Since I started developing with Web-oriented technologies I've had the opportunity to try different programming languages, libraries and frameworks, starting from JavaScript vanilla, jQuery and Bootstrap to the current Web Frameworks like React and Angular and to Webpack, the latter used in projects that need more control due to specific features",
     "Parallelamente allo studio dello sviluppo Frontend ho iniziato a formarmi sulle tecnologie di Backend, al fine di poter realizzare Web App complete in soluzioni Client Side Rendering e Server Side Rendering.": "While studying frontend technologies I also began my journey into backend development. This way I can create a complete Web Application using both Client Side Rendering or Server Side Rendering",
@@ -45,5 +47,7 @@
     "Copiato!": "Copied!",
 
     "Grazie per avermi contattato": "Thank you for contacting me",
-    "Cercherò di rispondere quanto prima al tuo messaggio, a presto!": "I'll reply to your message as soon as possible. Best regards!"
+    "Cercherò di rispondere quanto prima al tuo messaggio, a presto!": "I'll reply to your message as soon as possible. Best regards!",
+
+    "immagine": "image"
 }

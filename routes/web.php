@@ -31,9 +31,9 @@ Route::prefix('{locale}')
     ->group(function () {
         Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-        Route::get('/contact-me', ['as' => 'contact-me', 'uses' => 'ContactController@index']);
-        Route::post('/contact-me', ['as' => 'contact-me', 'uses' => 'ContactController@store']);
-        Route::get('/contact-me-tp', ['as' => 'contact-me-tp', 'uses' => 'ContactController@tp']);
+        Route::get('/contacts', ['as' => 'contacts', 'uses' => 'ContactController@index']);
+        Route::post('/contacts', ['as' => 'contacts', 'uses' => 'ContactController@store']);
+        Route::get('/contacts-tp', ['as' => 'contacts-tp', 'uses' => 'ContactController@tp']);
 
         Route::get('/about-me', ['as' => 'about-me', 'uses' => 'AboutController@index']);
     });

@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Redirect;
 class ContactController extends Controller
 {
     public function index() {
-        return view('pages.contact-me');
+        return view('pages.contacts');
     }
 
     public function store(ContactRequest $contact) {
@@ -30,15 +30,15 @@ class ContactController extends Controller
 
         ProcessContact::dispatchAfterResponse($contact);
 
-        return Redirect::to(route_locale('contact-me-tp'))
+        return Redirect::to(route_locale('contacts-tp'))
             ->with('success', true);
     }
 
     public function tp() {
         if (session('success') === true) {
-            return view('pages.contact-me-tp');
+            return view('pages.contacts-tp');
         } else {
-            return Redirect::to(route_locale('contact-me'));
+            return Redirect::to(route_locale('contacts'));
         }
     }
 }

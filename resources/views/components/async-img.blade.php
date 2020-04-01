@@ -1,6 +1,6 @@
 <div class="async-img-container {{ ($class ?? false) ? "$class" : '' }}" style="{{ ($style ?? false) ? "$style" : '' }}">
     <div class="async-img-placeholder {{ ($round ?? false) ? '-round' : '' }}" data-ratio="{{ $ratio ?? 1 }}">
-        <img src="{{ $src }}" class="async-img">
+        <img src="{{ $src }}" class="async-img" alt="{{ $alt ?? __('immagine') }}">
     </div>
 
     <i class="loading loading-lg"></i>

@@ -5,12 +5,22 @@
         <section class="padding">
             <div class="container">
                 <div class="columns">
-                    <div class="col-8 col-sm-12 col-mx-auto">
+                    <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
                         <h1><span class="elevation">{{ __('Chi sono?') }}</span></h1>
                         <h2><span class="underline">{{ __('Sono uno sviluppatore multipiattaforma') }}</span></h2>
                         <p>
                             {{ __('Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e mi sono dilettato in progetti basati su microcontrollori, fino ad arrivare all\'ambito Web che copre ormai la gran parte dei miei progetti.') }}
                         </p>
+                        <div class="socials-container">
+                            <div class="columns">
+                                <div class="col-6 column">
+                                    <a class="btn d-block" title="{{ __('Profilo GitHub') }}" target="_blank" href="https://github.com/cdellacqua"><i class="fab fa-github-square"></i>&nbsp;{{ __('Profilo GitHub') }}</a>
+                                </div>
+                                <div class="col-6 column">
+                                    <a class="btn d-block" title="{{ __('Profilo LinkedIn') }}" target="_blank" href="https://www.linkedin.com/in/carlo-dell-acqua/"><i class="fab fa-linkedin"></i>&nbsp;{{ __('Profilo LinkedIn') }}</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -18,7 +28,7 @@
         <section class="padding">
             <div class="container">
                 <div class="columns">
-                    <div class="col-8 col-sm-12 col-mx-auto">
+                    <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
                         <h2><span class="underline">{{ __('Lo sviluppo web') }}</span></h2>
                         <p>
                             {{ __('Da quando ho cominciato a sviluppare con le tecnologie Web ho avuto modo di testare differenti linguaggi, librerie e framework, a partire da JavaScript e CSS puro in una fase più didattica, passando per i classici jQuery e Bootstrap, fino a iniziare uno sviluppo più strutturato attraverso framework frontend quali React e Angular, insieme all\'utilizzo di Webpack per progetti in cui è necessario maggiore controllo.') }}
@@ -36,7 +46,7 @@
         <section class="padding">
             <div class="container">
                 <div class="columns">
-                    <div class="timeline col-8 col-xl-10 col-md-12 col-mx-auto">
+                    <div class="timeline col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
                         <h2><span class="underline">{{ __('Milestones') }}</span></h2>
                         @foreach($timeline as $item)
                             <div class="timeline-item">

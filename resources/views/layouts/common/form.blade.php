@@ -3,7 +3,7 @@ $formInputIndex = 0;
 @endphp
 <div class="container" style="margin-top: 2em;">
     <div class="columns">
-        <form method="post" action="{{ route_locale('contact-me') }}" class="form-horizontal col-12 col-mx-auto form-contact">
+        <form method="post" action="{{ route_locale('contacts') }}" class="form-horizontal col-12 col-mx-auto form-contact">
             @csrf
             <div class="form-group">
                 <div class="col-3 col-sm-12">
@@ -76,11 +76,13 @@ $formInputIndex = 0;
                 </div>
             @enderror
             <div class="form-group">
-                <div class="col-3 col-sm-12"></div>
+                <div class="col-3 col-sm-12">
+                    <label class="form-label">*</label>
+                </div>
                 <div class="col-6 col-sm-12">
                     <label class="form-switch" style="text-align: justify;">
                         <input type="checkbox" value="true" name="privacy" required {{ old('privacy') === 'true' ? 'checked' : '' }}>
-                        <i class="form-icon"></i> {{ __('Acconsento al trattamento dei dati personali per le finalità di contatto') }} *
+                        <i class="form-icon"></i> {{ __('Acconsento al trattamento dei dati personali per le finalità di contatto') }}
                     </label>
                 </div>
             </div>
@@ -101,7 +103,7 @@ $formInputIndex = 0;
                 <div class="col-12 text-center">
                     {{ __('oppure scrivi a') }}<br>
                     <span class="eaddress tooltip tooltip-top" data-tooltip-copied="{{ __('Copiato!') }}" data-tooltip-hover="{{ __('Clicca per copiare') }}" data-tooltip="{{ __('Clicca per copiare') }}">
-                        <img src="/img/eaddress.svg" alt="eaddress" style="height: .925em; width: auto; vertical-align: middle;">
+                        <img src="{{ asset('/img/eaddress.svg') }}" alt="eaddress" style="height: .925em; width: auto; vertical-align: middle;">
                     </span>
                 </div>
             </div>

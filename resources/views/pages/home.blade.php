@@ -1,11 +1,10 @@
 @extends('layouts.default')
 @section('content')
-    <script src="{{ mix('/js/pages/home.js') }}"></script>
     <div class="background">
-        <section class="fill-height first-scroll">
+        <section class="fill-height home-first-scroll first-scroll-height">
             <div class="catch-you">
                 <div class="image-container" style="width: 100%;">
-                    @component('components.async-img', ['src' => asset('/img/logo-colors.svg').'?v4', 'ratio' => 0.24, 'style' => 'max-width: 450px; width: 75%; margin: 0 auto; padding: 1rem 0'])
+                    @component('components.async-img', ['src' => asset('/img/logo-colors.svg'), 'ratio' => 0.24, 'style' => 'max-width: 450px; width: 75%; margin: 0 auto; padding: 1rem 0', 'alt' => 'logo'])
                     @endcomponent
                 </div>
                 <div class="wheel">
@@ -22,7 +21,7 @@
         <section class="fill-height padding vertical-center">
             <div class="container">
                 <div class="columns">
-                    <div class="col-8 col-sm-12 col-mx-auto text-left">
+                    <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto text-left">
                         <h2><span class="underline opacity-on-scroll">{{ __('Verso un mondo sempre più digitale') }}</span></h2>
                         <p>
                             {!! __('La <q>digital escalation</q> è la trasformazione tecnologica che sempre più rapidamente sta entrando nella vita di tutti i giorni.') !!}
@@ -38,7 +37,7 @@
         <section class="fill-height padding vertical-center">
             <div class="container">
                 <div class="columns">
-                    <div class="col-8 col-sm-12 col-mx-auto text-right">
+                    <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto text-right">
                         <h2><span class="underline opacity-on-scroll">{{ __('Dritto al punto') }}</span></h2>
                         <p>
                             {!! __('Software di produttività, gestionali, e-commerce e web app sono alcune tra le <strong>soluzioni</strong> che possiamo sviluppare insieme, <strong>collaborando</strong> per comprendere al meglio le specifiche esigenze della tua attività.<br><br>Ogni cliente ha necessità, budget e tempistiche differenti, per questo è importante studiare una soluzione su misura.') !!}
@@ -50,7 +49,7 @@
         <section class="fill-height padding vertical-center">
             <div class="container">
                 <div class="columns">
-                    <div class="col-8 col-sm-12 col-mx-auto text-center">
+                    <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto text-center">
                         <h2><span class="underline opacity-on-scroll">{{ __('Hai un\'idea?') }}</span></h2>
                         <p>
                             {{ __('Se hai un\'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un\'email all\'indirizzo riportato di seguito') }}

@@ -80,6 +80,12 @@ a {
     background: linear-gradient(90deg, #009344 0%, #009344 33%, #ffffff 33%, #ffffff 67%, #ce2b37 67%, #ce2b37 100%);
 }
 
+.square {
+    display: inline-block;
+    width: 1.5em;
+    height: 1em;
+}
+
 
 .main-nav {
     .links-wrapper {
@@ -109,33 +115,11 @@ a {
         .tab-item {
             margin: 0;
         }
-        .tab-item a {
+        .tab-item > a {
             padding-top: 1em;
             padding-bottom: 1em;
         }
     }
-
-    .change-locale-wrapper {
-        position: relative;
-        display: inline-block;
-        padding: 0 .4rem;
-        border-radius: 100vw;
-
-        .change-locale-placeholder {
-            visibility: hidden;
-        }
-
-        .change-locale {
-            position: absolute;
-            top: 1px;
-            right: 1px;
-            bottom: 1px;
-            left: 1px;
-            background: #f6f6f6;
-            border-radius: 100vw;
-        }
-    }
-
 
     &:not(.bottom) {
         a.tooltip {
@@ -160,6 +144,33 @@ a {
         bottom: -44px;
 
         ul.tab-block {
+        }
+    }
+
+    .language-switch {
+        display: inline-block;
+        > label {
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.6rem;
+        }
+        .form-checkbox input + .form-icon, .form-radio input + .form-icon, .form-switch input + .form-icon {
+            background: #409bd5;
+        }
+
+        &.loading::after {
+            border-color: $dark-color;
+            border-right-color: transparent;
+            border-top-color: transparent;
+            margin-top: -0.33rem;
+        }
+        &.right::after {
+            margin-left: -0.75rem;
+        }
+        &.left::after {
+            margin-left: -0.04rem;
         }
     }
 }
@@ -278,7 +289,7 @@ section {
     }
 }
 
-.first-scroll {
+.home-first-scroll {
     position: relative;
     display: flex;
     flex-flow: column;
@@ -473,7 +484,7 @@ label[for] {
 
 .fill-height {
     min-height: 100vh;
-    &:not(.first-scroll) {
+    &:not(.home-first-scroll) {
         @media #{$under-sm} {
             min-height: 70vh;
 

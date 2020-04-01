@@ -6,7 +6,7 @@ require('./wheel-slider');
 require('./expandable');
 require('./element-scrollY');
 
-
+// Fade-in on scroll
 document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         document.querySelectorAll('.opacity-on-scroll').forEach((element) => {
@@ -76,5 +76,51 @@ document.addEventListener('DOMContentLoaded', () => {
             eaddressElement.setAttribute('data-tooltip', eaddressElement.getAttribute('data-tooltip-copied'));
         });
         eaddressElement.addEventListener('mouseout', () => setTimeout(() => eaddressElement.setAttribute('data-tooltip', eaddressElement.getAttribute('data-tooltip-hover')), 200));
+    });
+});
+
+// Adjust first-scroll height
+document.addEventListener('DOMContentLoaded', () => {
+    const firstScroll = document.querySelector('.first-scroll-height');
+    if (firstScroll) {
+        function firstScrollHeight() {
+            firstScroll.style.minHeight = window.innerHeight - document.querySelector('.mobile-menu-wrapper').offsetHeight + 'px';
+        }
+
+        firstScrollHeight();
+        let oldWidth = window.innerWidth;
+        window.addEventListener('resize', () => {
+            if (oldWidth !== window.innerWidth) {
+                firstScrollHeight();
+                oldWidth = window.innerWidth;
+            } // else -> fake resize in Safari/Chrome mobile
+        });
+    }
+});
+
+
+// Language switch
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.language-switch').forEach(switchElement => {
+        const enLink = switchElement.querySelector('[data-lang="en"]');
+        const itLink = switchElement.querySelector('[data-lang="it"]');
+        const checkbox = switchElement.querySelector('input');
+
+        function changeLanguage(e) {
+            e.preventDefault();
+            checkbox.disabled = true;
+            switchElement.classList.add('loading');
+            if (checkbox.checked) {
+                switchElement.classList.add('left');
+                setTimeout(() => location.href = enLink.href, 200);
+            } else {
+                switchElement.classList.add('right');
+                setTimeout(() => location.href = itLink.href, 200);
+            }
+        }
+
+        checkbox.addEventListener('change', changeLanguage);
+        itLink.addEventListener('click', changeLanguage);
+        enLink.addEventListener('click', changeLanguage);
     });
 });

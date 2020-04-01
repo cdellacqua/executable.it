@@ -38,6 +38,8 @@ class ProcessContact implements ShouldQueue
      */
     public function handle()
     {
-        Mail::to(config('mail.contact_recipient'))->send(new ContactEmail($this->contact));
+        Mail::to(config('mail.contact_recipient'))
+            ->bcc(config('mail.from.address'))
+            ->send(new ContactEmail($this->contact));
     }
 }

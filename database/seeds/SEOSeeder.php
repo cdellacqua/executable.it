@@ -66,24 +66,24 @@ class SEOSeeder extends Seeder
 
                 array_merge($base['it'], [
                     'locale' => 'it',
-                    'path' => 'contact-me',
-                    'title' => 'Contattami',
+                    'path' => 'contacts',
+                    'title' => 'Contatti',
                 ]),
                 array_merge($base['en'], [
                     'locale' => 'en',
-                    'path' => 'contact-me',
-                    'title' => 'Contact me',
+                    'path' => 'contacts',
+                    'title' => 'Contact',
                 ]),
 
                 array_merge($base['it'], [
                     'locale' => 'it',
-                    'path' => 'contact-me-tp',
+                    'path' => 'contacts-tp',
                     'keywords' => 'grazie',
                     'title' => 'Grazie',
                 ]),
                 array_merge($base['en'], [
                     'locale' => 'en',
-                    'path' => 'contact-me-tp',
+                    'path' => 'contacts-tp',
                     'keywords' => 'thank you',
                     'title' => 'Thank you',
                 ])
