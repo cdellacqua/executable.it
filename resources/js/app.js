@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const scroll = window.scrollY - navTop.offsetTop;
         navBottom.style.bottom = Math.min(-navTop.offsetHeight + scroll, 0) + 'px';
         bottomSpacer.style.height = navTop.offsetHeight + 'px';
-        bottomSpacer.style.display = scroll > 0 ? 'block' : 'none';
     }
 
     setNavPosition();
@@ -60,12 +59,17 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.form-contact').forEach(form => {
         form.addEventListener('submit', () => form.querySelector('[type="submit"]').classList.add('disabled', 'loading'));
-        const eaddressElement = form.querySelector('.eaddress');
-        eaddressElement.setAttribute('data-tooltip', eaddressElement.getAttribute('data-tooltip-hover'));
-        eaddressElement.addEventListener('click', function () {
-            const eaddress = 'kizdg&lmddiky}iHmpmk}|ijdm&a|';
+    });
+});
+
+// copyable content
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-copy]').forEach(element => {
+        element.setAttribute('data-tooltip', element.getAttribute('data-tooltip-hover'));
+        element.addEventListener('click', function () {
+            const content = element.getAttribute('data-copy');
             const input = document.createElement('input');
-            input.value = eaddress.split('').map(x => x.charCodeAt(0)).map(x => String.fromCharCode(x ^ 8)).join('');
+            input.value = content.split('').map(x => x.charCodeAt(0)).map(x => String.fromCharCode(x ^ 8)).join('');
             input.style.position = 'absolute';
             input.style.opacity = '0';
             document.body.appendChild(input);
@@ -73,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
             input.setSelectionRange(0, input.value.length);
             document.execCommand('copy');
             document.body.removeChild(input);
-            eaddressElement.setAttribute('data-tooltip', eaddressElement.getAttribute('data-tooltip-copied'));
+            element.setAttribute('data-tooltip', element.getAttribute('data-tooltip-copied'));
         });
-        eaddressElement.addEventListener('mouseout', () => setTimeout(() => eaddressElement.setAttribute('data-tooltip', eaddressElement.getAttribute('data-tooltip-hover')), 200));
+        element.addEventListener('mouseout', () => setTimeout(() => element.setAttribute('data-tooltip', element.getAttribute('data-tooltip-hover')), 200));
     });
 });
 
@@ -109,13 +113,18 @@ document.addEventListener('DOMContentLoaded', () => {
         function changeLanguage(e) {
             e.preventDefault();
             checkbox.disabled = true;
-            switchElement.classList.add('loading');
             if (checkbox.checked) {
-                switchElement.classList.add('left');
-                setTimeout(() => location.href = enLink.href, 200);
+                setTimeout(() => {
+                    location.href = enLink.href;
+                    switchElement.classList.add('loading');
+                    switchElement.classList.add('left');
+                }, 200);
             } else {
-                switchElement.classList.add('right');
-                setTimeout(() => location.href = itLink.href, 200);
+                setTimeout(() => {
+                    location.href = itLink.href;
+                    switchElement.classList.add('loading');
+                    switchElement.classList.add('right');
+                }, 200);
             }
         }
 

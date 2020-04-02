@@ -11,7 +11,12 @@
                     <div class="fixed-text-wrapper elevation">
                         <h1>{{ __('Automazione digitale') }}</h1>&nbsp;<label>{{ __('per') }}&nbsp;</label>
                     </div>
-                    <div class="wheel-slider" data-values="{{ '<i class="fa-fw fas fa-user"></i> '.__('i cittadini').'|<i class="fa-fw fas fa-building"></i> '.__('le imprese').'|<i class="fa-fw fas fa-rocket"></i> '.__('le startup').'|<i class="fa-fw fas fa-store"></i> '.__('i negozi') }}"><span class="wheel-initial-width-placeholder"><i class="fa-fw fas fa-building"></i> {{ __('le imprese') }}</span></div>
+                    <div class="wheel-slider" data-values="{{
+                          '<span class="elevation"><i class="fa-fw fas fa-user"></i> '.__('i cittadini').'</span>'
+                        .'|<span class="elevation"><i class="fa-fw fas fa-building"></i> '.__('le imprese').'</span>'
+                        .'|<span class="elevation"><i class="fa-fw fas fa-rocket"></i> '.__('le startup').'</span>'
+                        .'|<span class="elevation"><i class="fa-fw fas fa-store"></i> '.__('i negozi').'</span>'
+                    }}"><span class="wheel-initial-width-placeholder"><span class="elevation"><i class="fa-fw fas fa-building"></i> {{ __('le imprese') }}</span></span></div>
                 </div>
             </div>
         </section>
@@ -52,7 +57,7 @@
                     <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto text-center">
                         <h2><span class="underline opacity-on-scroll">{{ __('Hai un\'idea?') }}</span></h2>
                         <p>
-                            {{ __('Se hai un\'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un\'email all\'indirizzo riportato di seguito') }}
+                            {{ __('Se hai un\'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un\'email all\'indirizzo riportato di seguito.') }}
                         </p>
                     </div>
                 </div>

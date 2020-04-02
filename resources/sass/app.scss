@@ -33,6 +33,12 @@ h1 {
 
 h2 {
     margin-bottom: 1.5em;
+    margin-top: 2em;
+}
+
+h3 {
+    margin-bottom: .5em;
+    margin-top: 1.5em;
 }
 
 .underline {
@@ -177,7 +183,7 @@ a {
 
 .mobile-bottom-menu-spacer {
     width: 100%;
-    height: 44px;
+    height: 72px;
 }
 
 main {
@@ -335,19 +341,16 @@ section {
 
         @media #{$under-sm} {
             font-size: 1.5em;
-            .fixed-text-wrapper {
-                display: inline-block;
+        }
+
+        .fixed-text-wrapper {
+            display: inline-block;
+            font-size: inherit;
+            line-height: 2.5em;
+            white-space: nowrap;
+            h1, label {
                 font-size: inherit;
-                line-height: 2.5em;
-                white-space: nowrap;
-                h1, label {
-                    font-size: inherit;
-                    line-height: inherit;
-                }
-            }
-
-            .wheel-slider {
-
+                line-height: inherit;
             }
         }
 
@@ -372,6 +375,9 @@ footer {
     color: white;
     padding: 1em .4rem;
     text-align: center;
+    a {
+        color: white !important;
+    }
 }
 
 p {
@@ -464,10 +470,10 @@ label[for] {
 }
 
 .form-contact {
-    .form-label {
+    .form-group > .field-name-wrapper {
         text-align: right;
         padding-right: 1ch;
-        @media #{$under-sm} {
+        @media #{$under-md} {
             text-align: left;
         }
     }
@@ -500,11 +506,10 @@ label[for] {
     background: linear-gradient(165deg, transparent 0%, rgba(64, 155, 213, 0.2) 0%, rgba(64, 155, 213, 0.2) 9%, transparent 9%),
         linear-gradient(234deg, transparent 0%, rgba(221, 5, 55, 0.1) 0%, rgba(221, 5, 55, 0.1) 11%, transparent 11%),
         linear-gradient(191deg, transparent 26%, rgba(221, 5, 55, 0.1) 26%, rgba(221, 5, 55, 0.1) 29%, transparent 29%),
-        linear-gradient(-22.25deg, transparent 65%, rgba(64, 155, 213, 0.2) 65%, rgba(64, 155, 213, 0.2) 74%, transparent 74%),
-        linear-gradient(5deg, transparent 49%, rgba(221, 5, 55, 0.1) 49%, rgba(221, 5, 55, 0.1) 60%, transparent 60%),
-        linear-gradient(15deg, transparent 34%, rgba(64, 155, 213, 0.2) 34%, rgba(64, 155, 213, 0.2) 41%, transparent 41%),
+        linear-gradient(5deg, transparent 49%, rgba(64, 155, 213, 0.2) 49%, rgba(64, 155, 213, 0.2) 60%, transparent 60%),
         linear-gradient(-8deg, transparent 29%, rgba(221, 5, 55, 0.1) 29%, rgba(221, 5, 55, 0.1) 32%, transparent 32%),
-        linear-gradient(6.75deg, transparent 0%, rgba(64, 155, 213, 0.2) 0%, rgba(64, 155, 213, 0.2) 12%, transparent 12%), linear-gradient(-72deg, transparent 0%, rgba(221, 5, 55, 0.1) 0%, rgba(221, 5, 55, 0.1) 19.75%, transparent 19.75%);
+        linear-gradient(6.75deg, transparent 0%, rgba(64, 155, 213, 0.2) 0%, rgba(64, 155, 213, 0.2) 12%, transparent 12%),
+        linear-gradient(-72deg, transparent 0%, rgba(221, 5, 55, 0.1) 0%, rgba(221, 5, 55, 0.1) 19.75%, transparent 19.75%);
 }
 
 .background-small {
@@ -518,6 +523,10 @@ label[for] {
     &.outside-visible-area {
         opacity: .5;
     }
+}
+
+.privacy-label {
+    font-weight: bold;
 }
 
 

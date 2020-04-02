@@ -1,7 +1,7 @@
 @extends('layouts.default')
 @section('content')
     <script src="{{ mix('/js/pages/about-me.js') }}"></script>
-    <div class="background-small">
+    <div class="background-small fill-height first-scroll-height">
         <section class="padding">
             <div class="container">
                 <div class="columns">

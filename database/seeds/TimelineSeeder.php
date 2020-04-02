@@ -56,8 +56,8 @@ class TimelineSeeder extends Seeder
                     'date' => Carbon::create(2020, 4),
                     'locale' => 'en',
                     'title' => 'EXECUTABLE is founded',
-                    'description' => 'My adventure as a freelance developer starts now, determined to 
-                                    create a good company operating in the IT sector.',
+                    'description' => 'My adventure as a freelance developer starts now, with great growth potential and with
+                                       the goal of turning Executable into a fully fledged company.',
                     'icon' => '<img alt="x" style="display: block; height:auto; width: 100%;" src="/img/logo-symbol-white.svg">'
                 ],
                 [

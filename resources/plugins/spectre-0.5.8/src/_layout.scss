@@ -33,6 +33,7 @@
 .show-xs,
 .show-sm,
 .show-md,
+.show-md-inline,
 .show-lg,
 .show-xl {
   display: none !important;
@@ -317,6 +318,9 @@
   .show-md {
     display: block !important;
   }
+    .show-md-inline {
+        display: inline !important;
+    }
 }
 @media (max-width: $size-sm) {
   .col-sm-12,
@@ -379,6 +383,9 @@
   .show-sm {
     display: block !important;
   }
+    .show-sm-inline {
+        display: inline !important;
+    }
 }
 @media (max-width: $size-xs) {
   .col-xs-12,

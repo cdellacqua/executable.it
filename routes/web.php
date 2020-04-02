@@ -21,10 +21,6 @@ Route::get('/', function () {
     return redirect(route_locale('home'), 301);
 });
 
-Route::get('/mail', function () {
-    return new \App\Email\ContactEmail(\App\Models\Contact::query()->firstOrFail());
-});
-
 Route::prefix('{locale}')
     ->where(['locale' => implode('|', config('app.locales'))])
     ->middleware(\App\Http\Middleware\RouteLocale::class)
@@ -36,12 +32,25 @@ Route::prefix('{locale}')
         Route::get('/contacts-tp', ['as' => 'contacts-tp', 'uses' => 'ContactController@tp']);
 
         Route::get('/about-me', ['as' => 'about-me', 'uses' => 'AboutController@index']);
+
+        Route::get('/cookies', ['as' => 'cookies', 'uses' => 'PrivacyController@cookies']);
+        Route::get('/privacy', ['as' => 'privacy', 'uses' => 'PrivacyController@privacy']);
     });
 
 // Development and Debug routes
 if (config('app.env') == 'local') {
     Route::get('/info', function () {
         phpinfo();
+    });
+
+    Route::get('/{errorCode}', function ($errorCode) {
+        abort(intval($errorCode));
+    })->where('errorCode', '\d+');
+
+    Route::get('/mail', function () {
+        /** @var \App\Models\Contact $contact */
+        $contact = \App\Models\Contact::query()->firstOrFail();
+        return new \App\Email\ContactEmail($contact);
     });
 }
 

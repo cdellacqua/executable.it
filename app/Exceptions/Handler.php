@@ -3,6 +3,8 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Str;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -50,6 +52,20 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        $locale = $request->getPreferredLanguage() ? Str::substr($request->getPreferredLanguage(), 0, 2) : null;
+        if ($locale && !in_array($locale, config('app.locales'))) {
+            $locale = null;
+        }
+
+        if ($locale) {
+            App::setLocale($locale);
+            if (App::getLocale() === 'it') {
+                setlocale(LC_TIME, 'it_IT.UTF8');
+            } else {
+                setlocale(LC_TIME, 'en_US.UTF8');
+            }
+        }
+
         return parent::render($request, $exception);
     }
 }

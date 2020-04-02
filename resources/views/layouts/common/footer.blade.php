@@ -1,3 +1,4 @@
 <strong style="color: white;">Executable</strong><br>
 <small>{{ __('di Carlo Dell\'Acqua') }} &ndash; {{ __('P.IVA TBD') }}</small><br>
-<small>Milano &ndash; &copy;&nbsp;{{ date('Y') }}</small>
+<small>{{ __('Milano') }} &ndash; &copy;&nbsp;{{ date('Y') }}</small><br>
+<small><a href="{{ route_locale('cookies') }}" title="{{ __('Cookie Policy') }}">{{ __('Cookie Policy') }}</a> | <a href="{{ route_locale('privacy') }}" title="{{ __('Privacy Policy') }}">{{ __('Privacy Policy') }}</a></small>
