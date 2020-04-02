@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.main-nav').forEach((nav) => {
         /** @type HTMLAnchorElement[] */
-        const anchors = Array.from(nav.querySelectorAll('a'));
+        const anchors = Array.from(nav.querySelectorAll('.tab-item:not(.language-switch-item) a'));
         const anchorIndex = anchors.findIndex((/** HTMLAnchorElement */a) => a.pathname === location.pathname);
         if (anchorIndex !== -1) {
             const a = anchors[anchorIndex];

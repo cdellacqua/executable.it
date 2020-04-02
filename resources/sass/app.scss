@@ -306,7 +306,7 @@ section {
         display: flex;
         flex-flow: column;
         justify-content: center;
-        font-size: 3vw;
+        font-size: 2.5em;
         font-weight: bold;
         z-index: 0;
         font-family: 'Spartan', sans-serif;
@@ -314,6 +314,17 @@ section {
         @media #{$under-xl} {
             font-size: 2em;
         }
+
+        @media (max-width: 900px) {
+            font-size: 1.7em;
+        }
+        @media (max-width: 800px) {
+            font-size: 1.5em;
+        }
+        @media (max-width: 700px) {
+            font-size: 1.2em;
+        }
+
 
         .fixed-text-wrapper {
             margin-bottom: 1em;
@@ -335,14 +346,6 @@ section {
             }
         }
 
-        @media #{$under-md} {
-            font-size: 1.7em;
-        }
-
-        @media #{$under-sm} {
-            font-size: 1.5em;
-        }
-
         .fixed-text-wrapper {
             display: inline-block;
             font-size: inherit;
@@ -351,12 +354,6 @@ section {
             h1, label {
                 font-size: inherit;
                 line-height: inherit;
-            }
-        }
-
-        @media #{$under-sm} {
-            label {
-                font-size: 1.2em;
             }
         }
     }

@@ -45,7 +45,7 @@ if (config('app.env') == 'local') {
 
     Route::get('/{errorCode}', function ($errorCode) {
         abort(intval($errorCode));
-    })->where('errorCode', '\d+');
+    })->where('errorCode', '\d{3,3}');
 
     Route::get('/mail', function () {
         /** @var \App\Models\Contact $contact */
