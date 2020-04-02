@@ -2,10 +2,10 @@
 .tooltip {
   position: relative;
   &::after {
-    background: rgba($dark-color, .95);
+    background: lighten($primary-color-light, 20%);
     border-radius: $border-radius;
     bottom: 100%;
-    color: $light-color;
+    color: $dark-color;
     content: attr(data-tooltip);
     display: block;
     font-size: $font-size-sm;
