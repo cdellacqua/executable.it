@@ -16,3 +16,4 @@ yarn-error.log
 /public/js
 /public/plugins/spectre-0.5.8
 xdebug.log
+/deploy
