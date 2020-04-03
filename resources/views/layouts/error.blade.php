@@ -22,9 +22,11 @@
 
 </head>
 <body>
-    <div class="mobile-menu-wrapper">
-        @include('layouts.common.mobile-menu')
-    </div>
+    @if($menu ?? true)
+        <div class="mobile-menu-wrapper">
+            @include('layouts.common.mobile-menu')
+        </div>
+    @endif
     <main>
         <div class="background-small">
             <section class="fill-height padding vertical-center text-center first-scroll-height">
@@ -35,9 +37,11 @@
                             <p>
                                 @yield('message')
                             </p>
-                            <p>
-                                <a href="{{ route_locale('home') }}" title="{{ __('Torna all\'homepage') }}">{{ __('Torna all\'homepage') }}</a>
-                            </p>
+                            @if($homepage ?? true)
+                                <p>
+                                    <a href="{{ route_locale('home') }}" title="{{ __('Torna all\'homepage') }}">{{ __('Torna all\'homepage') }}</a>
+                                </p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -45,8 +49,10 @@
         </div>
     </main>
     <footer>
-        @include('layouts.common.footer')
+        @include('layouts.common.footer', ['links' => $footerLinks ?? true])
     </footer>
-    <div class="mobile-bottom-menu-spacer"></div>
+    @if($menu ?? true)
+        <div class="mobile-bottom-menu-spacer"></div>
+    @endif
 </body>
 </html>

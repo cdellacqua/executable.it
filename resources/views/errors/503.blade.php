@@ -1,4 +1,4 @@
-@extends('layouts.error')
+@extends('layouts.error', ['homepage' => false, 'menu' => false, 'footerLinks' => false])
 
 @section('title', __('Servizio non disponibile'))
 @section('code', '503')
