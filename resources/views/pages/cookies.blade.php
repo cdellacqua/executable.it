@@ -17,13 +17,13 @@
                         <div class="container">
                             <div class="columns" style="margin-top: 1rem;">
                                 <div class="col-3 col-xl-4 col-sm-12">
-                                    <label class="privacy-label">XSRF-TOKEN</label>
+                                    <label class="important-label">XSRF-TOKEN</label>
                                 </div>
                                 <div class="col-9 col-xl-8 col-sm-12">{{ __('Token univoco associato alla sessione di navigazione per garantire la legittimità della compilazione dei form. Questo cookie viene memorizzato dal dispositivo dell\'utente per le successive quattro ore dall\'ultimo accesso a una qualsiasi pagina del sito.') }}</div>
                             </div>
                             <div class="columns" style="margin-top: 1rem;">
                                 <div class="col-3 col-xl-4 col-sm-12">
-                                    <label class="privacy-label">session</label>
+                                    <label class="important-label">session</label>
                                 </div>
                                 <div class="col-9 col-xl-8 col-sm-12">{{ __('Token per il mantenimento delle variabili di sessione utili al corretto funzionamento del sito web. Questo cookie viene memorizzato dal dispositivo dell\'utente fino alla chiusura della scheda di navigazione.') }}</div>
                             </div>

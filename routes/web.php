@@ -35,6 +35,7 @@ Route::prefix('{locale}')
 
         Route::get('/cookies', ['as' => 'cookies', 'uses' => 'PrivacyController@cookies']);
         Route::get('/privacy', ['as' => 'privacy', 'uses' => 'PrivacyController@privacy']);
+        Route::get('/licenses', ['as' => 'licenses', 'uses' => 'LicenseController@licenses']);
     });
 
 // Development and Debug routes

@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded',() => {
         const img = container.querySelector('.async-img');
         const placeholder = container.querySelector('.async-img-placeholder');
         if (placeholder.getAttribute('data-ratio')) {
-            placeholder.style.paddingBottom = Number(placeholder.getAttribute('data-ratio')) * 100 + "%";
+            placeholder.style.paddingBottom = Number(placeholder.getAttribute('data-ratio')) * 100 + '%';
         }
         const blurDelay = setTimeout(() => container.classList.add('-loading'), 100);
         function onload() {

@@ -1,6 +1,6 @@
 require('./polyfill');
 
-require('./bootstrap');
+// require('./bootstrap');
 require('./async-img');
 require('./wheel-slider');
 require('./expandable');

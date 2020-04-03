@@ -3,10 +3,10 @@
     "type": "project",
     "description": "Executable website.",
     "keywords": [
-        "framework",
-        "laravel"
+        "executable",
+        "website"
     ],
-    "license": "MIT",
+    "license": "proprietary",
     "require": {
         "php": "^7.3.0",
         "caouecs/laravel-lang": "~6.0",

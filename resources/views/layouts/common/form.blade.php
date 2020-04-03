@@ -119,7 +119,8 @@ $formInputIndex = 0;
         @if ($errors->any())
             <script>
                 document.addEventListener('DOMContentLoaded', function () {
-                    document.querySelector('.form-contact .error').scrollIntoView();
+                    var errorElement = document.querySelector('.form-contact .error');
+                    (errorElement.previousElementSibling || errorElement).previousElementSibling.scrollIntoView();
                 });
             </script>
         @endif

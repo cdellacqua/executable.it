@@ -6,7 +6,7 @@ window.wheelSlider = function (wheel) {
     if (!wheel.querySelector('.wheel-initial-width-placeholder')) {
         const fixSize = document.createElement('span');
         fixSize.innerHTML = 'AaBbCc';
-        fixSize.style.visibility = "hidden";
+        fixSize.style.visibility = 'hidden';
         wheel.appendChild(fixSize);
     }
 

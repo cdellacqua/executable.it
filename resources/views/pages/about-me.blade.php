@@ -14,10 +14,10 @@
                         <div class="socials-container">
                             <div class="columns">
                                 <div class="col-6 column">
-                                    <a class="btn d-block" title="{{ __('Profilo GitHub') }}" target="_blank" href="https://github.com/cdellacqua"><i class="fab fa-github-square"></i>&nbsp;{{ __('Profilo GitHub') }}</a>
+                                    <a class="btn d-block" title="{{ __('Profilo GitHub') }}" target="_blank" rel="noopener" href="https://github.com/cdellacqua"><i class="fab fa-github-square"></i>&nbsp;{{ __('Profilo GitHub') }}</a>
                                 </div>
                                 <div class="col-6 column">
-                                    <a class="btn d-block" title="{{ __('Profilo LinkedIn') }}" target="_blank" href="https://www.linkedin.com/in/carlo-dell-acqua/"><i class="fab fa-linkedin"></i>&nbsp;{{ __('Profilo LinkedIn') }}</a>
+                                    <a class="btn d-block" title="{{ __('Profilo LinkedIn') }}" target="_blank" rel="noopener" href="https://www.linkedin.com/in/carlo-dell-acqua/"><i class="fab fa-linkedin"></i>&nbsp;{{ __('Profilo LinkedIn') }}</a>
                                 </div>
                             </div>
                         </div>

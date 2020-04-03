@@ -42,13 +42,13 @@
                         <div class="container">
                             <div class="columns" style="margin-top: 1rem;margin-bottom: 1rem;">
                                 <div class="col-3 col-xl-4 col-sm-12">
-                                    <label class="privacy-label">{{ __('Contatto') }}</label>
+                                    <label class="important-label">{{ __('Contatto') }}</label>
                                 </div>
                                 <div class="col-9 col-xl-8 col-sm-12">{{ __('I dati personali liberamente comunicati dall\'utente verranno utilizzati per un successivo ricontatto telematico o telefonico da parte del titolare del trattamento dei dati.') }}</div>
                             </div>
                             <div class="columns" style="margin-top: 1rem;margin-bottom: 1rem;">
                                 <div class="col-3 col-xl-4 col-sm-12">
-                                    <label class="privacy-label">{{ __('Statistica') }}</label>
+                                    <label class="important-label">{{ __('Statistica') }}</label>
                                 </div>
                                 <div class="col-9 col-xl-8 col-sm-12">{{ __('I dati di utilizzo anonimi degli utenti verranno utilizzati al fine di migliorare la qualità del servizio mediante analisi di carattere statistico riguardanti, a titolo esemplificativo e non esaustivo, i contenuti più visitati, i tempi medi delle sessioni di navigazione e i tempi medi di risposta del server.') }}</div>
                             </div>
