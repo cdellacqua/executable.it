@@ -65,12 +65,13 @@ Route::get('/maintenance', function () {
 });
 
 Route::post('/maintenance', function () {
-    if (\Illuminate\Support\Facades\Request::post('key') !== config('maintenance.key')) {
+    if (request()->post('key') !== config('maintenance.key')) {
         abort(404);
     } else {
+        Artisan::call('cache:clear');
         Artisan::call('config:clear');
         Artisan::call('view:clear');
-        Artisan::call('migrate');
+        Artisan::call('migrate', ['--force' => true]);
 
         if (config('app.env') == 'local') {
             Artisan::call('db:seed --force');

@@ -30,15 +30,19 @@ class LogRequest
      */
     public function terminate($request)
     {
-        Log::query()->create([
-            'remote_address' => $request->getClientIp(),
-            'session' => session()->getId(),
-            'http_version' => $request->getProtocolVersion(),
-            'method' => $request->method(),
-            'url' => $request->fullUrl(),
-            'headers' => $request->headers->all(),
-            'locale' => app()->getLocale(),
-            'processing_time_ms' => Carbon::now()->diffInMilliseconds(self::$requestStart),
-        ]);
+        try {
+            Log::query()->create([
+                'remote_address' => $request->getClientIp(),
+                'session' => session()->getId(),
+                'http_version' => $request->getProtocolVersion(),
+                'method' => $request->method(),
+                'url' => $request->fullUrl(),
+                'headers' => $request->headers->all(),
+                'locale' => app()->getLocale(),
+                'processing_time_ms' => Carbon::now()->diffInMilliseconds(self::$requestStart),
+            ]);
+        } catch (\Exception $ex) {
+            // ignore
+        }
     }
 }
