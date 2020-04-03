@@ -8,6 +8,7 @@ use App\Models\Contact;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Response;
 
 class ContactController extends Controller
 {
@@ -28,15 +29,17 @@ class ContactController extends Controller
             'privacy_granted' => Carbon::now()
         ]);
 
-        ProcessContact::dispatchAfterResponse($contact);
+        if (config('app.env') !== 'testing') {
+            ProcessContact::dispatchAfterResponse($contact);
+        }
 
-        return Redirect::to(route_locale('contacts-tp'))
+        return Redirect::to(route_locale('contacts-tp'), 303)
             ->with('success', true);
     }
 
     public function tp() {
         if (session('success') === true) {
-            return view('pages.contacts-tp');
+            return response()->view('pages.contacts-tp', [], 201);
         } else {
             return Redirect::to(route_locale('contacts'));
         }

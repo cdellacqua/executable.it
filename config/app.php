@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'executable'),
+    'name' => env('APP_NAME', 'Executable'),
 
     /*
     |--------------------------------------------------------------------------

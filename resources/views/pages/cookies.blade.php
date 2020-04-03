@@ -19,7 +19,7 @@
                                 <div class="col-3 col-xl-4 col-sm-12">
                                     <label class="privacy-label">XSRF-TOKEN</label>
                                 </div>
-                                <div class="col-9 col-xl-8 col-sm-12">{{ __('Token univoco associato alla sessione di navigazione per garantire la legittimità della compilazione dei form. Questo cookie viene memorizzato dal dispositivo dell\'utente per le successive due ore dall\'ultimo accesso a una qualsiasi pagina del sito.') }}</div>
+                                <div class="col-9 col-xl-8 col-sm-12">{{ __('Token univoco associato alla sessione di navigazione per garantire la legittimità della compilazione dei form. Questo cookie viene memorizzato dal dispositivo dell\'utente per le successive quattro ore dall\'ultimo accesso a una qualsiasi pagina del sito.') }}</div>
                             </div>
                             <div class="columns" style="margin-top: 1rem;">
                                 <div class="col-3 col-xl-4 col-sm-12">
