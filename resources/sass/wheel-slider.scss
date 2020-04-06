@@ -9,22 +9,38 @@
     }
 
     .values-wrapper {
+        overflow: hidden;
         position: absolute;
         top: 0;
-        @include transition(transform);
+        transform: translateY(-33.3333333%);
+        width: 100%;
         .value {
-            display: block;
-            white-space: nowrap;
+            position: absolute;
+            left: 0;
             opacity: 0;
-            @include transition(opacity);
-            &.active {
+            top: 33.333333%;
+            @include transition(opacity, top, left);
+            &.current {
+                top: 33.33333%;
                 opacity: 1;
-
-                ~ .value {
-                    opacity: .2;
-                }
+            }
+            &.previous, &.next {
+                opacity: .2;
+            }
+            &.previous {
+                top: 0;
+            }
+            &.next {
+                top: 66.6666667%;
+            }
+            &.current, &.previous, &.next {
+                left: 0;
             }
         }
+    }
+    .value {
+        display: block;
+        white-space: nowrap;
     }
 
 

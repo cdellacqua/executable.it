@@ -1,45 +1,66 @@
 window.wheelSlider = function (wheel) {
+    const minQueueValues = 3;
+
+
     const wrapper = document.createElement('div');
     wrapper.classList.add('values-wrapper');
     wheel.appendChild(wrapper);
 
-    if (!wheel.querySelector('.wheel-initial-width-placeholder')) {
+    let fixSize = wheel.querySelector('.wheel-initial-width-placeholder');
+    if (!fixSize) {
         const fixSize = document.createElement('span');
         fixSize.innerHTML = 'AaBbCc';
         fixSize.style.visibility = 'hidden';
-        wheel.appendChild(fixSize);
+    } else {
+        wheel.removeChild(fixSize);
+    }
+    const fixSizeWrapper = document.createElement('div');
+    fixSizeWrapper.appendChild(fixSize);
+    fixSizeWrapper.classList.add('value');
+    wheel.appendChild(fixSizeWrapper);
+    function fixSizeCallback() {
+        wrapper.style.height = fixSizeWrapper.offsetHeight * 3 + "px";
+    }
+    window.addEventListener('resize', fixSizeCallback);
+    fixSizeCallback();
+
+
+    const initialNodes = wheel.getAttribute('data-values').split('|')
+        .map(v => {
+            const valueElement = document.createElement('div');
+            valueElement.innerHTML = v;
+            valueElement.classList.add('value');
+            return valueElement;
+        });
+
+
+    const values = [...initialNodes];
+    for (let i = 1; i <= minQueueValues - initialNodes.length; i++) {
+        values.push(/** @type HTMLDivElement */initialNodes[i % initialNodes.length].cloneNode(true));
     }
 
-    const values = wheel.getAttribute('data-values').split('|');
-    values.map(v => {
-        const valueElement = document.createElement('div');
-        valueElement.innerHTML = v;
-        valueElement.classList.add('value');
-        return valueElement;
-    }).forEach(e => wrapper.appendChild(e));
+    const queue = [];
+    for (let i = 0; i < values.length; i++) {
+        queue.push(values[(i + Math.floor(minQueueValues / 2)) % values.length]);
+    }
 
-    let i = values.length;
-    let delta = 1;
+    for (let i = 0; i < queue.length; i++) {
+        wrapper.appendChild(queue[i]);
+    }
+
+    next();
 
     function next() {
-        if (i !== -1 && i !== values.length) {
-            wrapper.children[i].classList.remove('active');
-        }
-
-        i += delta;
-        if (i < 0 || i >= values.length) {
-            delta *= -1;
-            i += 2*delta;
-        }
-
-        wrapper.children[i].classList.add('active');
-
-        wrapper.style.transform = `translateY(-${i * 100 / values.length}%)`;
+        queue[0].classList.remove('previous');
+        queue[1].classList.remove('current');
+        queue[2].classList.remove('next');
+        queue.push(queue.shift());
+        queue[0].classList.add('previous');
+        queue[1].classList.add('current');
+        queue[2].classList.add('next');
     }
 
     const delayMs = Number(wheel.getAttribute('data-delay-ms') || '2000');
-
-    next();
 
     let lastUpdate = new Date().getTime();
     function animation() {

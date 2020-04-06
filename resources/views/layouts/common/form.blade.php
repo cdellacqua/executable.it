@@ -101,14 +101,14 @@ $formInputIndex = 0;
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-mx-auto" style="margin-top: 1em;">
+                <div class="col-mx-auto" style="margin-top: 1em; margin-bottom: .5em;">
                     <button class="btn btn-primary input-group-btn btn-lg" type="submit" style="white-space: nowrap;">
                         {{ __('Invia messaggio') }} <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
             </div>
             <div class="form-group">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center" style="line-height: 2;">
                     {{ __('oppure scrivi a') }}<br>
                     <span class="eaddress tooltip tooltip-top" data-copy="{{ 'kizdg&lmddiky}iHmpmk}|ijdm&a|' }}" data-tooltip-copied="{{ __('Copiato!') }}" data-tooltip-hover="{{ __('Clicca per copiare') }}">
                         <img src="{{ asset('/img/eaddress.svg') }}" alt="eaddress" style="height: .925em; width: auto; vertical-align: middle;">

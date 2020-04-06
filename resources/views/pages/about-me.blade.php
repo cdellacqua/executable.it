@@ -43,7 +43,7 @@
                 </div>
             </div>
         </section>
-        <section class="padding">
+        <section class="padding" style="margin-bottom: 3em;">
             <div class="container">
                 <div class="columns">
                     <div class="timeline col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">

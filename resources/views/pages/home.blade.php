@@ -12,11 +12,13 @@
                         <h1>{{ __('Automazione digitale') }}</h1>&nbsp;<label>{{ __('per') }}&nbsp;</label>
                     </div>
                     <div class="wheel-slider" data-values="{{
-                          '<span class="elevation"><i class="fa-fw fas fa-user"></i> '.__('i cittadini').'</span>'
-                        .'|<span class="elevation"><i class="fa-fw fas fa-building"></i> '.__('le imprese').'</span>'
-                        .'|<span class="elevation"><i class="fa-fw fas fa-rocket"></i> '.__('le startup').'</span>'
-                        .'|<span class="elevation"><i class="fa-fw fas fa-store"></i> '.__('i negozi').'</span>'
-                    }}"><span class="wheel-initial-width-placeholder"><span class="elevation"><i class="fa-fw fas fa-building"></i> {{ __('le imprese') }}</span></span></div>
+                              '<span class="elevation"><i class="fa-fw fas fa-user"></i> '.__('i cittadini').'</span>'
+                            .'|<span class="elevation"><i class="fa-fw fas fa-building"></i> '.__('le imprese').'</span>'
+                            .'|<span class="elevation"><i class="fa-fw fas fa-rocket"></i> '.__('le startup').'</span>'
+                            .'|<span class="elevation"><i class="fa-fw fas fa-store"></i> '.__('i negozi').'</span>'
+                        }}">
+                        <span class="wheel-initial-width-placeholder"><span class="elevation"><i class="fa-fw fas fa-building"></i> {{ __('le imprese') }}</span></span>
+                    </div>
                 </div>
             </div>
         </section>
