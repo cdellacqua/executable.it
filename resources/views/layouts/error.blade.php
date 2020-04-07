@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" type="image/png" href="{{ asset('/favicon.png') }}">
 
     <title>@yield('title')</title>
-    <meta name="robots" content="noindex,nofollow" />
+    <meta name="robots" content="noindex,nofollow">
 
     <link rel="stylesheet" href="{{ mix('/plugins/spectre-0.5.8/spectre.css') }}">
     <link rel="stylesheet" href="{{ asset('/plugins/fontawesome-free-5.12.1-web/fontawesome.css') }}">
