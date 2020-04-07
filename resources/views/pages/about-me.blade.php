@@ -47,7 +47,7 @@
             <div class="container">
                 <div class="columns">
                     <div class="timeline col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
-                        <h2 data-reveal="fly-in" data-from="left"><span class="underline">{{ __('Milestones') }}</span></h2>
+                        <h2 data-reveal="fly-in" data-from="bottom"><span class="underline">{{ __('Milestones') }}</span></h2>
                         @foreach($timeline as $item)
                             <div class="timeline-item">
                                 <div class="timeline-left">
