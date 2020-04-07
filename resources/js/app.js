@@ -6,21 +6,30 @@ require('./wheel-slider');
 require('./expandable');
 require('./element-scrollY');
 
-// Fade-in on scroll
+// Fly-in
 document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('scroll', () => {
-        document.querySelectorAll('.opacity-on-scroll').forEach((element) => {
-            const yValue = elementScrollY(element) + element.offsetHeight / 2;
+    document.querySelectorAll('[data-reveal]').forEach((element) => {
+        element.style.transition = "none";
+        element.setAttribute('data-transition', 'out');
+        void element.offsetHeight;
+        element.style.transition = "";
+    });
+    function handler() {
+        document.querySelectorAll('[data-reveal]').forEach((element) => {
+            const yValueTop = elementScrollY(element);
+            const yValueBottom = yValueTop + element.offsetHeight;
             if (
-                yValue >= window.scrollY + .05 * window.innerHeight
-                && yValue <= window.scrollY + (1-0.05) * window.innerHeight
+                yValueBottom <= window.scrollY + .01 * window.innerHeight
+                || yValueTop >= window.scrollY + (1-0.05) * window.innerHeight
             ) {
-                element.classList.remove('outside-visible-area');
+                element.setAttribute('data-transition', 'out');
             } else {
-                element.classList.add('outside-visible-area');
+                element.setAttribute('data-transition', 'in');
             }
         });
-    });
+    }
+    window.addEventListener('scroll', handler);
+    handler();
 });
 
 // Navigation menu highlighting

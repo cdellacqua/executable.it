@@ -5,9 +5,9 @@
             <div class="container">
                 <div class="columns">
                     <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
-                        <h1><span class="elevation">{{ __('Licenze') }}</span></h1>
-                        <h2><span class="underline">{{ __('Licenze del software utilizzato per realizzare questo sito') }}</span></h2>
-                        <div class="container">
+                        <h1 data-reveal="opacity"><span class="elevation">{{ __('Licenze') }}</span></h1>
+                        <h2 data-reveal="opacity"><span class="underline">{{ __('Licenze del software utilizzato per realizzare questo sito') }}</span></h2>
+                        <div class="container" data-reveal="opacity">
                             @foreach($licenses as $license)
                                 <div class="columns" style="margin-top: 1rem;">
                                     <div class="col-10">

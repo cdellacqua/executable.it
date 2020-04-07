@@ -1,7 +1,7 @@
 @php
 $formInputIndex = 0;
 @endphp
-<div class="container" style="margin-top: 2em;">
+<div class="container" style="margin-top: 2em;" data-reveal="opacity">
     <div class="columns">
         <form method="post" action="{{ route_locale('contacts') }}" class="form-horizontal col-12 col-md-8 col-sm-12 col-mx-auto form-contact">
             @csrf

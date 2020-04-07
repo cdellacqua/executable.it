@@ -5,16 +5,16 @@
             <div class="container">
                 <div class="columns">
                     <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
-                        <h1><span class="elevation">{{ __('Cookie Policy') }}</span></h1>
-                        <h2><span class="underline">{{ __('Cosa sono e a cosa servono i cookie') }}</span></h2>
-                        <p>
+                        <h1 data-reveal="opacity"><span class="elevation">{{ __('Cookie Policy') }}</span></h1>
+                        <h2 data-reveal="opacity"><span class="underline">{{ __('Cosa sono e a cosa servono i cookie') }}</span></h2>
+                        <p data-reveal="opacity">
                             {{ __('I cookie sono piccoli file di testo che un sito web può salvare sul tuo dispositivo al fine di erogare i suoi servizi.') }}
                         </p>
-                        <h2><span class="underline">{{ __('Quali cookie utilizza questo sito') }}</span></h2>
-                        <p>
+                        <h2 data-reveal="opacity"><span class="underline">{{ __('Quali cookie utilizza questo sito') }}</span></h2>
+                        <p data-reveal="opacity">
                             {{ __('Questo sito web utilizza solo cookie tecnici necessari per la fruizione dei servizi erogati:') }}
                         </p>
-                        <div class="container">
+                        <div data-reveal="opacity" class="container">
                             <div class="columns" style="margin-top: 1rem;">
                                 <div class="col-3 col-xl-4 col-sm-12">
                                     <label class="important-label">XSRF-TOKEN</label>

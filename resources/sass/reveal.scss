@@ -1,0 +1,48 @@
+@import "utils";
+
+@media not print {
+    [data-reveal="fly-in"] {
+        &[data-transition] {
+            @include transition(transform, opacity);
+            transition-duration: .8s;
+        }
+
+        &[data-transition="in"] {
+            transform: translate(0%, 0%);
+            opacity: 1;
+        }
+
+        &[data-transition="out"] {
+            opacity: 0;
+
+            &[data-from="left"] {
+                transform: translate(-50%, 0%);
+            }
+
+            &[data-from="right"] {
+                transform: translate(50%, 0%);
+            }
+
+            &[data-from="bottom"] {
+                transform: translate(0%, 50%);
+            }
+
+            &[data-from="top"] {
+                transform: translate(0%, -50%);
+            }
+        }
+    }
+
+    [data-reveal="opacity"] {
+        @include transition(opacity);
+        transition-duration: 1s;
+
+        &[data-transition="in"] {
+            opacity: 1;
+        }
+
+        &[data-transition="out"] {
+            opacity: 0;
+        }
+    }
+}

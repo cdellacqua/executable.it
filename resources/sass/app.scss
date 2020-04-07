@@ -2,6 +2,8 @@
 @import "../plugins/spectre-0.5.8/src/variables";
 @import "fonts";
 
+@import "reveal";
+
 * {
     box-sizing: border-box;
 }
@@ -363,7 +365,7 @@ section {
         .fixed-text-wrapper {
             display: inline-block;
             font-size: inherit;
-            line-height: 2.5em;
+            line-height: 4.5em;
             white-space: nowrap;
             h1, label {
                 font-size: inherit;
@@ -526,14 +528,6 @@ label[for] {
 .background-small {
     background: linear-gradient(5deg, transparent 10%, rgba(221, 5, 55, 0.1) 10%, rgba(221, 5, 55, 0.1) 20%, transparent 20%),
     linear-gradient(-15deg, transparent 64%, rgba(64, 155, 213, 0.2) 64%, rgba(64, 155, 213, 0.2) 74%, transparent 74%);
-}
-
-.opacity-on-scroll {
-    opacity: 1;
-    @include transition(opacity);
-    &.outside-visible-area {
-        opacity: .5;
-    }
 }
 
 .important-label {

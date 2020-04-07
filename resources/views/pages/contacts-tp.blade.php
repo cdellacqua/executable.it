@@ -5,8 +5,8 @@
             <div class="container">
                 <div class="columns">
                     <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
-                        <h1><span class="elevation">{{ __('Grazie per avermi contattato') }}</span></h1>
-                        <p>
+                        <h1 data-reveal="fly-in" data-from="top"><span class="elevation">{{ __('Grazie per avermi contattato') }}</span></h1>
+                        <p data-reveal="fly-in" data-from="bottom">
                             {{ __('Cercherò di rispondere quanto prima al tuo messaggio, a presto!') }}
                         </p>
                     </div>
