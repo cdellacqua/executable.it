@@ -11,7 +11,15 @@
 <meta name="keywords" content="{{ $seo->keywords }}">
 <title>@yield('title', e($seo->title))</title>
 <meta name="description" content="{{ $seo->description }}">
-
 @isset($seo->robots)
     <meta name="robots" content="{{ $seo->robots }}">
 @endisset
+
+@if (request()->route() && request()->route()->getName())
+    @foreach(array_filter(
+                config('app.locales'),
+                function ($locale) { return $locale !== app()->getLocale(); }
+            ) as $locale)
+        <link rel="alternate" hreflang="{{ $locale }}" href="{{ route(request()->route()->getName(), ['locale' => $locale]) }}">
+    @endforeach
+@endif
