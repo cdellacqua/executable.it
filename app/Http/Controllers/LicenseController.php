@@ -18,7 +18,7 @@ class LicenseController extends Controller
                 return [
                     'license' => $licenseAndName[0],
                     'name' => $licenseAndName[1],
-                    'assetPath' => 'licenses/'.$fileInfo->getFilename(),
+                    'assetPath' => 'licenses/'.rawurlencode($fileInfo->getFilename()),
                 ];
             },
             array_filter(File::files(public_path().'/licenses'), function (SplFileInfo $fileInfo) {
