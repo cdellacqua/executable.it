@@ -1,2 +1,4 @@
 User-agent: *
-Disallow:
+Disallow: /licenses/
+
+Sitemap: https://www.executable.it/sitemap.xml
