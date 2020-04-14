@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="columns">
                     <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
-                        @component('components.async-img', ['src' => asset('/img/me.jpg'), 'ratio' => 1, 'class' => 'photo-container', 'round' => true, 'alt' => 'me'])
+                        @component('components.async-img', ['src' => asset('/img/me.jpg'), 'ratio' => 1, 'class' => 'photo-container', 'round' => true, 'alt' => 'me', 'data' => ['reveal' => 'fly-in', 'from' => 'right']])
                         @endcomponent
                         <h1 data-reveal="opacity"><span class="elevation">{{ __('Chi sono?') }}</span></h1>
                         <h2 data-reveal="fly-in" data-from="bottom"><span class="underline">{{ __('Carlo Dell\'Acqua: sviluppatore multipiattaforma') }}</span></h2>
