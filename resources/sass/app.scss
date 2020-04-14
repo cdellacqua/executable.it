@@ -547,11 +547,37 @@ label[for] {
 }
 
 .photo-container {
-    max-width: 150px;
+    max-width: 125px;
     min-width: 75px;
     width: 43%;
-    padding: .4rem;
+    padding: 0 0 .4rem .4rem;
+    margin: 0 1ch;
     float:right;
+
+    &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+        left: 0;
+        height: 2px;
+        background: $dark-color;
+    }
+    &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        bottom: 0%;
+        width: 2px;
+        background: $dark-color;
+    }
+
+    > div {
+
+    }
 
     & + h1 + h2 {
         @media (max-width: 390px) {
