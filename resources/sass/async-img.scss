@@ -37,7 +37,7 @@
             display: block;
         }
         > .async-img-placeholder > .async-img {
-            transform: scale(.97);
+            transform: scale(1.05);
             filter: blur(3px);
         }
     }
@@ -58,7 +58,7 @@
         filter: blur(0);
     }
     to {
-        transform: scale(.97);
+        transform: scale(1.05);
         filter: blur(3px);
     }
 

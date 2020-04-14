@@ -6,8 +6,10 @@
             <div class="container">
                 <div class="columns">
                     <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
+                        @component('components.async-img', ['src' => asset('/img/me.jpg'), 'ratio' => 1, 'class' => 'photo-container', 'round' => true, 'alt' => 'me'])
+                        @endcomponent
                         <h1 data-reveal="opacity"><span class="elevation">{{ __('Chi sono?') }}</span></h1>
-                        <h2 data-reveal="fly-in" data-from="bottom"><span class="underline">{{ __('Sono uno sviluppatore multipiattaforma') }}</span></h2>
+                        <h2 data-reveal="fly-in" data-from="bottom"><span class="underline">{{ __('Carlo Dell\'Acqua: sviluppatore multipiattaforma') }}</span></h2>
                         <p data-reveal="fly-in" data-from="bottom">
                             {{ __('Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e mi sono dilettato in progetti basati su microcontrollori, fino ad arrivare all\'ambito Web che copre ormai la gran parte dei miei progetti.') }}
                         </p>

@@ -35,7 +35,7 @@
 
     [data-reveal="opacity"] {
         @include transition(opacity);
-        transition-duration: 1s;
+        transition-duration: .8s;
 
         &[data-transition="in"] {
             opacity: 1;
