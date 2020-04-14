@@ -21,4 +21,17 @@ class SEO extends Model
         'title',
         'description'
     ];
+
+    public function getOgImageAttribute() {
+        return $this->og_image ?? asset('/img/og-image.png');
+    }
+    public function getOgImageHeightAttribute() {
+        return $this->og_image_height ?? getimagesize(public_path().'/img/og-image.png')[1];
+    }
+    public function getOgImageWidthAttribute() {
+        return $this->og_image_width ?? getimagesize(public_path().'/img/og-image.png')[0];
+    }
+    public function getTwitterCardAttribute() {
+        return $this->twitter_card ?? 'summary_large_image';
+    }
 }
