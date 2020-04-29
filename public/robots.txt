@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /licenses/
 Disallow: /public/
 
 Sitemap: https://www.executable.it/sitemap.xml
