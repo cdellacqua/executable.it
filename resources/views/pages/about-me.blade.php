@@ -33,7 +33,7 @@
                     <div class=" col-6 col-xl-8 col-lg-10 col-sm-12 col-mx-auto">
                         <h2 data-reveal="fly-in" data-from="bottom"><span class="underline">{{ __('Lo sviluppo web') }}</span></h2>
                         <p data-reveal="fly-in" data-from="bottom">
-                            {{ __('Da quando ho cominciato a sviluppare con le tecnologie Web ho avuto modo di testare differenti linguaggi, librerie e framework, a partire da JavaScript e CSS puro in una fase più didattica, passando per i classici jQuery e Bootstrap, fino a iniziare uno sviluppo più strutturato attraverso framework frontend quali Angular e Svelte, insieme all'utilizzo di Webpack o Rollup per progetti in cui è necessario maggiore controllo.') }}
+                            {{ __('Da quando ho cominciato a sviluppare con le tecnologie Web ho avuto modo di testare differenti linguaggi, librerie e framework, a partire da JavaScript e CSS puro in una fase più didattica, passando per i classici jQuery e Bootstrap, fino a iniziare uno sviluppo più strutturato attraverso framework frontend quali Angular e Svelte, insieme all\'utilizzo di Webpack o Rollup per progetti in cui è necessario maggiore controllo.') }}
                         </p>
                         <p data-reveal="fly-in" data-from="bottom">
                             {{ __('Parallelamente allo studio dello sviluppo Frontend ho iniziato a formarmi sulle tecnologie di Backend, al fine di poter realizzare Web App complete in soluzioni Client Side Rendering e Server Side Rendering.') }}
