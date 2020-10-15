@@ -6,7 +6,7 @@ echo "Creating directory deploy-${DATE}" && \
 mkdir deploy-${DATE} && \
 cd deploy-${DATE} && \
 echo "CWD to deploy-${DATE}" && \
-git clone git@cdellacqua.gitlab.com:cdellacqua/www.executable.it.git . && \
+git clone git@gitlab.com:cdellacqua/www.executable.it.git . && \
 rm -rf .git && \
 composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev && \
 \
