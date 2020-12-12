@@ -6,6 +6,8 @@ BASEDIR="$(cd $(dirname "$0") && pwd)"
 
 cd "$BASEDIR"
 
+. "$BASEDIR/env.sh"
+
 if [ -d "$BASEDIR/tmp" ]; then
 	echo "Deleting old tmp..."
 		rm -rf "$BASEDIR/tmp"
@@ -44,7 +46,7 @@ echo "Compressing..."
 		if ! [ -f ".buildinclude" ]; then
 			echo "[ WARN ] .buildinclude missing"
 		else
-			cat "/.buildinclude" | while read BUILDINCLUDE; do
+			cat ".buildinclude" | while read BUILDINCLUDE; do
 				if ! [ -d "$BUILDINCLUDE" ] && ! [ -f "$BUILDINCLUDE" ]; then
 					echo "[ WARN ] $BUILDINCLUDE not found, skipping"
 				else
@@ -52,10 +54,9 @@ echo "Compressing..."
 				fi
 			done
 		fi
-	done
-	echo "Compressing _archive_..."
-		tar cf - _archive_ | gzip -9 > _archive_.tar.gz
-	echo "  [  OK  ]"
+		echo "Compressing _archive_..."
+			tar cf - _archive_ | gzip -9 > _archive_.tar.gz
+		echo "  [  OK  ]"
 	cd ..
 echo "[  OK  ]"
 
@@ -64,7 +65,7 @@ echo "Uploading..."
 echo "[  OK  ]"
 
 echo "Running remote script..."
-	"$BASEDIR/deploy-remote.sh" | ssh "$USER@$SSH_HOST" -p "$SSH_PORT" '/bin/sh'
+	cat "$BASEDIR/env.sh" "$BASEDIR/deploy-remote.sh" | ssh "$USER@$SSH_HOST" -p "$SSH_PORT" '/bin/sh'
 echo "[  OK  ]"
 
 echo "Cleaning up..."

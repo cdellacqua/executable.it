@@ -1,0 +1,6 @@
+.env
+public
+node_modules
+src/api
+package.json
+package-lock.json
