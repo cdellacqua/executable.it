@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			try {
 				await axios.post(form.action === "http://localhost:5000/api/contact" ? "http://localhost:3000/api/contact" : form.action, data);
 				setTimeout(() => {
-					window.location.href = `/${data.lang}/contacts-tp.html`;
+					window.location.href = `/${data.lang}/contacts-tp`;
 				}, 1);
 			} catch (err) {
 				const toastDiv = document.createElement('div');
