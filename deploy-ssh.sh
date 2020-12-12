@@ -50,7 +50,9 @@ echo "Compressing..."
 				if ! [ -d "$BUILDINCLUDE" ] && ! [ -f "$BUILDINCLUDE" ]; then
 					echo "[ WARN ] $BUILDINCLUDE not found, skipping"
 				else
-					cp -R "$BUILDINCLUDE" "_archive_"
+					DIR="$(dirname "$BUILDINCLUDE")"
+					mkdir -p "_archive_/$DIR"
+					cp -R "$BUILDINCLUDE" "_archive_/$DIR"
 				fi
 			done
 		fi
