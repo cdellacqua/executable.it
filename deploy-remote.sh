@@ -9,10 +9,12 @@ echo "[  OK  ]"
 cd _archive_
 
 echo "Adjusting permissions..."
-	chown -R "$USER" *
-	chgrp -R "$GROUP" *
-	chmod 750 -R *
-	find . -type d -exec chmod g+s {} \;
+	find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '
+		chown -R "$2" "$1"
+		chgrp -R "$3" "$1"
+		chmod 750 -R "$1"
+	' sh {} $USER $GROUP \;
+	find . -maxdepth 1 -mindepth 1 -type d -exec chmod g+s -R {} \;
 echo "[  OK  ]"
 
 echo "Stopping Node process..."
@@ -20,15 +22,13 @@ echo "Stopping Node process..."
 echo "[  OK  ]"
 
 echo "Cleaning up old version..."
-	find . -maxdepth 1 -exec sh -c '
-		if ! [ "$1" = "." ]; then
-			rm -rf "$2/$1"
-		fi
+	find . -maxdepth 1 -mindepth 1 -exec sh -c '
+		rm -rf "$2/$1"
 	' sh {} "$TARGET_DIRECTORY" \;
 echo "[  OK  ]"
 
 echo "Moving new version..."
-	mv * "$TARGET_DIRECTORY"
+	find . -maxdepth 1 -mindepth 1 -exec mv {} "$TARGET_DIRECTORY" \;
 echo "[  OK  ]"
 
 echo "Restarting Node process..."
