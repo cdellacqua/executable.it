@@ -1,7 +1,0 @@
-RewriteEngine on
-RewriteCond %{REQUEST_URI} !^public
-RewriteRule ^(.*)$ public/$1 [L]
-
-<Files ".user.ini">
-  Require all denied
-</Files>
