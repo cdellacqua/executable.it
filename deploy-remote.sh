@@ -9,7 +9,7 @@ echo "[  OK  ]"
 cd _archive_
 
 echo "Adjusting permissions..."
-	find . -maxdepth 1 -mindepth 1 -type d -exec sh -c '
+	find . -maxdepth 1 -mindepth 1 -exec sh -c '
 		chown -R "$2" "$1"
 		chgrp -R "$3" "$1"
 		chmod 750 -R "$1"
