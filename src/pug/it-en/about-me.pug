@@ -1,0 +1,95 @@
+extends ../_layout.pug
+block main
+	.background-small.fill-height.first-scroll-height
+			section.padding
+				.container
+					.columns
+						.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto
+							.async-img-container.photo-container(data-reveal="fly-in" data-from="right")
+								.async-img-placeholder(data-ratio="1.0")
+									img(src="/img/me.jpg" class="async-img" alt="me")
+								i.loading.loading-lg
+							h1(data-reveal="opacity")
+								span.elevation=__('Chi sono?')
+							h2(data-reveal="fly-in" data-from="bottom")
+								span.underline=__('Carlo Dell\'Acqua: sviluppatore multipiattaforma')
+							p(data-reveal="fly-in" data-from="bottom")
+								=__('Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e mi sono dilettato in progetti basati su microcontrollori, fino ad arrivare all\'ambito Web che copre ormai la gran parte dei miei progetti.')
+							.socials-container
+								.columns
+									.col-6.column(data-reveal="fly-in" data-from="left")
+										a.btn.d-block(title=__("Profilo GitHub") target="_blank" rel="noopener"
+											href="https://github.com/cdellacqua")
+											i.fab.fa-github-square
+											| &nbsp;
+											=__('Profilo GitHub')
+									.col-6.column(data-reveal="fly-in" data-from="right")
+										a.btn.d-block(title=__("Profilo LinkedIn") target="_blank" rel="noopener"
+											href="https://www.linkedin.com/in/carlo-dell-acqua/")
+											i.fab.fa-linkedin
+											| &nbsp;
+											=__('Profilo LinkedIn')
+			section.padding
+				.container
+					.columns
+						.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto
+							h2(data-reveal="fly-in" data-from="bottom")
+								span.underline=__('Lo sviluppo web')
+							p(data-reveal="fly-in" data-from="bottom")
+								=__('Da quando ho cominciato a sviluppare con le tecnologie Web ho avuto modo di testare differenti linguaggi, librerie e framework, a partire da JavaScript e CSS puro in una fase più didattica, passando per i classici jQuery e Bootstrap, fino a iniziare uno sviluppo più strutturato attraverso framework frontend quali Angular e Svelte, insieme all\'utilizzo di Webpack o Rollup per progetti in cui è necessario maggiore controllo.')
+							p(data-reveal="fly-in" data-from="bottom")
+								=__('Parallelamente allo studio dello sviluppo Frontend ho iniziato a formarmi sulle tecnologie di Backend, al fine di poter realizzare Web App complete in soluzioni Client Side Rendering e Server Side Rendering.')
+							p(data-reveal="fly-in" data-from="bottom")
+								=__('Ad oggi mi occupo di proporre soluzioni pensate su misura per le esigenze specifiche di ogni cliente, cercando ove possibile di adottare tecnologie e metodologie rodate e robuste, tenendo sempre in considerazione le esigenze e il target a cui ci si rivolge.')
+			section.padding(style="margin-bottom: 3em;")
+				.container
+					.columns
+						.timeline.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto
+							h2(data-reveal="fly-in" data-from="bottom")
+								span.underline Milestones
+							.timeline-item
+								.timeline-left
+									span.timeline-icon.icon-lg(style="padding: 3px;")
+										img(alt="x" style="display: block; height:auto; width: 100%;" src="/img/logo-symbol-white.svg")
+								.timeline-content
+									.tile
+										.tile-content
+											p.tile-subtitle(data-reveal="fly-in" data-from="right")=__('aprile 2020')
+											h3.tile-title(data-reveal="fly-in" data-from="right")
+												span.underline=__('Nasce EXECUTABLE')
+											p.tile-text(data-reveal="fly-in" data-from="right")
+												=__('Inizia la mia avventura come Programmatore Freelance, con forti prospettive di crescita e con l\'obiettivo di rendere questa mia attività un\'azienda strutturata e prospera.')
+							.timeline-item
+								.timeline-left
+									span.timeline-icon.icon-lg(style="padding: 3px;")
+										i.fas.fa-graduation-cap
+								.timeline-content
+									.tile
+										.tile-content
+											p.tile-subtitle(data-reveal="fly-in" data-from="right")=__('settembre 2019')
+											h3.tile-title(data-reveal="fly-in" data-from="right")
+												span.underline=__('Laurea Triennale in Ingegneria Informatica')
+											p.tile-text(data-reveal="fly-in" data-from="right")
+							.timeline-item
+								.timeline-left
+									span.timeline-icon.icon-lg(style="padding: 3px;")
+										i.fas.fa-briefcase
+								.timeline-content
+									.tile
+										.tile-content
+											p.tile-subtitle(data-reveal="fly-in" data-from="right")=__('marzo 2018')
+											h3.tile-title(data-reveal="fly-in" data-from="right")
+												span.underline=__('Assunzione presso TCommunication Srl')
+											p.tile-text(data-reveal="fly-in" data-from="right")
+												=__('Parallelamente alla carriera accademica vengo assunto come sviluppatore IT, iniziando ad applicare le conoscenze acquisite negli anni per la realizzazione di prodotti digitali.')
+							.timeline-item
+								.timeline-left
+									span.timeline-icon.icon-lg(style="padding: 3px;")
+										i.fas.fa-graduation-cap
+								.timeline-content
+									.tile
+										.tile-content
+											p.tile-subtitle(data-reveal="fly-in" data-from="right")=__('luglio 2016')
+											h3.tile-title(data-reveal="fly-in" data-from="right")
+												span.underline=__('Diploma in Informatica e Telecomunicazioni')
+											p.tile-text(data-reveal="fly-in" data-from="right")

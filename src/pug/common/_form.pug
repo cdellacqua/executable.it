@@ -1,0 +1,74 @@
+.container(style="margin-top: 2em;" data-reveal="opacity")
+	.columns
+		noscript=__('È necessario abilitare JavaScript per utilizzare questo form')
+		form(method="post" action="/api/contact").form-horizontal.col-12.col-md-8.col-sm-12.col-mx-auto.form-contact
+			input(type="hidden" name="lang" value="it")
+			.form-group
+				.col-3.col-md-12.field-name-wrapper
+					label.form-label(for="input-0")=__('Nome')
+						|
+						| *
+				.col-6.col-md-12
+					input.form-input(type="text" minlength="2" maxlength="100" id="input-0" value="" name="firstName" required)
+			.form-group
+				.col-3.col-md-12.field-name-wrapper
+					label.form-label(for="input-1")=__('Cognome')
+						|
+						| *
+				.col-6.col-md-12
+					input.form-input(type="text" minlength="2" maxlength="100" id="input-1" value="" name="lastName" required)
+			.form-group
+				.col-3.col-md-12.field-name-wrapper
+					label.form-label(for="input-2")=__('Email')
+						|
+						| *
+				.col-6.col-md-12
+					input.form-input(type="email" minlength="2" maxlength="100" id="input-2" value="" name="email" required)
+			.form-group
+				.col-3.col-md-12.field-name-wrapper
+					label.form-label(for="input-3")=__('Telefono')
+						|
+						span(style="visibility: hidden;") *
+				.col-6.col-md-12
+					input.form-input(type="tel" minlength="2" maxlength="100" id="input-3" value="" name="phone")
+			.form-group
+				.col-3.col-md-12.field-name-wrapper
+					label.form-label(for="input-4")=__('Messaggio')
+						|
+						| *
+				.col-6.col-md-12
+					textarea.form-input(id="input-4"
+						placeholder=__("In quest'area puoi illustrarmi brevemente ciò di cui hai bisogno, sarà mia cura ricontattarti appena possibile per poter approfondire il progetto che vuoi realizzare")
+						rows="8" style="resize: vertical;" minlength="5" maxlength="5000" name="message"
+						required)
+			.form-group
+				.col-3.col-md-12.field-name-wrapper.hide-md
+					label.form-label *
+				.col-6.col-md-12
+					label.form-switch(style="text-align: justify;")
+						input(type="checkbox" value="true" name="privacy" required)
+						i.form-icon
+						=__('Acconsento al trattamento dei dati personali per la')
+						|
+						|
+						a(href="/"+lang+"/privacy" title="Privacy Policy" target="_blank")=__('finalità di contatto')
+							span.show-md-inline *
+			.form-group
+				.col-3.col-md-12.field-name-wrapper.hide-md
+					small *
+				.col-6.col-md-12
+					small.show-md-inline *
+					small=__('campo obbligatori')
+			.form-group
+				.col-mx-auto(style="margin-top: 1em; margin-bottom: .5em;")
+					button.btn.btn-primary.input-group-btn.btn-lg(type="submit" style="white-space: nowrap;")
+						=__('Invia messaggio')
+						i.fas.fa-paper-plane
+			.form-group
+				.col-12.text-center(style="line-height: 2;")
+					=__('oppure scrivi a')
+					br
+					span.eaddress.tooltip.tooltip-top(data-copy="kizdg&amp;lmddiky}iHmpmk}|ijdm&amp;a|"
+						data-tooltip-copied=__('Copiato!') data-tooltip-hover=__('Clicca per copiare'))
+						img(src="/img/eaddress.svg" alt="eaddress"
+							style="height: .925em; width: auto; vertical-align: middle;")

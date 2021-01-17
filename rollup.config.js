@@ -7,6 +7,13 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
+import { join, basename, resolve as pathResolve } from 'path';
+import fs from 'fs';
+import pug from 'pug';
+import translations from './src/translations/index.mjs';
+import seo from './src/seo/index.mjs';
+
+const dotenv = require('dotenv').config;
 
 const production = process.env.NODE_ENV !== 'development';
 
@@ -31,6 +38,78 @@ function serve() {
 	};
 }
 
+function pugPlugin(dir, outDir) {
+	function* walk(dir) {
+		for (const path of fs.readdirSync(dir)) {
+			if (fs.statSync(join(dir, path)).isFile()) {
+				yield join(dir, path);
+			} else {
+				yield* walk(join(dir, path));
+			}
+		}
+	}
+	
+	const allFiles = [...walk(dir)].filter((entry) => entry.endsWith('.pug'));
+	const pug2HtmlFiles = allFiles.filter((entry) => !basename(entry).startsWith('_'));
+	return {
+		load() {
+			allFiles.forEach((file) => this.addWatchFile(pathResolve(file)));
+		},
+		writeBundle() {
+			function generatePug(src, dst, lang) {
+				fs.writeFileSync(dst, pug.compileFile(src, {
+					pretty: true,
+					basedir: dir,
+					debug: false,
+					cache: false,
+					compileDebug: false,
+				})({
+					dotenv,
+					lang,
+					seo,
+					basename: basename(src),
+					basenameNoExt: basename(src).split('.').slice(0, -1).join('.'),
+					self: src,
+					__: function __(text, replace = {}) {
+						let result = (translations[lang]?.[text] ?? text);
+						Object.keys(replace)
+							.sort((k1, k2) => -(k1.length - k2.length))
+							.forEach((key) => {
+								result = result
+									.replace(new RegExp(`([^\\\\]):${key}`, 'g'), `$1${replace[key]}`)
+									.replace(new RegExp(`^:${key}`, 'g'), `${replace[key]}`);
+							});
+						result = result.replace(/\\:/g, ':');
+					
+						return result;
+					},
+				}));
+			}
+			for (const entry of pug2HtmlFiles) {
+				if (entry.includes('it-en')) {
+					generatePug(
+						entry,
+						entry.replace('it-en', 'it').replace(dir, outDir).split('.').slice(0, -1).join('.') + '.html',
+						'it'
+					);
+					generatePug(
+						entry,
+						entry.replace('it-en', 'en').replace(dir, outDir).split('.').slice(0, -1).join('.') + '.html',
+						'en'
+					);
+				} else {
+					generatePug(
+						entry,
+						entry.replace(dir, outDir).split('.').slice(0, -1).join('.') + '.html',
+						'it'
+					);
+				}
+			}
+		},
+	};
+}
+
+
 export default [{
 	input: 'src/js/app.js',
 	output: {
@@ -38,6 +117,8 @@ export default [{
 		format: 'iife',
 	},
 	plugins: [
+		pugPlugin(join('src', 'pug'), 'public'),
+
 		replace({
 			'process.env': JSON.stringify({
 				BUILD_VERSION: new Date().toISOString(),

@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Navigation menu scroll behaviour
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
 	const navTop = document.querySelector('.main-nav');
 	const navBottom = document.querySelector('.main-nav.bottom');
 	const bottomSpacer = document.querySelector('.mobile-bottom-menu-spacer');
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Adjust first-scroll height
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
 	const firstScroll = document.querySelector('.first-scroll-height');
 	if (firstScroll) {
 		function firstScrollHeight() {
