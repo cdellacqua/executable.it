@@ -1,16 +1,17 @@
-li.tab-item.language-switch-item
-	span.language-switch
-		a(data-lang="it" rel="alternate" hreflang="it" href='/it'+('/'+basenameNoExt).replace('/index','') title="Sito in italiano" onclick="this.nextElementSibling.children[0].checked = false")
-			img(alt="it" class="icon" src="/img/flags/it.png")
-		|
-		|
-		label.form-switch(title="Cambia lingua/Switch language")
-			if lang === 'en'
-				input(type="checkbox" checked)
-			else
-				input(type="checkbox")
-			i.form-icon
-		|
-		|
-		a(data-lang="en" rel="alternate" hreflang="en" href='/en'+('/'+basenameNoExt).replace('/index','') title="English website" onclick="this.previousElementSibling.children[0].checked = true")
-			img(alt="en" class="icon" src="/img/flags/en.png")
+if basenameNoExt !== '404'
+	li.tab-item.language-switch-item
+		span.language-switch
+			a(data-lang="it" rel="alternate" hreflang="it" href='/it'+('/'+basenameNoExt).replace('/index','') title="Sito in italiano" onclick="this.nextElementSibling.children[0].checked = false")
+				img(alt="it" class="icon" src="/img/flags/it.png")
+			|
+			|
+			label.form-switch(title="Cambia lingua/Switch language")
+				if lang === 'en'
+					input(type="checkbox" checked)
+				else
+					input(type="checkbox")
+				i.form-icon
+			|
+			|
+			a(data-lang="en" rel="alternate" hreflang="en" href='/en'+('/'+basenameNoExt).replace('/index','') title="English website" onclick="this.previousElementSibling.children[0].checked = true")
+				img(alt="en" class="icon" src="/img/flags/en.png")

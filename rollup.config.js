@@ -7,8 +7,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
-import { join, basename, resolve as pathResolve } from 'path';
-import fs from 'fs';
+import { join, basename, resolve as pathResolve, dirname } from 'path';
+import fs, { mkdirSync } from 'fs';
 import pug from 'pug';
 import translations from './src/translations/index.mjs';
 import seo from './src/seo/index.mjs';
@@ -57,7 +57,9 @@ function pugPlugin(dir, outDir) {
 		},
 		writeBundle() {
 			function generatePug(src, dst, lang) {
-				console.log(dotenv);
+				mkdirSync(dirname(dst), {
+					recursive: true,
+				});
 				fs.writeFileSync(dst, pug.compileFile(src, {
 					pretty: true,
 					basedir: dir,
