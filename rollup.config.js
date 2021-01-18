@@ -13,7 +13,7 @@ import pug from 'pug';
 import translations from './src/translations/index.mjs';
 import seo from './src/seo/index.mjs';
 
-const dotenv = require('dotenv').config;
+const dotenv = require('dotenv').config().parsed;
 
 const production = process.env.NODE_ENV !== 'development';
 
@@ -57,6 +57,7 @@ function pugPlugin(dir, outDir) {
 		},
 		writeBundle() {
 			function generatePug(src, dst, lang) {
+				console.log(dotenv);
 				fs.writeFileSync(dst, pug.compileFile(src, {
 					pretty: true,
 					basedir: dir,
@@ -64,7 +65,7 @@ function pugPlugin(dir, outDir) {
 					cache: false,
 					compileDebug: false,
 				})({
-					dotenv,
+					...dotenv,
 					lang,
 					seo,
 					basename: basename(src),
