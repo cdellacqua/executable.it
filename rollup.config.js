@@ -89,7 +89,7 @@ function pugPlugin(dir, outDir) {
 				}));
 			}
 			for (const entry of pug2HtmlFiles) {
-				if (entry.includes('it-en')) {
+				if (entry.startsWith(join(dir, 'it-en'))) {
 					generatePug(
 						entry,
 						entry.replace('it-en', 'it').replace(dir, outDir).split('.').slice(0, -1).join('.') + '.html',
