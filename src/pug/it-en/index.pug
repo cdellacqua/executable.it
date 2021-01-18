@@ -11,10 +11,13 @@ block main
 				.wheel(data-reveal="fly-in" data-from="bottom")
 					.fixed-text-wrapper.elevation
 						h1 #{__('Automazione digitale')}&nbsp;<label>#{__('per')}&nbsp;</label>
-					.wheel-slider(data-values=`<span class="elevation"><i class="fa-fw fas fa-user"></i> ${__('i cittadini')}</span>|<span class="elevation"><i class="fa-fw fas fa-building"></i> '${__('le imprese')}</span>|<span class="elevation"><i class="fa-fw fas fa-rocket"></i> '${('le startup')}</span>|<span class="elevation"><i class="fa-fw fas fa-store"></i> '${('i negozi')}</span>`)
+					.wheel-slider(data-values=`<span class="elevation"><i class="fa-fw fas fa-user"></i> ${__('i cittadini')}</span>|<span class="elevation"><i class="fa-fw fas fa-building"></i> ${__('le imprese')}</span>|<span class="elevation"><i class="fa-fw fas fa-rocket"></i> ${__('le startup')}</span>|<span class="elevation"><i class="fa-fw fas fa-store"></i> ${__('i negozi')}</span>`)
 						span.wheel-initial-width-placeholder
 							span.elevation
-								i.fa-fw.fas.fa-building=__('le imprese')
+								i.fa-fw.fas.fa-building
+								|
+								|
+								=__('le imprese')
 		script.
 			wheelSlider(document.querySelector('.wheel-slider'));
 		section.fill-height.padding.vertical-center
