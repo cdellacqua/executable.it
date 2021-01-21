@@ -74,7 +74,11 @@ function pugPlugin(dir, outDir) {
 					basenameNoExt: basename(src).split('.').slice(0, -1).join('.'),
 					self: src,
 					__: function __(text, replace = {}) {
-						let result = (translations[lang]?.[text] ?? text);
+						let result = translations[lang]?.[text];
+						if (result === undefined && lang !== 'it') {
+							console.warn(`missing translation for string "${text}"`);
+						}
+						result = result ?? text;
 						Object.keys(replace)
 							.sort((k1, k2) => -(k1.length - k2.length))
 							.forEach((key) => {

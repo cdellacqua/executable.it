@@ -62,13 +62,15 @@ export default {
 
     "Privacy Policy": "Privacy Policy",
     "Titolare del trattamento dei dati": "Owner and Data Controller",
-    "Il Titolare del trattamento è Carlo Dell'Acqua.": "The Data Owner is Carlo Dell'Acqua.",
+    "Il Titolare del trattamento è Carlo Dell'Acqua, sede legale in via Martino Lutero 4, CAP 20126, Milano (MI), Partita IVA 11238940966.":
+        "The Data Owner is Carlo Dell'Acqua, legal address via Martino Lutero 4, CAP 20126, Milano (MI), VAT 11238940966.",
     "Indirizzo e-mail": "E-mail address",
     "Dati raccolti": "Collected data",
     "Questo sito web raccoglie in modalità automatica i seguenti dati:": "This website automatically collects the following data from any visitor:",
     "indirizzo IP": "IP address",
     "token di sessione": "session token",
     "data e ora di accesso alle pagine": "time and date of navigation to any page",
+    "dati di navigazione trasmessi dal browser": "browsing data automatically transmitted by the browser",
     "Previo inserimento e consenso esplicito da parte dell'utente il sito può inoltre raccogliere dati personali:": "The user can manually transmit the following data providing explicit consent for its processing:",
     "nome": "first name",
     "cognome": "last name",
@@ -80,18 +82,23 @@ export default {
     "Contatto": "Contact",
     "I dati personali liberamente comunicati dall'utente verranno utilizzati per un successivo ricontatto telematico o telefonico da parte del titolare del trattamento dei dati.": "Personal data willingly transmitted by the user will be used by the owner to contact them by e-mail or phone call.",
     "Statistica": "Statistics",
-    "I dati di utilizzo anonimi degli utenti verranno utilizzati al fine di migliorare la qualità del servizio mediante analisi di carattere statistico riguardanti, a titolo esemplificativo e non esaustivo, i contenuti più visitati, i tempi medi delle sessioni di navigazione e i tempi medi di risposta del server.": "Anonymous usage data provided by the devices of the user will be used to improve the service by statistically analyzing them.",
+    "I dati di utilizzo anonimi degli utenti verranno utilizzati al fine di migliorare la qualità del servizio mediante analisi di carattere statistico riguardanti, a titolo esemplificativo e non esaustivo, i contenuti più visitati, i tempi medi delle sessioni di navigazione e i tempi medi di risposta del server. Le finalità espresse in questo punto non necessitano di esplicito consenso secondo quanto previsto dall'art. 6 lett. f del GDPR":
+        "Anonymous usage data provided by the devices of the user will be used to improve the service by statistically analyzing them. For example, the website can collect anonymous data about most visited pages and mean response time by the server. This data processing does not require explicit consent in accordance with art. 6, letter f GDPR",
     "Modalità del trattamento": "Processing methods",
     "Conservazione e cancellazione": "Data retention and deletion",
-    "I dati saranno mantenuti all'interno del sistema informatico sino a quando saranno ritenuti utili al soddisfacimento dell'interesse legittimo del titolare.": "Data will be retained by the information system as long as the owner finds it useful for their legitimate interests.",
-    "I dati ottenuti sono archiviati all'interno del territorio nazionale italiano. Il titolare adotta le opportune misure di sicurezza atte a impedirne l'accesso, la divulgazione, la modifica o la distruzione non autorizzate.": "Collected data is stored in Italy. The data owner will take the appropriate actions to prevent unauthorized data access, publish, edit and deletion.",
-    "In qualsiasi momento l'utente potrà richiedere la copia e/o la cancellazione dei propri dati personali dal sistema scrivendo una e-mail di richiesta alla casella di posta elettronica indicata in questo documento. Con la medesima modalità di comunicazione l'utente può richiedere la revoca dei consensi per le finalità indicate.": "The user can, at any time, request their copy of their personal data and/or the deletion of it by sending a request by e-email to the address indicated in this document. By sending an e-mail to the same address the user can also revoke any consent they previously granted.",
-    "Al termine del periodo di conservazione, i dati personali saranno cancellati e conseguentemente il diritto di accesso, cancellazione, rettificazione ed il diritto alla portabilità dei dati non potranno più essere esercitati dall'utente.": "At the end of the retention period, user's personal data will be deleted, therefor the user may no longer exercise their rights of access and portability.",
+    "I Dati Personali saranno conservati per il periodo di tempo necessario al perseguimento delle finalità per cui tali dati sono stati raccolti e per l'assolvimento degli obblighi di Legge vigenti.":
+        "Personal Data will be retained for the duration of the data processing listed in this document and to comply with the Law",
+    "Tali Trattamenti hanno luogo presso la sede del Titolare e/o presso i Responsabili Ulteriori del trattamento che effettuano il trattamento per conto del Titolare, all'interno dello Spazio Economico Europeo.":
+        "Personal Data will be processed by the Data Owner and/or by the Sub Processors within the European Economic Area",
+    "In qualsiasi momento l'utente potrà richiedere la copia e/o la cancellazione dei propri Dati Personali dal sistema scrivendo una email di richiesta alla casella di posta elettronica indicata in questo documento. Con la medesima modalità di comunicazione l'utente può richiedere la revoca dei consensi per le finalità indicate.":
+        "The user can, at any time, request their copy of their personal data and/or the deletion of it by sending a request by e-email to the address indicated in this document. By sending an e-mail to the same address the user can also revoke any consent they previously granted.",
+    "Al termine del periodo di conservazione, i Dati Personali saranno cancellati e conseguentemente il diritto di accesso, cancellazione, rettificazione ed il diritto alla portabilità dei dati non potranno più essere esercitati dall'utente.":
+        "At the end of the retention period, user's personal data will be deleted, therefor the user may no longer exercise their rights of access and portability.",
     "Base giuridica del trattamento": "Legal basis of the processing",
     "Il titolare tratta i dati personali relativi all'utente qualora sussista una delle seguenti condizioni:": "The data owner processes user's personal data if any of the following conditions apply:",
     "l'utente ha fornito consenso esplicito per una o più finalità indicate in fase di comunicazione dei dati": "the user consented explicitly to one or more purposes indicated during the transmission",
     "il trattamento è necessario per adempiere un obbligo legale al quale è soggetto il titolare": "the processing is required because of a legal obligation of the owner",
-    "il trattamento è necessario per il perseguimento del legittimo interesse del titolare o di terzi": "the processing is necessary for the pursuit of the legitimate interest of the owner",
+    "il trattamento è necessario per il perseguimento del legittimo interesse del titolare": "the processing is necessary for the pursuit of the legitimate interest of the owner",
     "Luogo del trattamento": "Processing location",
     "I dati saranno trattati presso la sede operativa del titolare o in qualunque altro luogo questi si trovi.": "Data will be processed wherever the data owner will be located.",
     "Diritti dell'utente": "Rights of data subjects",
@@ -147,5 +154,7 @@ export default {
     "luglio 2016": "July 2016",
     "Diploma in Informatica e Telecomunicazioni": "Diploma in Information and Communication Technologies",
     "Se hai un'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un'email all'indirizzo riportato di seguito.": "If you have an idea that you want to discuss, contact me by filling in this form or send me an email at the address indicated below.",
-    "Nasce EXECUTABLE": "EXECUTABLE is founded"
+    "Nasce EXECUTABLE": "EXECUTABLE is founded",
+    "Milano": "Milan",
+    "Home": "Home"
 };
