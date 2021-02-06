@@ -156,5 +156,6 @@ export default {
     "Se hai un'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un'email all'indirizzo riportato di seguito.": "If you have an idea that you want to discuss, contact me by filling in this form or send me an email at the address indicated below.",
     "Nasce EXECUTABLE": "EXECUTABLE is founded",
     "Milano": "Milan",
-    "Home": "Home"
+    "Home": "Home",
+    "Blog": "Blog"
 };
