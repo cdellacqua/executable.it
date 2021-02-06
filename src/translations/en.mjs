@@ -157,5 +157,9 @@ export default {
     "Nasce EXECUTABLE": "EXECUTABLE is founded",
     "Milano": "Milan",
     "Home": "Home",
-    "Blog": "Blog"
+    "Blog": "Blog",
+    "GitHub": "GitHub",
+    "LinkedIn": "LinkedIn",
+    "Milano, 1 Febbraio 2021": "Milan, 1 Feb 2021",
+    "CarloDev - a developer's journey": "CarloDev - a developer's journey"
 };
