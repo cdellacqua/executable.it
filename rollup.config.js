@@ -6,7 +6,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
-import nodePolyfills from 'rollup-plugin-node-polyfills';
 import { join, basename, resolve as pathResolve, dirname } from 'path';
 import fs, { mkdirSync } from 'fs';
 import pug from 'pug';
@@ -155,7 +154,6 @@ export default [{
 			include: 'node_modules/**',
 		}),
 
-		nodePolyfills(),
 		babel({
 			extensions: ['.js', '.mjs', '.html', '.svelte'],
 			babelHelpers: 'runtime',
