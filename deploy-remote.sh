@@ -12,14 +12,16 @@ echo "Adjusting permissions..."
 	find . -maxdepth 1 -mindepth 1 -exec sh -c '
 		chown -R "$2" "$1"
 		chgrp -R "$3" "$1"
-		chmod 750 -R "$1"
+		chmod 755 -R "$1"
 	' sh {} $USER $GROUP \;
 	find . -maxdepth 1 -mindepth 1 -type d -exec chmod g+s -R {} \;
 echo "[  OK  ]"
 
-echo "Stopping Node process..."
-	sudo systemctl stop "$SYSTEMD_SERVICE"
-echo "[  OK  ]"
+if [ "${SYSTEMD_SERVICE:-}" != "" ]; then
+	echo "Stopping systemd service..."
+		sudo systemctl stop "$SYSTEMD_SERVICE"
+	echo "[  OK  ]"
+fi
 
 echo "Cleaning up old version..."
 	find . -maxdepth 1 -mindepth 1 -exec sh -c '
@@ -31,9 +33,11 @@ echo "Moving new version..."
 	find . -maxdepth 1 -mindepth 1 -exec mv {} "$TARGET_DIRECTORY" \;
 echo "[  OK  ]"
 
-echo "Restarting Node process..."
-	sudo systemctl start "$SYSTEMD_SERVICE"
-echo "[  OK  ]"
+if [ "${SYSTEMD_SERVICE:-}" != "" ]; then
+	echo "Restarting systemd service..."
+		sudo systemctl start "$SYSTEMD_SERVICE"
+	echo "[  OK  ]"
+fi
 
 echo "Cleaning up /tmp..."
 	rm -rf /tmp/_archive_
