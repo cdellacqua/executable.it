@@ -1,6 +1,7 @@
 /public/js
 /public/css
 .env
+.env.prod
 /tmp
 node_modules
 public/**/*.html
