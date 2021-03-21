@@ -12,7 +12,7 @@ echo "Adjusting permissions..."
 	find . -maxdepth 1 -mindepth 1 -exec sh -c '
 		chown -R "$2" "$1"
 		chgrp -R "$3" "$1"
-		chmod 755 -R "$1"
+		chmod 750 -R "$1"
 	' sh {} $USER $GROUP \;
 	find . -maxdepth 1 -mindepth 1 -type d -exec chmod g+s -R {} \;
 echo "[  OK  ]"
