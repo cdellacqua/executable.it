@@ -20,7 +20,7 @@ echo "[  OK  ]"
 
 echo "Downloading .env file from target server..."
 	set +e
-	scp -P "$SSH_PORT" "$USER@$SSH_HOST:$TARGET_DIRECTORY/.env" "$BASEDIR/tmp/.env" > /dev/null
+	scp -P "$SSH_PORT" "$TARGET_USER@$SSH_HOST:$TARGET_DIRECTORY/.env" "$BASEDIR/tmp/.env" > /dev/null
 	RETCODE="$?"
 	set -e
 	if [ "$RETCODE" -ne 0 ]; then
@@ -56,6 +56,9 @@ echo "Compressing..."
 				fi
 			done
 		fi
+		echo "  Setting up permissions..."
+			chmod -R "$PERMISSIONS" _archive_
+		echo "  [  OK  ]"
 		echo "Compressing _archive_..."
 			tar cf - _archive_ | gzip -9 > _archive_.tar.gz
 		echo "  [  OK  ]"
@@ -63,11 +66,11 @@ echo "Compressing..."
 echo "[  OK  ]"
 
 echo "Uploading..."
-	scp -P "$SSH_PORT" "$BASEDIR/tmp/_archive_.tar.gz" "$USER@$SSH_HOST:/tmp/_archive_.tar.gz"
+	scp -P "$SSH_PORT" "$BASEDIR/tmp/_archive_.tar.gz" "$TARGET_USER@$SSH_HOST:/tmp/_archive_.tar.gz"
 echo "[  OK  ]"
 
 echo "Running remote script..."
-	cat "$BASEDIR/env.sh" "$BASEDIR/deploy-remote.sh" | ssh "$USER@$SSH_HOST" -p "$SSH_PORT" '/bin/sh'
+	cat "$BASEDIR/env.sh" "$BASEDIR/deploy-remote.sh" | ssh "$TARGET_USER@$SSH_HOST" -p "$SSH_PORT" '/bin/sh'
 echo "[  OK  ]"
 
 echo "Cleaning up..."

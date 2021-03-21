@@ -8,15 +8,6 @@ echo "Extracting archive..."
 echo "[  OK  ]"
 cd _archive_
 
-echo "Adjusting permissions..."
-	find . -maxdepth 1 -mindepth 1 -exec sh -c '
-		chown -R "$2" "$1"
-		chgrp -R "$3" "$1"
-		chmod 750 -R "$1"
-	' sh {} $USER $GROUP \;
-	find . -maxdepth 1 -mindepth 1 -type d -exec chmod g+s -R {} \;
-echo "[  OK  ]"
-
 if [ "${SYSTEMD_SERVICE:-}" != "" ]; then
 	echo "Stopping systemd service..."
 		sudo systemctl stop "$SYSTEMD_SERVICE"
