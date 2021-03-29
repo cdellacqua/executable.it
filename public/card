@@ -17,10 +17,4 @@
 [33m║[m        [4m[1mEmail[m:  [37mcarlo.dellacqua@executable.it[m       [33m║[m
 [33m║[m       [4m[1mGitHub[m:  [37mhttps://github.com/cdellacqua[m       [33m║[m
 [33m║[m                                                    [33m║[m
-[33m║[m             [1m[2mcurl -sL executable.it/card[m            [33m║[m
-[33m║[m            [1m[2mcurl -sL executable.it/card-bw[m          [33m║[m
-[33m║[m                                                    [33m║[m
-[33m║[m        [1m[2mInvoke-RestMethod executable.it/card[m        [33m║[m
-[33m║[m       [1m[2mInvoke-RestMethod executable.it/card-bw[m      [33m║[m
-[33m║[m                                                    [33m║[m
 [33m╚════════════════════════════════════════════════════╝[m

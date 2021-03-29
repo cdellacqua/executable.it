@@ -17,10 +17,4 @@
 ║        Email:  carlo.dellacqua@executable.it       ║
 ║       GitHub:  https://github.com/cdellacqua       ║
 ║                                                    ║
-║             curl -sL executable.it/card            ║
-║            curl -sL executable.it/card-bw          ║
-║                                                    ║
-║        Invoke-RestMethod executable.it/card        ║
-║       Invoke-RestMethod executable.it/card-bw      ║
-║                                                    ║
 ╚════════════════════════════════════════════════════╝

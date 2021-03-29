@@ -161,5 +161,6 @@ export default {
     "GitHub": "GitHub",
     "LinkedIn": "LinkedIn",
     "Milano, 1 Febbraio 2021": "Milan, 1 Feb 2021",
-    "CarloDev - a developer's journey": "CarloDev - a developer's journey"
+    "CarloDev - a developer's journey": "CarloDev - a developer's journey",
+    "anteprima per browser": "browser preview"
 };
