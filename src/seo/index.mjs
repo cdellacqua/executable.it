@@ -52,7 +52,7 @@ export default {
 		},
 		description: {
 			it: 'Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia',
-			en: 'IT Consulting and Web Development, based in a Reggio Emilia',
+			en: 'IT Consulting and Web Development, based in Reggio Emilia',
 		},
 	},
 	'licenses': {
