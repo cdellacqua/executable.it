@@ -1,4 +1,45 @@
 extends ../_layout.pug
+block head
+	-
+		var ldJson = {
+			"@context": "https://schema.org",
+			"@id": WEBSITE_URL+"/",
+			"@type": "LocalBusiness",
+			"openingHoursSpecification": [
+				"Monday",
+				"Tuesday",
+				"Wednesday",
+				"Thursday",
+				"Friday",
+				"Saturday",
+				"Sunday",
+			].flatMap((dayOfWeek) => [
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "https://schema.org/"+dayOfWeek,
+					"opens":  "10:00:00",
+					"closes":  "12:00:00",
+				},
+				{
+					"@type": "OpeningHoursSpecification",
+					"dayOfWeek": "https://schema.org/"+dayOfWeek,
+					"opens":  "14:00:00",
+					"closes":  "17:00:00",
+				},
+			]),
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Reggio Emilia",
+				"addressRegion": "RE",
+				"postalCode": "42122",
+				"addressCountry": "IT"
+			},
+			"url": WEBSITE_URL+"/",
+			"description": seo[basenameNoExt].description[lang],
+			"name": "Executable",
+			"telephone": "+39 375 502 4577"
+		}
+	script(type="application/ld+json") !{JSON.stringify(ldJson, undefined, 2)}
 block main
 	.background
 		section.fill-height.home-first-scroll.first-scroll-height
