@@ -164,5 +164,7 @@ export default {
     "LinkedIn": "LinkedIn",
     "Reggio Emilia, 13 Maggio 2021": "Reggio Emilia, 13 May 2021",
     "CarloDev - a developer's journey": "CarloDev - a developer's journey",
-    "anteprima per browser": "browser preview"
+    "anteprima per browser": "browser preview",
+    "Lun-Ven 10-12, 14-17": "Mon-Fri 10-12, 14-17",
+    "Tel": "Phone"
 };
