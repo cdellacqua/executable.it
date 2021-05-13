@@ -62,8 +62,8 @@ export default {
 
     "Privacy Policy": "Privacy Policy",
     "Titolare del Trattamento dei dati": "Owner and Data Controller",
-    "Il Titolare del Trattamento è Carlo Dell'Acqua, sede legale in via Martino Lutero 4, CAP 20126, Milano (MI), Partita IVA 11238940966.":
-        "The Data Owner is Carlo Dell'Acqua, legal address via Martino Lutero 4, CAP 20126, Milano (MI), VAT 11238940966.",
+    "Il Titolare del Trattamento è Carlo Dell'Acqua, sede legale in via Martiri di Minozzo 26, CAP 42122, Reggio Emilia (RE), Partita IVA 11238940966.":
+        "The Data Owner is Carlo Dell'Acqua, legal address via Martiri di Minozzo 26, CAP 42122, Reggio Emilia (RE), VAT 11238940966.",
     "Indirizzo e-mail": "E-mail address",
     "Dati raccolti": "Collected data",
     "Questo sito web raccoglie in modalità automatica i seguenti dati:": "This website automatically collects the following data from any visitor:",
@@ -71,6 +71,8 @@ export default {
     "token di sessione": "session token",
     "data e ora di accesso alle pagine": "time and date of navigation to any page",
     "dati di navigazione trasmessi dal browser": "browsing data automatically transmitted by the browser",
+    "identificativo anonimo del dispositivo: generato automaticamente all'accesso al sito e salvato sul dispositivo nel c.d. localStorage del browser dell'utente": 
+        "anonymous device identifier: automatically generated on first access to this website and saved in the localStorage of the user browser",
     "Previo inserimento e consenso esplicito da parte dell'utente il sito può inoltre raccogliere Dati Personali:": "The user can manually transmit the following data providing explicit consent for its processing:",
     "nome": "first name",
     "cognome": "last name",
@@ -121,7 +123,7 @@ export default {
     "Il Titolare si riserva il diritto di apportare modifiche alla presente Privacy Policy in qualunque momento notificandolo agli utenti su questa pagina e, se possibile, inviando una notifica agli utenti attraverso uno degli estremi di contatto di cui è in possesso. Qualora le modifiche interessino trattamenti la cui base giuridica è il consenso, il Titolare provvederà, se necessario, a raccogliere nuovamente il consenso dell'utente.": "The data owner can change this Privacy Policy at any time, notifying the changes to the users in this page and, if possible, sending a notification to the users through the contact information they provided. If changes are made to a processing whose legal basis is consent, the data owner will ask for that consent, if necessary.",
     "Questo sito utilizza dei cookie, per leggere l'apposita informativa puoi consultare la": "This website uses cookies, to read more about it you can",
     "pagina dedicata cliccando qui": "go to the dedicated page by clicking here",
-    "Milano, 17 Gennaio 2021": "Milan, 17 January 2021",
+    "Reggio Emilia, 13 Maggio 2021": "Reggio Emilia, 13 May 2021",
 
     "Licenze": "Licenses",
     "Licenze dei componenti utilizzati per realizzare questo sito": "Licenses of the components used to made this website",
@@ -155,12 +157,12 @@ export default {
     "Diploma in Informatica e Telecomunicazioni": "Diploma in Information and Communication Technologies",
     "Se hai un'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un'email all'indirizzo riportato di seguito.": "If you have an idea that you want to discuss, contact me by filling in this form or send me an email at the address indicated below.",
     "Nasce EXECUTABLE": "EXECUTABLE is founded",
-    "Milano": "Milan",
+    "Reggio Emilia": "Reggio Emilia",
     "Home": "Home",
     "Blog": "Blog",
     "GitHub": "GitHub",
     "LinkedIn": "LinkedIn",
-    "Milano, 1 Febbraio 2021": "Milan, 1 Feb 2021",
+    "Reggio Emilia, 13 Maggio 2021": "Reggio Emilia, 13 May 2021",
     "CarloDev - a developer's journey": "CarloDev - a developer's journey",
     "anteprima per browser": "browser preview"
 };
