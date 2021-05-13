@@ -47,12 +47,12 @@ export default {
 			en: 'consulting,software,development,developer,website,web,webapp,information,it,landing,page,form,programming,programmer',
 		},
 		title: {
-			it: 'Executable',
-			en: 'Executable',
+			it: 'Executable - Azienda informatica Reggio Emilia',
+			en: 'Executable - IT Company in Reggio Emilia',
 		},
 		description: {
-			it: 'Servizi di consulenza informatica e realizzazione di applicativi Web',
-			en: 'IT Consulting and Web Development',
+			it: 'Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia',
+			en: 'IT Consulting and Web Development, based in a Reggio Emilia',
 		},
 	},
 	'licenses': {
