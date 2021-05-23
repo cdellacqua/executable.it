@@ -11,10 +11,15 @@ $under-sm: "(max-width: #{$sm})";
 $under-xs: "(max-width: #{$xs})";
 
 $animation-duration: .6s;
+$animation-duration-fast: .2s;
 
 @mixin transition($props...) {
     transition-property: $props;
     transition-duration: $animation-duration;
+}
+@mixin transition-fast($props...) {
+    transition-property: $props;
+    transition-duration: $animation-duration-fast;
 }
 
 @mixin stretch() {

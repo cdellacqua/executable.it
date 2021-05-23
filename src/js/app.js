@@ -54,15 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
 });
 
-// Navigation menu scroll behaviour
+// Navigation menu height
 window.addEventListener('load', () => {
 	const navTop = document.querySelector('.main-nav');
-	const navBottom = document.querySelector('.main-nav.bottom');
-	const bottomSpacer = document.querySelector('.mobile-bottom-menu-spacer');
 	function setNavPosition() {
-		const scroll = window.scrollY - navTop.offsetTop;
-		navBottom.style.bottom = Math.min(-navTop.offsetHeight + scroll, 0) + 'px';
-		bottomSpacer.style.height = navTop.offsetHeight + 'px';
+		if (window.scrollY > navTop.offsetTop * 0.9) {
+			navTop.classList.add('tiny');
+		} else {
+			navTop.classList.remove('tiny');
+		}
 	}
 
 	setNavPosition();

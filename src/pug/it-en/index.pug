@@ -1,4 +1,6 @@
 extends ../_layout.pug
+block variables
+	- backgroundClass = 'background';
 block head
 	-
 		var ldJson = {
@@ -41,53 +43,52 @@ block head
 		}
 	script(type="application/ld+json") !{JSON.stringify(ldJson, undefined, 2)}
 block main
-	.background
-		section.fill-height.home-first-scroll.first-scroll-height
-			.catch-you
-				.image-container(data-reveal="fly-in" data-from="top" style="width: 100%;")
-						.async-img-container(style="max-width: 450px; width: 75%; margin: 0 auto; padding: 1rem 0")
-							.async-img-placeholder(data-ratio=".240")
-								img(src="/img/logo-colors.svg" class="async-img" alt="logo")
-							i.loading.loading-lg
-				.wheel(data-reveal="fly-in" data-from="bottom")
-					.fixed-text-wrapper.elevation
-						h1 #{__('Automazione digitale')}&nbsp;<label>#{__('per')}&nbsp;</label>
-					.wheel-slider(data-values=`<span class="elevation"><i class="fa-fw fas fa-user"></i> ${__('i cittadini')}</span>|<span class="elevation"><i class="fa-fw fas fa-building"></i> ${__('le imprese')}</span>|<span class="elevation"><i class="fa-fw fas fa-rocket"></i> ${__('le startup')}</span>|<span class="elevation"><i class="fa-fw fas fa-store"></i> ${__('i negozi')}</span>`)
-						span.wheel-initial-width-placeholder
-							span.elevation
-								i.fa-fw.fas.fa-building
-								|
-								|
-								=__('le imprese')
-		script.
-			wheelSlider(document.querySelector('.wheel-slider'));
-		section.fill-height.padding.vertical-center
-			.container
-				.columns
-					.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto.text-left
-						h2(data-reveal="fly-in" data-from="left")
-							span.underline=__('Verso un mondo sempre più digitale')
-						p(data-reveal="fly-in" data-from="left")
-							| !{__('La <q>digital escalation</q> è la trasformazione tecnologica che sempre più rapidamente sta entrando nella vita di tutti i giorni.')}
-						p(data-reveal="fly-in" data-from="left")
-							| !{__('<strong>Cittadini e imprese sono sempre più connessi</strong> e far parte di questa grande rete di comunicazione digitale offre opportunità di crescita e sviluppo in ogni settore.')}
-		section.fill-height.padding.vertical-center
-			.container
-				.columns
-					.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto.text-right
-						h2(data-reveal="fly-in" data-from="right")
-							span.underline=__('Dritto al punto')
-						p(data-reveal="fly-in" data-from="right")
-							| !{__('Software di produttività, gestionali, e-commerce e web app sono alcune tra le <strong>soluzioni</strong> che possiamo sviluppare insieme, <strong>collaborando</strong> per comprendere al meglio le specifiche esigenze della tua attività.')}
-						p(data-reveal="fly-in" data-from="right")
-							| !{__('Ogni cliente ha necessità, budget e tempistiche differenti, per questo è importante studiare una soluzione su misura.')}
-		section.fill-height.padding.vertical-center
-			.container
-				.columns
-					.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto.text-center
-						h2(data-reveal="fly-in" data-from="bottom")
-							span.underline=__('Hai un\'idea?')
-						p(data-reveal="fly-in" data-from="bottom")
-							=__('Se hai un\'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un\'email all\'indirizzo riportato di seguito.')
-			div
-				include ../common/_form.pug
+	section.fill-height.home-first-scroll.first-scroll-height
+		.catch-you
+			.image-container(data-reveal="fly-in" data-from="top" style="width: 100%;")
+					.async-img-container(style="max-width: 450px; width: 75%; margin: 0 auto; padding: 1rem 0")
+						.async-img-placeholder(data-ratio=".240")
+							img(src="/img/logo-colors.svg" class="async-img" alt="logo")
+						i.loading.loading-lg
+			.wheel(data-reveal="fly-in" data-from="bottom")
+				.fixed-text-wrapper.elevation
+					h1 #{__('Automazione digitale')}&nbsp;<label>#{__('per')}&nbsp;</label>
+				.wheel-slider(data-values=`<span class="elevation"><i class="fa-fw fas fa-user"></i> ${__('i cittadini')}</span>|<span class="elevation"><i class="fa-fw fas fa-building"></i> ${__('le imprese')}</span>|<span class="elevation"><i class="fa-fw fas fa-rocket"></i> ${__('le startup')}</span>|<span class="elevation"><i class="fa-fw fas fa-store"></i> ${__('i negozi')}</span>`)
+					span.wheel-initial-width-placeholder
+						span.elevation
+							i.fa-fw.fas.fa-building
+							|
+							|
+							=__('le imprese')
+	script.
+		wheelSlider(document.querySelector('.wheel-slider'));
+	section.fill-height.padding.vertical-center
+		.container
+			.columns
+				.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto.text-left
+					h2(data-reveal="fly-in" data-from="left")
+						span.underline=__('Verso un mondo sempre più digitale')
+					p(data-reveal="fly-in" data-from="left")
+						| !{__('La <q>digital escalation</q> è la trasformazione tecnologica che sempre più rapidamente sta entrando nella vita di tutti i giorni.')}
+					p(data-reveal="fly-in" data-from="left")
+						| !{__('<strong>Cittadini e imprese sono sempre più connessi</strong> e far parte di questa grande rete di comunicazione digitale offre opportunità di crescita e sviluppo in ogni settore.')}
+	section.fill-height.padding.vertical-center
+		.container
+			.columns
+				.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto.text-right
+					h2(data-reveal="fly-in" data-from="right")
+						span.underline=__('Dritto al punto')
+					p(data-reveal="fly-in" data-from="right")
+						| !{__('Software di produttività, gestionali, e-commerce e web app sono alcune tra le <strong>soluzioni</strong> che possiamo sviluppare insieme, <strong>collaborando</strong> per comprendere al meglio le specifiche esigenze della tua attività.')}
+					p(data-reveal="fly-in" data-from="right")
+						| !{__('Ogni cliente ha necessità, budget e tempistiche differenti, per questo è importante studiare una soluzione su misura.')}
+	section.fill-height.padding.vertical-center
+		.container
+			.columns
+				.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto.text-center
+					h2(data-reveal="fly-in" data-from="bottom")
+						span.underline=__('Hai un\'idea?')
+					p(data-reveal="fly-in" data-from="bottom")
+						=__('Se hai un\'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un\'email all\'indirizzo riportato di seguito.')
+		div
+			include ../common/_form.pug

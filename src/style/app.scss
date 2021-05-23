@@ -6,15 +6,15 @@
 
 @import "reveal";
 
-
 * {
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
-    font-family: 'Work Sans', sans-serif;
+    font-family: "Work Sans", sans-serif;
     overflow-x: hidden;
     font-size: 20px;
     font-weight: 500;
@@ -24,8 +24,13 @@ html, body {
     }
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Spartan', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Spartan", sans-serif;
 }
 
 h1 {
@@ -33,7 +38,7 @@ h1 {
 }
 
 .elevation {
-    text-shadow: .1ch .1em 0 rgba($dark-color, 0.2);
+    text-shadow: 0.1ch 0.1em 0 rgba($dark-color, 0.2);
 }
 
 h2 {
@@ -42,21 +47,33 @@ h2 {
 }
 
 h3 {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
     margin-top: 1.5em;
 }
 
 .underline {
     display: inline;
-    background: linear-gradient(to top,transparent 5%, rgba($error-color, .1) 5%,rgba($error-color, .1) 37%,transparent 37%);
+    background: linear-gradient(
+        to top,
+        transparent 5%,
+        rgba($error-color, 0.1) 5%,
+        rgba($error-color, 0.1) 37%,
+        transparent 37%
+    );
 }
 
 h1 > .underline {
-    background: linear-gradient(to top,transparent 5%, rgba(yellow, .3) 5%,rgba(yellow, .3) 37%,transparent 37%);
+    background: linear-gradient(to top, transparent 5%, rgba(yellow, 0.3) 5%, rgba(yellow, 0.3) 37%, transparent 37%);
 }
 
 h2 > .underline {
-    background: linear-gradient(to top,transparent 5%, rgba($error-color, .1) 5%,rgba($error-color, .1) 37%,transparent 37%);
+    background: linear-gradient(
+        to top,
+        transparent 5%,
+        rgba($error-color, 0.1) 5%,
+        rgba($error-color, 0.1) 37%,
+        transparent 37%
+    );
 }
 
 strong {
@@ -83,9 +100,42 @@ a {
     }
 }
 
-
 .english-flag-background {
-    background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%), linear-gradient(transparent 38%, white 38%, white 42%, red 42%, red 58%, white 58%, white 62%, transparent 62%), linear-gradient(90deg, transparent 44%, white 44%, white 46%, red 46%, red 56%, white 56%, white 58%, transparent 58%), linear-gradient(33deg, transparent 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, transparent 57%), linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
+    background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%),
+        linear-gradient(transparent 38%, white 38%, white 42%, red 42%, red 58%, white 58%, white 62%, transparent 62%),
+        linear-gradient(
+            90deg,
+            transparent 44%,
+            white 44%,
+            white 46%,
+            red 46%,
+            red 56%,
+            white 56%,
+            white 58%,
+            transparent 58%
+        ),
+        linear-gradient(
+            33deg,
+            transparent 45%,
+            white 45%,
+            white 48%,
+            red 48%,
+            red 54%,
+            white 54%,
+            white 57%,
+            transparent 57%
+        ),
+        linear-gradient(
+            -33deg,
+            mediumblue 45%,
+            white 45%,
+            white 48%,
+            red 48%,
+            red 54%,
+            white 54%,
+            white 57%,
+            mediumblue 57%
+        );
 }
 .italian-flag-background {
     background: linear-gradient(90deg, #009344 0%, #009344 33%, #ffffff 33%, #ffffff 67%, #ce2b37 67%, #ce2b37 100%);
@@ -97,6 +147,13 @@ a {
     height: 1em;
 }
 
+.mobile-menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
 
 .main-nav {
     .links-wrapper {
@@ -104,7 +161,6 @@ a {
     }
 
     font-weight: bold;
-    position: relative;
     z-index: 2;
     box-shadow: 0 0 10px -5px black;
     background: $light-color;
@@ -128,6 +184,13 @@ a {
         .tab-item > a {
             padding-top: 1em;
             padding-bottom: 1em;
+            @include transition-fast(padding-top, padding-bottom);
+        }
+    }
+    &.tiny {
+        ul.tab-block .tab-item > a {
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
         }
     }
 
@@ -147,13 +210,6 @@ a {
         }
     }
 
-    &.bottom {
-        position: fixed;
-        left: 0;
-        right: 0;
-        bottom: -44px;
-    }
-
     .tab.tab-block .tab-item.language-switch-item {
         .language-switch {
             margin-right: 2ch;
@@ -167,7 +223,9 @@ a {
                 width: 1.6rem;
             }
 
-            .form-checkbox input + .form-icon, .form-radio input + .form-icon, .form-switch input + .form-icon {
+            .form-checkbox input + .form-icon,
+            .form-radio input + .form-icon,
+            .form-switch input + .form-icon {
                 background: #409bd5;
             }
 
@@ -197,7 +255,7 @@ a {
     }
 }
 
-.mobile-bottom-menu-spacer {
+.mobile-menu-spacer {
     width: 100%;
     height: 72px;
 }
@@ -212,16 +270,14 @@ main {
 section {
     position: relative;
     overflow: hidden;
-
 }
 
-.menu .menu-item>a {
+.menu .menu-item > a {
     @include transition(color, background);
 }
 
-
 .tile-text {
-    font-size: .9em;
+    font-size: 0.9em;
 }
 
 .timeline {
@@ -242,7 +298,6 @@ section {
     animation-timing-function: ease;
     animation-fill-mode: both;
 }
-
 
 @keyframes reveal-left {
     from {
@@ -283,13 +338,13 @@ section {
 
         &:last-child {
             bottom: 0;
-            fill: $error-color
+            fill: $error-color;
         }
     }
     &:nth-child(2n + 1) {
         svg {
             &:first-child {
-                fill: $error-color
+                fill: $error-color;
             }
 
             &:last-child {
@@ -305,7 +360,7 @@ section {
             }
 
             &:last-child {
-                fill: $error-color
+                fill: $error-color;
             }
         }
     }
@@ -328,7 +383,7 @@ section {
     padding: 7vw 2vw;
     animation-name: first-scroll-opacity;
     animation-fill-mode: both;
-    animation-duration: .8s;
+    animation-duration: 0.8s;
 
     .catch-you {
         display: flex;
@@ -337,7 +392,7 @@ section {
         font-size: 2.5em;
         font-weight: bold;
         z-index: 0;
-        font-family: 'Spartan', sans-serif;
+        font-family: "Spartan", sans-serif;
 
         @media #{$under-xl} {
             font-size: 2em;
@@ -353,15 +408,14 @@ section {
             font-size: 1.2em;
         }
 
-
         .fixed-text-wrapper {
             margin-bottom: 1em;
             text-transform: lowercase;
         }
 
         .wheel {
-            padding-top: .5em;
-            padding-bottom: .5em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
             text-align: center;
             h1 {
                 display: inline-block;
@@ -379,7 +433,8 @@ section {
             font-size: inherit;
             line-height: 4.5em;
             white-space: nowrap;
-            h1, label {
+            h1,
+            label {
                 font-size: inherit;
                 line-height: inherit;
             }
@@ -387,18 +442,16 @@ section {
     }
 }
 
-
 .padding {
     padding: 1.8rem 1rem;
 }
 
-
 footer {
     font-weight: 400;
-    font-size: .8em;
+    font-size: 0.8em;
     background: $dark-color;
     color: white;
-    padding: 2em .4rem;
+    padding: 2em 0.4rem;
     text-align: center;
     a {
         color: white !important;
@@ -409,12 +462,10 @@ p {
     font-weight: 500;
 }
 
-
 .btn.btn-lg {
     font-size: 1.1rem;
     height: 2.4rem;
 }
-
 
 .form-input {
     background: white;
@@ -428,10 +479,10 @@ p {
     .timeline-item {
         .timeline-icon {
             animation-name: pulse;
-            animation-duration: .8s;
+            animation-duration: 0.8s;
             animation-timing-function: ease;
         }
-        $delay: .1s;
+        $delay: 0.1s;
         &:nth-child(1) .timeline-icon {
             animation-delay: 0 * $delay;
         }
@@ -464,7 +515,7 @@ p {
         transform: scale(1.2);
     }
     67% {
-        transform: scale(.93);
+        transform: scale(0.93);
     }
     100% {
         transform: scale(1);
@@ -474,13 +525,19 @@ p {
 .timeline {
     .timeline-icon {
         > i {
-            font-size: .7rem;
+            font-size: 0.7rem;
         }
     }
     .tile-title {
         .underline {
             font-size: 1rem;
-            background: linear-gradient(to top, transparent 5%, rgba($primary-color-light, .2) 5%, rgba($primary-color-light, .2) 40%, transparent 40%);
+            background: linear-gradient(
+                to top,
+                transparent 5%,
+                rgba($primary-color-light, 0.2) 5%,
+                rgba($primary-color-light, 0.2) 40%,
+                transparent 40%
+            );
         }
     }
     .tile-subtitle {
@@ -519,23 +576,58 @@ p {
                 min-height: 50vh;
             }
         }
-
     }
 }
 
 .background {
-    background: linear-gradient(165deg, transparent 0%, rgba(64, 155, 213, 0.2) 0%, rgba(64, 155, 213, 0.2) 9%, transparent 9%),
+    background: linear-gradient(
+            165deg,
+            transparent 0%,
+            rgba(64, 155, 213, 0.2) 0%,
+            rgba(64, 155, 213, 0.2) 9%,
+            transparent 9%
+        ),
         linear-gradient(234deg, transparent 0%, rgba(221, 5, 55, 0.1) 0%, rgba(221, 5, 55, 0.1) 11%, transparent 11%),
         linear-gradient(191deg, transparent 26%, rgba(221, 5, 55, 0.1) 26%, rgba(221, 5, 55, 0.1) 29%, transparent 29%),
-        linear-gradient(5deg, transparent 49%, rgba(64, 155, 213, 0.2) 49%, rgba(64, 155, 213, 0.2) 60%, transparent 60%),
+        linear-gradient(
+            5deg,
+            transparent 49%,
+            rgba(64, 155, 213, 0.2) 49%,
+            rgba(64, 155, 213, 0.2) 60%,
+            transparent 60%
+        ),
         linear-gradient(-8deg, transparent 29%, rgba(221, 5, 55, 0.1) 29%, rgba(221, 5, 55, 0.1) 32%, transparent 32%),
-        linear-gradient(6.75deg, transparent 0%, rgba(64, 155, 213, 0.2) 0%, rgba(64, 155, 213, 0.2) 12%, transparent 12%),
-        linear-gradient(-72deg, transparent 0%, rgba(221, 5, 55, 0.1) 0%, rgba(221, 5, 55, 0.1) 19.75%, transparent 19.75%);
+        linear-gradient(
+            6.75deg,
+            transparent 0%,
+            rgba(64, 155, 213, 0.2) 0%,
+            rgba(64, 155, 213, 0.2) 12%,
+            transparent 12%
+        ),
+        linear-gradient(
+            -72deg,
+            transparent 0%,
+            rgba(221, 5, 55, 0.1) 0%,
+            rgba(221, 5, 55, 0.1) 19.75%,
+            transparent 19.75%
+        );
 }
 
 .background-small {
-    background: linear-gradient(5deg, transparent 10%, rgba(221, 5, 55, 0.1) 10%, rgba(221, 5, 55, 0.1) 20%, transparent 20%),
-    linear-gradient(-15deg, transparent 64%, rgba(64, 155, 213, 0.2) 64%, rgba(64, 155, 213, 0.2) 74%, transparent 74%);
+    background: linear-gradient(
+            5deg,
+            transparent 10%,
+            rgba(221, 5, 55, 0.1) 10%,
+            rgba(221, 5, 55, 0.1) 20%,
+            transparent 20%
+        ),
+        linear-gradient(
+            -15deg,
+            transparent 64%,
+            rgba(64, 155, 213, 0.2) 64%,
+            rgba(64, 155, 213, 0.2) 74%,
+            transparent 74%
+        );
 }
 
 .important-label {
@@ -546,12 +638,12 @@ p {
     max-width: 125px;
     min-width: 75px;
     width: 43%;
-    padding: 0 0 .4rem .4rem;
+    padding: 0 0 0.4rem 0.4rem;
     margin: 0 1ch;
-    float:right;
+    float: right;
 
     &:after {
-        content: ' ';
+        content: " ";
         display: block;
         position: absolute;
         bottom: 0;
@@ -561,7 +653,7 @@ p {
         background: $dark-color;
     }
     &:before {
-        content: ' ';
+        content: " ";
         display: block;
         position: absolute;
         left: 0;

@@ -1,3 +1,4 @@
+block variables
 doctype html
 html(lang=lang)
 	head
@@ -6,8 +7,8 @@ html(lang=lang)
 	body
 		.mobile-menu-wrapper
 			include common/_mobile-menu.pug
-		main
+		main(class=backgroundClass || 'background-small')
+			.mobile-menu-spacer
 			block main
 		footer
 			include common/_footer.pug
-		.mobile-bottom-menu-spacer

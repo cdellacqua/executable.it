@@ -1,13 +1,12 @@
 extends ../_layout.pug
 block main
-	.background-small
-		section.fill-height.padding.vertical-center.text-center.first-scroll-height
-			.container
-				.columns
-					.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto
-						h1(data-reveal="fly-in" data-from="top")
-							span.elevation=__('Grazie per avermi contattato')
-						p(data-reveal="fly-in" data-from="bottom")
-							=__('Cercherò di rispondere quanto prima al tuo messaggio, a presto!')
+	section.fill-height.padding.vertical-center.text-center.first-scroll-height
+		.container
+			.columns
+				.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto
+					h1(data-reveal="fly-in" data-from="top")
+						span.elevation=__('Grazie per avermi contattato')
+					p(data-reveal="fly-in" data-from="bottom")
+						=__('Cercherò di rispondere quanto prima al tuo messaggio, a presto!')
 	script.
 		window.anonylyticsFns.conversion();
