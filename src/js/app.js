@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
 	const navTop = document.querySelector('.main-nav');
 	function setNavPosition() {
-		if (window.scrollY > navTop.offsetTop * 0.9) {
+		if (window.scrollY > navTop.offsetHeight * 0.9) {
 			navTop.classList.add('tiny');
 		} else {
 			navTop.classList.remove('tiny');
@@ -146,6 +146,26 @@ window.addEventListener('load', () => {
 			} // else -> fake resize in Safari/Chrome mobile
 		});
 	}
+});
+
+// Scroll-top button
+window.addEventListener('load', () => {
+	const scrollTopWrapper = document.querySelector('.scroll-top-wrapper');
+	function setScrollTopVisibility() {
+		if (window.scrollY > scrollTopWrapper.offsetHeight * 0.9) {
+			scrollTopWrapper.classList.add('visible');
+		} else {
+			scrollTopWrapper.classList.remove('visible');
+		}
+	}
+
+	setScrollTopVisibility();
+
+	window.addEventListener('scroll', setScrollTopVisibility);
+
+	scrollTopWrapper.querySelector('button').addEventListener('click', () => {
+		window.scrollTo(0, 0);
+	});
 });
 
 
