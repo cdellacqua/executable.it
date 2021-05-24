@@ -2,7 +2,7 @@ export default [{
 	name: 'Edoco',
 	description: {
 		it: `Progressive Web Application per l'emissione di documenti commerciali. Invio telematico, integrazione con stampanti termiche e listino prodotti/servizi`,
-		en: '',
+		en: `Progressive Web Application that handles receipts. It provides a friendly user interface for creating and storing receipts online as well as an integration with thermal printers`,
 	},
 	url: 'https://edoco.it/',
 	urlText: 'edoco.it',
@@ -14,11 +14,11 @@ export default [{
 		imgUrl: "/img/projects/companies/edoco-small.jpg",
 		imgRatio: 3.428571429,
 	}
-}, {
+}, /*{
 	name: 'Cube H24 Web',
 	description: {
 		it: `Trasformazione di un'applicazione desktop in una Progressive Web App. Tra le funzionalità: visualizzazione di dati provenienti da sensori ambientali, mappa interattiva per la loro individuazione e visualizzazione di grafici con dati aggregati sull'andamento dei valori`,
-		en: '',
+		en: `Porting of a Desktop application to a Progressive Web App. The Web Application shows data from various sensors, it provides an interactive map to locate the sensors in a specific area and statistics based on historical data`,
 	},
 	url: 'https://www.stonex.it/it/',
 	urlText: 'Stonex',
@@ -30,11 +30,11 @@ export default [{
 		imgUrl: "/img/projects/companies/stonex-small.jpg",
 		imgRatio: 3.448275862,
 	}
-}, {
+}, */{
 	name: 'Light Touch',
 	description: {
 		it: `Realizzazione di una sezione nell'applicativo Web Light Touch per la raccolta interattiva dei dati d'illuminazione stradale e la visualizzazione delle fotometrie`,
-		en: '',
+		en: 'Development of a portion of a Web App called Light Touch. The section I developed provides an interactive form to collect data about street lamps, showing a preview of the street and the heatmap of the photometry',
 	},
 	url: 'https://huna.io/light-touch/',
 	urlText: 'Huna - Light Touch',
@@ -50,7 +50,7 @@ export default [{
 	name: 'Booking TouchHair',
 	description: {
 		it: `Portale di prenotazioni rivolto a saloni e parrucchieri. Gestione degli appuntamenti lato negozio e prenotazione dei servizi lato cliente`,
-		en: '',
+		en: 'Booking platform targeting hairdressers and beauty centers. Shops can manage appointments through an interactive calendar, while customers can make reservations using a funnel that automatically scans for available time slots',
 	},
 	url: 'https://booking.touchhair.it/',
 	urlText: 'Booking TouchHair',

@@ -9,8 +9,8 @@ export default {
 			en: 'About me',
 		},
 		description: {
-			it: 'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e mi sono dilettato in progetti basati su microcontrollori, fino ad arrivare all\'ambito Web che copre ormai la gran parte dei miei progetti.',
-			en: "As a developer I've written some Desktop and Android utility applications, I've also experimented embedded development during school and as a hobby. Now I'm primarily a Web Developer.",
+			it: 'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.',
+			en: "As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now Full-Stack Web Developer.",
 		},
 	},
 	'contacts-tp': {

@@ -26,13 +26,19 @@ export default {
 
     "Chi sono?": "Who am I?",
     "Carlo Dell'Acqua: sviluppatore multipiattaforma": "Carlo Dell'Acqua: multiplatform developer",
-    "Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e mi sono dilettato in progetti basati su microcontrollori, fino ad arrivare all'ambito Web che copre ormai la gran parte dei miei progetti.": "As a developer I've written some Desktop and Android utility applications, I've also experimented embedded development during school and as a hobby. Now I'm primarily a Web Developer.",
+    'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.': "As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now Full-Stack Web Developer.",
+    "Sviluppo soluzioni valutando la piattaforma e lo stack tecnologico più adatto per ogni progetto.": `I develop solutions based on the technologies and platforms that are most suitable for each project.`,
     "Profilo GitHub": "GitHub Profile",
     "Profilo LinkedIn": "LinkedIn Profile",
-    "Lo sviluppo web": "Web Development",
-    "Da quando ho cominciato a sviluppare con le tecnologie Web ho avuto modo di testare differenti linguaggi, librerie e framework, a partire da JavaScript e CSS puro in una fase più didattica, passando per i classici jQuery e Bootstrap, fino a iniziare uno sviluppo più strutturato attraverso framework frontend quali Angular e Svelte, insieme all'utilizzo di Webpack o Rollup per progetti in cui è necessario maggiore controllo.": "Since I started developing with Web-oriented technologies I've had the opportunity to try different programming languages, libraries and frameworks, starting from pure JavaScript, jQuery and Bootstrap to the modern Web Frameworks like Angular and Svelte, along with Webpack and Rollup for projects with specific features.",
-    "Parallelamente allo studio dello sviluppo Frontend ho iniziato a formarmi sulle tecnologie di Backend, al fine di poter realizzare Web App complete in soluzioni Client Side Rendering e Server Side Rendering.": "While studying frontend technologies I also began my journey into backend development. This way I can create a complete Web Application using both Client Side Rendering or Server Side Rendering.",
-    "Ad oggi mi occupo di proporre soluzioni pensate su misura per le esigenze specifiche di ogni cliente, cercando ove possibile di adottare tecnologie e metodologie rodate e robuste, tenendo sempre in considerazione le esigenze e il target a cui ci si rivolge.": "Nowadays I create solutions that fits the specific needs of my clients, trying to choose the right technologies for the job, always keeping in mind the budget and target of my clients.",
+    "Competenze": "Skills",
+    'Il mio viaggio nello sviluppo Web è iniziato dai classici JavaScript con jQuery e Bootstrap fino ad arrivare ai framework Frontend Angular e Svelte.':
+        "My journey into Web Development started from JavaScript with jQuery and Bootstrap all the way up to modern Web Frameworks like Angular and Svelte.",
+	'Parallelamente allo studio dello sviluppo Frontend ho iniziato a formarmi sulle tecnologie di Backend, in particolare specializzandomi su Node.js, al fine di poter realizzare Web App complete.':
+    "While studying frontend technologies, I began working with backend technologies, focusing on Node.js, thus starting to develop complete Web Applications.",
+    "Coperte le tecnologie ho approfondito le piattaforme, focalizzandomi principalmente su Linux e i container, raggiungendo un buon grado di dimestichezza con lo scripting POSIX, la composizione dei comandi tramite pipeline e la gestione dei servizi con systemd e journald.":
+        "Then it was time to learn more about the platforms. I focused primarily on Linux and Linux-containers, reaching a good level of proficiency in POSIX scripting, command composition using pipelines and service management using systemd and journald.",
+	"Ad oggi mi occupo di realizzare soluzioni pensate su misura per le esigenze specifiche di ogni cliente, cercando quando possibile di proporre prodotti innovativi.": 
+        "Nowadays I create solutions that fits the specific needs of my clients, choosing the right technologies for the job and trying to come up with innovative solutions.",
     "Milestones": "Milestones",
 
     "Nome": "First name",
@@ -148,7 +154,7 @@ export default {
     "È necessario abilitare JavaScript per utilizzare questo form": "JavaScript is required for the following form",
     "aprile 2020": "April 2020",
     "settembre 2019": "September 2019",
-    "Inizia la mia avventura come Programmatore Freelance, con forti prospettive di crescita e con l'obiettivo di rendere questa mia attività un'azienda strutturata e prospera.": "My adventure as a freelance developer starts now, with great growth potential and with the goal of turning Executable into a fully fledged company.",
+    "Inizia la mia avventura imprenditoriale": "I started my own business",
     "Laurea Triennale in Ingegneria Informatica": "Bachelor's degree in Computer Science",
     "marzo 2018": "March 2018",
     "Assunzione presso TCommunication Srl": "Employed at TCommunication Srl",
@@ -166,5 +172,8 @@ export default {
     "CarloDev - a developer's journey": "CarloDev - a developer's journey",
     "anteprima per browser": "browser preview",
     "Lun-Ven 10-12, 14-17": "Mon-Fri 10-12, 14-17",
-    "Tel": "Phone"
+    "Tel": "Phone",
+    "Progetti": "Projects",
+    "About": "About",
+    "Visita :name": "Visit :name",
 };
