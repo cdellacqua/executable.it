@@ -1,0 +1,34 @@
+extends ../_layout.pug
+block main
+	section.first-scroll-height.padding
+		.container
+			.columns
+				.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto
+					h1(data-reveal="opacity" style="text-align: center")
+						span.elevation=__('Progetti')
+					.projects
+						each project, i in projects
+							.project(data-reveal="fly-in" data-from=(i % 2 === 0 ? "left" : "right"))
+								div
+									.preview
+										.async-img-container
+											.async-img-placeholder(data-ratio=project.imgRatio)
+												img(src=project.imgUrl class="async-img" alt=project.name)
+									if project.company
+										.company(data-tooltip=(project.company.url ? __('Visita :name', {name:project.company.name}) : undefined) class=(project.company.url ? "tooltip" : undefined))
+											.async-img-container
+												.async-img-placeholder(data-ratio=project.company.imgRatio)
+													if project.company
+														a.async-img(href=project.company.url target="_blank" rel="noopener" title=project.company.name)
+															img.img-full-width(src=project.company.imgUrl alt=project.company.name)
+													else
+														img.async-img(src=project.company.imgUrl alt=project.company.name)
+								div
+										h2.name=project.name
+										.description
+											p=project.description[lang]
+										a.btn.d-block(href=project.url target="_blank" rel="noopener" title=project.name)
+											| #{project.urlText}
+											|
+											|
+											i.icon.icon-link

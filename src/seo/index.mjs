@@ -83,4 +83,18 @@ export default {
 			en: 'Privacy Policy',
 		},
 	},
+	'projects': {
+		keywords: {
+			it: 'progetti,lavori',
+			en: 'works,projects',
+		},
+		title: {
+			it: 'Progetti',
+			en: 'Projects',
+		},
+		description: {
+			it: 'Progetti realizzati',
+			en: 'Works',
+		},
+	},
 };

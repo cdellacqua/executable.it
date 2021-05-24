@@ -35,6 +35,7 @@ window.addEventListener('load', () => {
 		});
 	}
 	window.addEventListener('scroll', handler);
+	window.addEventListener('resize', handler);
 	setTimeout(handler, 1);
 });
 
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Navigation menu height
 window.addEventListener('load', () => {
 	const navTop = document.querySelector('.main-nav');
+	navTop.classList.add('animate');
 	function setNavPosition() {
 		if (window.scrollY > navTop.offsetHeight * 0.9) {
 			navTop.classList.add('tiny');
@@ -82,8 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
 				acc[cur.name] = String(cur.value || '').trim();
 				return acc;
 			}, {});
-			console.log(inputs);
-			console.log(data);
 			try {
 				await axios.post(form.action === "http://localhost:5000/api/contact" ? "http://localhost:3000/api/contact" : form.action, data);
 				setTimeout(() => {

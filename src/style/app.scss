@@ -162,6 +162,7 @@ a {
 .scroll-top-wrapper {
 	position: fixed;
 	right: 1em;
+	z-index: 1000;
 	bottom: 1em;
 	transform: scale(0);
 	@include transition-fast(transform);
@@ -200,8 +201,10 @@ a {
 		.tab-item > a {
 			padding-top: 1em;
 			padding-bottom: 1em;
-			@include transition-fast(padding-top, padding-bottom);
 		}
+	}
+	&.animate ul.tab-block .tab-item > a {
+		@include transition-fast(padding-top, padding-bottom);
 	}
 	&.tiny {
 		ul.tab-block .tab-item > a {
@@ -684,6 +687,95 @@ p {
 			font-size: 1.3em;
 		}
 	}
+}
+
+.project {
+	position: relative;
+	font-size: 16px;
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	> * {
+		position: relative;
+		padding: .4rem;
+	}
+	> *:nth-child(1) {
+		width: 33%;
+	}
+	> *:nth-child(2) {
+		width: 67%;
+	}
+	@media (max-width: 780px) {
+		> *:nth-child(1) {
+			width: 50%;
+		}
+		> *:nth-child(2) {
+			width: 50%;
+		}		
+	}
+	@media (max-width: 730px) {
+		> *:nth-child(1) {
+			width: 100%;
+		}
+		> *:nth-child(2) {
+			width: 100%;
+		}	
+	}
+	@media (min-width: 730px) {
+		&:nth-child(2n+1) {
+			flex-flow: row-reverse;
+			flex-wrap: wrap;
+		}
+	}
+	.preview {
+		width: 100%;
+		> * {
+			box-shadow: 0 0 10px -5px black;
+		}
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+	.company {
+		position: absolute;
+		bottom: 2rem;
+		right: 0;
+		width: 43%;
+		z-index: 3;
+		height: auto;
+		box-shadow: 0 0 10px -5px black;
+	}
+	.name {
+		margin: 0;
+		margin-bottom: 1rem;
+	}
+	.description {
+		p {
+			margin: 0;
+		}
+	}
+	> *:nth-child(2) {
+		a {
+			margin-top: 2rem;
+			font-size: .8rem;
+		}
+	}
+}
+
+.gaps {
+	padding: 0;
+	.columns {
+		> * {
+			padding: 0.4rem;
+		}
+	}
+}
+
+.img-full-width {
+	display: block;
+	width: 100%;
+	height: auto;
 }
 
 @import "async-img";

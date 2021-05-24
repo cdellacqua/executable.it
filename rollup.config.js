@@ -11,6 +11,7 @@ import fs, { mkdirSync } from 'fs';
 import pug from 'pug';
 import translations from './src/translations/index.mjs';
 import seo from './src/seo/index.mjs';
+import projects from './src/projects/index.mjs';
 
 const dotenv = require('dotenv').config().parsed;
 
@@ -69,6 +70,7 @@ function pugPlugin(dir, outDir) {
 					...dotenv,
 					lang,
 					seo,
+					projects,
 					basename: basename(src),
 					basenameNoExt: basename(src).split('.').slice(0, -1).join('.'),
 					self: src,
@@ -177,7 +179,10 @@ export default [{
 
 		// Watch the `public` directory and refresh the
 		// browser on changes when not in production
-		!production && livereload('public'),
+		!production && livereload({
+			watch: 'public',
+			delay: 500
+		}),
 
 		production && terser(),
 	],
