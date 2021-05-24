@@ -6,6 +6,8 @@ block main
 				.col-6.col-xl-8.col-lg-10.col-sm-12.col-mx-auto
 					h1(data-reveal="opacity" style="text-align: center")
 						span.elevation=__('Progetti')
+					p(data-reveal="fly-in" data-from="bottom" style="text-align: center")
+						=__("Qui trovi alcuni dei progetti su cui ho lavorato")
 					.projects
 						each project, i in projects
 							.project(data-reveal="fly-in" data-from=(i % 2 === 0 ? "left" : "right"))

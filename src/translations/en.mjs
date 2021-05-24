@@ -176,4 +176,5 @@ export default {
     "Progetti": "Projects",
     "About": "About",
     "Visita :name": "Visit :name",
+    "Qui trovi alcuni dei progetti su cui ho lavorato": "Some projects I worked on",
 };

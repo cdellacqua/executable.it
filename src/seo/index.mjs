@@ -93,8 +93,8 @@ export default {
 			en: 'Projects',
 		},
 		description: {
-			it: 'Progetti realizzati',
-			en: 'Works',
+			it: 'Qui trovi alcuni dei progetti su cui ho lavorato',
+			en: 'Some projects I worked on',
 		},
 	},
 };
