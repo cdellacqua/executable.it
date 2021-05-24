@@ -1,4 +1,20 @@
 export default [{
+	name: 'Smart Parking',
+	description: {
+		it: `Piattaforma di monitoraggio delle aree di parcheggio basata sul rilevamento di veicoli tramite Computer Vision. Ho progettato l'infrastruttura di rete e integrato il servizio analisi remota del flusso video`,
+		en: `Monitoring Platform that analyzes video streams coming from IP Cameras. I built the network infrastructure and integrated the video analysis service`,
+	},
+	url: 'https://huna.io/',
+	urlText: 'Huna',
+	imgUrl: "/img/projects/smart-parking.jpg",
+	imgRatio: 1,
+	company: {
+		name: "Huna",
+		url: 'https://huna.io/',
+		imgUrl: "/img/projects/companies/huna-small.jpg",
+		imgRatio: 1.633986928,
+	}
+},{
 	name: 'Edoco',
 	description: {
 		it: `Progressive Web Application per l'emissione di documenti commerciali. Invio telematico, integrazione con stampanti termiche e listino prodotti/servizi`,
