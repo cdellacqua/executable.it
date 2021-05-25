@@ -30,7 +30,7 @@ export default [{
 		imgUrl: "/img/projects/companies/edoco-small.jpg",
 		imgRatio: 3.428571429,
 	}
-}, /*{
+}, {
 	name: 'Cube H24 Web',
 	description: {
 		it: `Trasformazione di un'applicazione desktop in una Progressive Web App. Tra le funzionalità: visualizzazione di dati provenienti da sensori ambientali, mappa interattiva per la loro individuazione e visualizzazione di grafici con dati aggregati sull'andamento dei valori`,
@@ -46,7 +46,7 @@ export default [{
 		imgUrl: "/img/projects/companies/stonex-small.jpg",
 		imgRatio: 3.448275862,
 	}
-}, */{
+}, {
 	name: 'Light Touch',
 	description: {
 		it: `Realizzazione di una sezione nell'applicativo Web Light Touch per la raccolta interattiva dei dati d'illuminazione stradale e la visualizzazione delle fotometrie`,
