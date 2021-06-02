@@ -26,7 +26,7 @@ export default {
 
     "Chi sono?": "Who am I?",
     "Carlo Dell'Acqua: sviluppatore multipiattaforma": "Carlo Dell'Acqua: multiplatform developer",
-    'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.': "As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now Full-Stack Web Developer.",
+    'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.': "As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now a Full-Stack Web Developer.",
     "Sviluppo soluzioni valutando la piattaforma e lo stack tecnologico più adatto per ogni progetto.": `I develop solutions based on the technologies and platforms that are most suitable for each project.`,
     "Profilo GitHub": "GitHub Profile",
     "Profilo LinkedIn": "LinkedIn Profile",

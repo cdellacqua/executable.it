@@ -10,7 +10,7 @@ export default {
 		},
 		description: {
 			it: 'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.',
-			en: "As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now Full-Stack Web Developer.",
+			en: "As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now a Full-Stack Web Developer.",
 		},
 	},
 	'contacts-tp': {
