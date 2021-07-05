@@ -30,17 +30,6 @@ small
 	|
 	a(href=BLOG_URL+'/' rel='noopener' target='_blank' title=__('Blog'))=__('Blog')
 
-br
-br
-small(style="color: white;") Business Card
-br
-span.tooltip.tooltip-top(data-copy="k}zd(%{D(mpmk}|ijdm&a|'kizl"
-						data-tooltip-copied=__('Copiato!') data-tooltip-hover=__('Clicca per copiare'))
-	code curl -sL executable.it/card
-br
-span.tooltip.tooltip-top(data-copy="Af~gcm%Zm{|Em|`gl(mpmk}|ijdm&a|'kizl"
-						data-tooltip-copied=__('Copiato!') data-tooltip-hover=__('Clicca per copiare'))
-	code Invoke-RestMethod executable.it/card
-br
-button.btn.btn-link.btn-sm(style="font-size:.75rem" type="button" onclick="window.open('/card-bw', '', 'width=500,height=400,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=yes')")
-	| #{__('anteprima per browser')}
+//- hide from google bot
+script.
+	document.write(!{JSON.stringify(__('business_card'))});
