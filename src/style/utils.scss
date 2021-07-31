@@ -3,12 +3,14 @@ $lg: 960px;
 $md: 840px;
 $sm: 600px;
 $xs: 480px;
+$xxs: 360px;
 
 $under-xl: "(max-width: #{$xl})";
 $under-lg: "(max-width: #{$lg})";
 $under-md: "(max-width: #{$md})";
 $under-sm: "(max-width: #{$sm})";
 $under-xs: "(max-width: #{$xs})";
+$under-xxs: "(max-width: #{$xxs})";
 
 $animation-duration: .6s;
 $animation-duration-fast: .2s;
