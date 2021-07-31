@@ -182,5 +182,5 @@ export default {
     "Il software può migliorare la produttività automatizzando operazioni ripetitive. Il valore di una consulenza specialistica sta anche nel trovare la soluzione più adatta alla tua attività.":
         "Software improves productivity by automating repetitive tasks. IT Consulting helps finding an appropriate solution for your business.",
     'Se vuoi capire se la tua attività possa trarre vantaggio da applicazioni su misura non esitare a <a href="#contacts" title="Contattami">contattarmi</a>.':
-        'If you think your business can benefit from a custom application, <a href="#contacts" title="Contattami">contact me</a>.',
+        'If you think your business can benefit from a custom application, <a href="#contacts" title="Contact me">contact me</a>.',
 };
