@@ -1,3 +1,0 @@
-export default {
-	"business_card": '<br><br><small style="color: white;">Business Card</small><br><span class="tooltip tooltip-top" data-copy="k}zd(%{D(mpmk}|ijdm&amp;a|\'kizl" data-tooltip-copied="Copiato!" data-tooltip-hover="Clicca per copiare"><code>curl -sL executable.it/card</code></span><br><span class="tooltip tooltip-top" data-copy="Af~gcm%Zm{|Em|`gl(mpmk}|ijdm&amp;a|\'kizl" data-tooltip-copied="Copiato!" data-tooltip-hover="Clicca per copiare"><code>Invoke-RestMethod executable.it/card</code></span><br><button class="btn btn-link btn-sm" style="font-size:.75rem" type="button" onclick="window.open(\'/card-bw\', \'\', \'width=500,height=400,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=yes\')">anteprima per browser</button>'
-}

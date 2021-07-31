@@ -177,5 +177,4 @@ export default {
     "About": "About",
     "Visita :name": "Visit :name",
     "Qui trovi alcuni dei progetti su cui ho lavorato": "Some projects I worked on",
-    "business_card": '<br><br><small style="color: white;">Business Card</small><br><span class="tooltip tooltip-top" data-copy="k}zd(%{D(mpmk}|ijdm&amp;a|\'kizl" data-tooltip-copied="Copied!" data-tooltip-hover="Click to copy"><code>curl -sL executable.it/card</code></span><br><span class="tooltip tooltip-top" data-copy="Af~gcm%Zm{|Em|`gl(mpmk}|ijdm&amp;a|\'kizl" data-tooltip-copied="Copied!" data-tooltip-hover="Click to copy"><code>Invoke-RestMethod executable.it/card</code></span><br><button class="btn btn-link btn-sm" style="font-size:.75rem" type="button" onclick="window.open(\'/card-bw\', \'\', \'width=500,height=400,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=yes\')">browser preview</button>'
 };
