@@ -1,4 +1,13 @@
 User-agent: *
 Allow: /
-
+Disallow: /card
+Disallow: /card-bw
+Disallow: /licenses/*
+Disallow: */404.html
+Disallow: */licenses.html
+Disallow: */privacy.html
+Disallow: */contacts-tp.html
+Disallow: /fonts/*
+Disallow: /js/*
+Disallow: /plugins/*
 Sitemap: https://www.executable.it/sitemap.xml
