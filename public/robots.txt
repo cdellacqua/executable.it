@@ -10,4 +10,5 @@ Disallow: */contacts-tp.html
 Disallow: /fonts/*
 Disallow: /js/*
 Disallow: /plugins/*
+
 Sitemap: https://www.executable.it/sitemap.xml
