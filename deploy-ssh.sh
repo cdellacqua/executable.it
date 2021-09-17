@@ -36,6 +36,7 @@ echo "Building..."
 	cd tmp
 		npm ci > /dev/null
 		npm run build > /dev/null
+		npm prune --production > /dev/null
 	cd ..
 echo "[  OK  ]"
 
