@@ -31,14 +31,14 @@ export default {
     "Profilo GitHub": "GitHub Profile",
     "Profilo LinkedIn": "LinkedIn Profile",
     "Competenze": "Skills",
-    'Il mio viaggio nello sviluppo Web è iniziato dai classici JavaScript con jQuery e Bootstrap fino ad arrivare ai framework Frontend Angular e Svelte.':
-        "My journey into Web Development started from JavaScript with jQuery and Bootstrap all the way up to modern Web Frameworks like Angular and Svelte.",
+    'Il mio viaggio nello sviluppo Web è iniziato dai classici JavaScript con jQuery e Bootstrap fino ad arrivare ai framework Frontend Svelte, React, SolidJS e Angular.':
+        "My journey into Web Development started from JavaScript with jQuery and Bootstrap all the way up to modern Web Frameworks like Svelte, React, SolidJS and Angular.",
 	'Parallelamente allo studio dello sviluppo Frontend ho iniziato a formarmi sulle tecnologie di Backend, in particolare specializzandomi su Node.js, al fine di poter realizzare Web App complete.':
-    "While studying frontend technologies, I began working with backend technologies, focusing on Node.js, thus starting to develop complete Web Applications.",
+    "While studying frontend technologies, I began working on backends too, focusing on Node.js, thus starting to develop complete Web Applications.",
     "Coperte le tecnologie ho approfondito le piattaforme, focalizzandomi principalmente su Linux e i container, raggiungendo un buon grado di dimestichezza con lo scripting POSIX, la composizione dei comandi tramite pipeline e la gestione dei servizi con systemd e journald.":
         "Then it was time to learn more about the platforms. I focused primarily on Linux and Linux-containers, reaching a good level of proficiency in POSIX scripting, command composition using pipelines and service management using systemd and journald.",
-	"Ad oggi mi occupo di realizzare soluzioni pensate su misura per le esigenze specifiche di ogni cliente, cercando quando possibile di proporre prodotti innovativi.": 
-        "Nowadays I create solutions that fits the specific needs of my clients, choosing the right technologies for the job and trying to come up with innovative solutions.",
+	"Ad oggi mi occupo di progettare e realizzare, in autonomia o in team, soluzioni su misura che abbiano una forte componente innovativa. Coordino inoltre team di sviluppo, gestendo le attività e orientando le decisioni tecniche. Infine, mi occupo della formazione di sviluppatori junior sulle tecnologie su cui sono più ferrato.": 
+        "Nowadays I design and build products, either as a solo developer or in a team, trying to bring innovation whenever possible. I also coordinate development teams and orient them on technical decisions. Lastly, I tutor junior developers, teaching them the technologies I use the most.",
     "Milestones": "Milestones",
 
     "Nome": "First name",
