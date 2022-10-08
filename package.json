@@ -8,7 +8,7 @@
     "start": "node .",
     "serve": "cross-env PORT=5000 HOST=0.0.0.0 sirv public --cors",
     "dev": "rimraf public/js && cross-env NODE_ENV=development rollup -c -w",
-    "build": "npx browserslist@latest --update-db && rimraf public/js && cross-env NODE_ENV=production rollup -c"
+    "build": "npx browserslist --update-db && rimraf public/js && cross-env NODE_ENV=production rollup -c"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
