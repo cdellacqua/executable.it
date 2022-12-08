@@ -1,0 +1,31 @@
+---
+import Page from '../../components/Page.astro';
+import {getTranslationStaticPaths, useTranslation} from '../../lib/i18n';
+
+export const getStaticPaths = getTranslationStaticPaths;
+
+const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
+
+const t = useTranslation(lang);
+---
+
+<Page lang={lang}>
+	<div class="w-full relative h-screen" style="nobackground-image: url('/assets/pawel-czerwinski-NTYYL9Eb9y8-unsplash.jpg')">
+		<div
+			class="absolute inset-0"
+			style="nobackground-image: linear-gradient(black 0%, rgba(255,255,255,0) 50%, black 100%);"
+		>
+		</div>
+		<div class="relative">
+			<h1 class="mb-2 font-bold">{t("Carlo Dell'Acqua: sviluppatore multipiattaforma")}</h1>
+
+			{t("Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.")}
+		</div>
+	</div>
+
+	<!-- <button
+		class="uppercase block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 neumorph-element active:sunken protrude"
+	>
+		<span class="neumorph-content-wrapper">EXECUTABLE</span>
+	</button> -->
+</Page>

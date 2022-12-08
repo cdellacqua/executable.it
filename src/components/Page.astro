@@ -1,0 +1,32 @@
+---
+import FooterContent from './FooterContent.astro';
+import MainHead from './MainHead.astro';
+import Nav from './Nav.astro';
+
+type Props = {
+	lang?: string;
+	title?: string;
+	description?: string;
+};
+
+const {title = '', description = '', lang = 'it'} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+	<head>
+		<MainHead title={title} description={description} />
+	</head>
+	<body class="relative min-h-screen z-0">
+		<Nav lang={lang} />
+		<main class="min-h-screen relative z-10 bg-inherit neumorph-element protrude no-padding shadow-xl">
+			<slot />
+		</main>
+		<div class="invisible">
+			<FooterContent />
+		</div>
+		<footer class="fixed bottom-0 left-0 right-0 z-0">
+			<FooterContent />
+		</footer>
+	</body>
+</html>

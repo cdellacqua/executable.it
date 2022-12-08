@@ -1,0 +1,14 @@
+---
+type Props = {
+	class?: string;
+};
+
+const props = Astro.props;
+---
+
+<div class={`${props.class ?? ''}`}>
+	<strong>Executable</strong><br />
+	di Carlo Dell'Acqua &ndash; P.IVA IT 11238940966<br />
+	Lun-Ven 10-12, 14-17 &ndash; Tel: +39 375 502 4577<br />
+	Reggio Emilia &ndash; © 2022 Privacy Policy
+</div>

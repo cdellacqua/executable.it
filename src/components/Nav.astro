@@ -1,0 +1,49 @@
+---
+import {useTranslation} from '../lib/i18n';
+
+const t = useTranslation(Astro.props.lang as 'it' | 'en');
+const links = [
+	{
+		text: t('Home'),
+		pathname: `/${Astro.props.lang}/`,
+	},
+	{
+		text: t('Chi sono'),
+		pathname: `/${Astro.props.lang}/about`,
+	},
+	{
+		text: t('Progetti'),
+		pathname: `/${Astro.props.lang}/projects`,
+	},
+	{
+		text: t('Contatti'),
+		pathname: `/${Astro.props.lang}/contacts`,
+	},
+];
+---
+
+<nav class="fixed inset-x-0 top-0 z-20 pointer-events-none">
+	<div class="flex flex-row justify-center w-full">
+		<ul
+			class="pointer-events-auto flex flex-row space-x-6 lg:space-x-16 py-3 px-4 md:px-6 lg:px-8 shadow-md bg-white rounded-b-xl text-sm md:text-lg lg:text-xl"
+		>
+			{
+				links.map(({text, pathname}) => (
+					<li class="relative block z-0">
+						<a
+							class:list={[
+								'block uppercase whitespace-nowrap',
+								{
+									'first-letter:text-sky-600': Astro.url.pathname === pathname,
+								},
+							]}
+							href={pathname}
+						>
+							{text}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</nav>

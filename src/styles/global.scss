@@ -1,0 +1,73 @@
+@use 'sass:color';
+
+:root {
+	--color: rgb(31 41 55);
+	--background-color: rgb(226 226 226);
+
+	color: var(--color);
+	background-color: var(--background-color);
+	@apply bg-gray-200;
+}
+
+body {
+	position: relative;
+	background-color: inherit;
+}
+
+[style*='background-image'] {
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+@keyframes shuttle {
+	from {
+		transform: rotateZ(3deg);
+	}
+	to {
+		transform: rotateZ(-3deg);
+	}
+}
+
+.form-group {
+	@apply mb-3;
+	& > label {
+		@apply block ml-1 text-gray-600 mb-2;
+	}
+
+	& > input,
+	& > textarea {
+		@apply px-4 py-2 bg-white border border-gray-300 hover:bg-gray-100 focus:bg-white;
+		@apply transition-colors rounded-xl overflow-hidden block w-full;
+	}
+}
+
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em;
+	text-align: center;
+	color: inherit;
+	fill: currentColor;
+	&.spin {
+		path {
+			animation: fa-spin 2s linear infinite;
+			transform-origin: 50% 50%;
+		}
+	}
+}
+
+*,
+*::after,
+*::before {
+	backface-visibility: hidden;
+}

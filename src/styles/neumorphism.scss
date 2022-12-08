@@ -1,0 +1,193 @@
+$baseColor: #5c3d3d !default;
+
+@use 'sass:color';
+
+:root {
+	color: white;
+	background-color: #{$baseColor};
+	--neumorph-vertical-shadow-spacing: 8px;
+	--neumorph-horizontal-shadow-spacing: 5px;
+	--neumorph-blur-radius: 12px;
+	--neumorph-color-lighter: #{lighten($baseColor, 3%)};
+	--neumorph-color-light: #{lighten($baseColor, 1%)};
+	--neumorph-color-base: #{$baseColor};
+	--neumorph-color-dark: #{darken($baseColor, 1%)};
+	--neumorph-color-darker: #{darken($baseColor, 3%)};
+	--neumorph-color-outline: #{darken($baseColor, 6%)};
+
+	--neumorph-horizontal-shadow-spacing-text: 0.08em;
+	--neumorph-vertical-shadow-spacing-text: 0.08em;
+	--neumorph-blur-radius-text: 0.1em;
+	--neumorph-color-lighter-text: #{lighten($baseColor, 9%)};
+	--neumorph-color-light-text: #{lighten($baseColor, 6%)};
+	--neumorph-color-base-text: #{$baseColor};
+	--neumorph-color-dark-text: #{darken($baseColor, 6%)};
+	--neumorph-color-darker-text: #{darken($baseColor, 9%)};
+	--neumorph-color-outline-text: #{darken($baseColor, 6%)};
+}
+/* 
+.go1040067735 {
+	padding: 16px 25.6px;
+	background: #5c3d3d;
+}
+.go1040067735 > * {
+	padding: 16px 25.6px;
+	background: #5c3d3d;
+	outline: none;
+}
+.go1040067735 > *:focus-visible {
+	outline: 2px solid hsl(0, 20.3%, 21%);
+}
+.go1040067735 > *:not(:active) {
+	box-shadow: 12.8px 8px 12.8px hsl(0, 20.3%, 27%), -12.8px -8px 12.8px hsl(0, 20.3%, 33%),
+		0rem 0rem 0rem hsl(0, 20.3%, 27%) inset, 0rem 0rem 0rem hsl(0, 20.3%, 33%) inset;
+}
+.go1040067735 > *:not(.active) {
+	box-shadow: 12.8px 8px 12.8px hsl(0, 20.3%, 27%), -12.8px -8px 12.8px hsl(0, 20.3%, 33%),
+		0rem 0rem 0rem hsl(0, 20.3%, 27%) inset, 0rem 0rem 0rem hsl(0, 20.3%, 33%) inset;
+}
+.go1040067735 > *:active {
+	box-shadow: 0rem 0rem 0rem hsl(0, 20.3%, 27%), 0rem 0rem 0rem hsl(0, 20.3%, 33%),
+		-12.8px -8px 12.8px hsl(0, 20.3%, 33%) inset, 12.8px 8px 12.8px hsl(0, 20.3%, 27%) inset;
+}
+.go1040067735 > *.active {
+	box-shadow: 0rem 0rem 0rem hsl(0, 20.3%, 27%), 0rem 0rem 0rem hsl(0, 20.3%, 33%),
+		-12.8px -8px 12.8px hsl(0, 20.3%, 33%) inset, 12.8px 8px 12.8px hsl(0, 20.3%, 27%) inset;
+}
+.go1040067735 > *:not(:active) > .children-container {
+	transform: translate(0px, 0px);
+}
+.go1040067735 > *:not(.active) > .children-container {
+	transform: translate(0px, 0px);
+}
+.go1040067735 > *:active > .children-container {
+	transform: translate(2px, 2px);
+}
+.go1040067735 > *.active > .children-container {
+	transform: translate(2px, 2px);
+}
+.go191227051 {
+	padding: 16px 25.6px;
+	background: #5c3d3d;
+}
+.go191227051 > * {
+	padding: 16px 25.6px;
+	background: #5c3d3d;
+	outline: none;
+}
+.go191227051 > *:focus-visible {
+	outline: 2px solid hsl(0, 20.3%, 21%);
+}
+.go191227051 > *:not(.active) {
+	box-shadow: 12.8px 8px 12.8px hsl(0, 20.3%, 27%), -12.8px -8px 12.8px hsl(0, 20.3%, 33%),
+		0rem 0rem 0rem hsl(0, 20.3%, 27%) inset, 0rem 0rem 0rem hsl(0, 20.3%, 33%) inset;
+}
+.go191227051 > *.active {
+	box-shadow: 0rem 0rem 0rem hsl(0, 20.3%, 27%), 0rem 0rem 0rem hsl(0, 20.3%, 33%),
+		-12.8px -8px 12.8px hsl(0, 20.3%, 33%) inset, 12.8px 8px 12.8px hsl(0, 20.3%, 27%) inset;
+}
+.go191227051 > *:not(.active) > .children-container {
+	transform: translate(0px, 0px);
+}
+.go191227051 > *.active > .children-container {
+	transform: translate(2px, 2px);
+}
+.go2303818145 {
+	padding: 2rem;
+}
+.go2303818145 > * {
+	padding: 2rem;
+	outline: none;
+}
+.go2303818145 > *:focus-visible {
+	outline: 2px solid hsl(0, 20.3%, 21%);
+}
+.go3911608916 > * {
+	padding-top: 16px;
+	padding-bottom: 16px;
+	outline: none;
+	box-shadow: 12.8px 8px 12.8px hsl(0, 20.3%, 27%), -12.8px -8px 12.8px hsl(0, 20.3%, 33%),
+		0rem 0rem 0rem hsl(0, 20.3%, 27%) inset, 0rem 0rem 0rem hsl(0, 20.3%, 33%) inset;
+}
+.go3911608916 > *:focus-visible {
+	outline: 2px solid hsl(0, 20.3%, 21%);
+}
+.go2778631451 {
+	background: #5c3d3d;
+	box-shadow: 12.8px 8px 12.8px hsl(0, 20.3%, 27%), -12.8px -8px 12.8px hsl(0, 20.3%, 33%),
+		0rem 0rem 0rem hsl(0, 20.3%, 27%) inset, 0rem 0rem 0rem hsl(0, 20.3%, 33%) inset;
+}
+.go3186477251 {
+	padding: 16px 25.6px;
+	outline: none;
+}
+.go3186477251:focus-visible {
+	box-shadow: 0px -1px 0px 1px hsl(0, 20.3%, 21%);
+}
+.go521091808 {
+	box-shadow: 0rem 0rem 0rem hsl(0, 20.3%, 27%), 0rem 0rem 0rem hsl(0, 20.3%, 33%),
+		-12.8px -8px 12.8px hsl(0, 20.3%, 33%) inset, 12.8px 8px 12.8px hsl(0, 20.3%, 27%) inset;
+}
+
+ */
+
+.neumorph-element {
+	background: var(--neumorph-color-base);
+	transition: box-shadow 100ms ease;
+
+	&:not(.no-padding) {
+		padding: calc(var(--neumorph-vertical-shadow-spacing) + var(--neumorph-blur-radius))
+			calc(var(--neumorph-horizontal-shadow-spacing) + var(--neumorph-blur-radius));
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--neumorph-color-outline);
+	}
+
+	& > .neumorph-content-wrapper {
+		outline: none;
+		&:focus-visible {
+			outline: 2px solid var(--neumorph-color-outline);
+		}
+		transition: transform 100ms ease;
+		display: block;
+		transform: translate(0px, 0px);
+	}
+
+	&.protrude,
+	&.active\:protrude:active {
+		box-shadow: calc(-1 * var(--neumorph-horizontal-shadow-spacing)) calc(-1 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-lighter),
+			calc(1 * var(--neumorph-horizontal-shadow-spacing)) calc(1 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-darker),
+			calc(0 * var(--neumorph-horizontal-shadow-spacing)) calc(0 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-darker) inset,
+			calc(0 * var(--neumorph-horizontal-shadow-spacing)) calc(0 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-lighter) inset;
+		& > .neumorph-content-wrapper {
+			transform: translate(0px, 0px);
+		}
+	}
+
+	&.sunken,
+	&.active\:sunken:active {
+		box-shadow: calc(0 * var(--neumorph-horizontal-shadow-spacing)) calc(0 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-lighter),
+			calc(0 * var(--neumorph-horizontal-shadow-spacing)) calc(0 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-darker),
+			calc(1 * var(--neumorph-horizontal-shadow-spacing)) calc(1 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-darker) inset,
+			calc(-1 * var(--neumorph-horizontal-shadow-spacing)) calc(-1 * var(--neumorph-vertical-shadow-spacing))
+				var(--neumorph-blur-radius) var(--neumorph-color-lighter) inset;
+		& > .neumorph-content-wrapper {
+			transform: translate(2px, 2px);
+		}
+	}
+}
+
+.neumorph-text {
+	text-shadow: calc(-1 * var(--neumorph-horizontal-shadow-spacing-text))
+			calc(-1 * var(--neumorph-vertical-shadow-spacing-text)) var(--neumorph-blur-radius-text) var(--neumorph-color-lighter-text),
+		calc(1 * var(--neumorph-horizontal-shadow-spacing-text)) calc(1 * var(--neumorph-vertical-shadow-spacing-text))
+			var(--neumorph-blur-radius-text) var(--neumorph-color-darker-text);
+}
