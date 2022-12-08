@@ -254,7 +254,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 							/>{' '}
 							Acconsento al trattamento dei dati personali per la{' '}
 							<a class="underline text-sky-600" href={`/${props.lang}/privacy`} title="Privacy Policy" target="_blank">
-								finalità di contatto
+								finalità di contatto.
 							</a>
 						</>
 					}
@@ -263,7 +263,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 					reveal="bottom"
 				/>
 			</div>
-			<div class="text-right">
+			<div class="text-right mt-2">
 				<button
 					disabled={formState() === 'submitting'}
 					type="submit"

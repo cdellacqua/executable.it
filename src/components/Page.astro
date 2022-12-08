@@ -19,13 +19,10 @@ const {title = '', description = '', lang = 'it'} = Astro.props;
 	</head>
 	<body class="relative min-h-screen z-0">
 		<Nav lang={lang} />
-		<main class="min-h-screen relative z-10 bg-inherit neumorph-element protrude no-padding shadow-xl">
+		<main class="min-h-screen relative z-10 bg-inherit pb-px">
 			<slot />
 		</main>
-		<div class="invisible">
-			<FooterContent />
-		</div>
-		<footer class="fixed bottom-0 left-0 right-0 z-0">
+		<footer class="">
 			<FooterContent />
 		</footer>
 	</body>
