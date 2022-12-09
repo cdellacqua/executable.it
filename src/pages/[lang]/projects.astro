@@ -1,56 +1,200 @@
 ---
 import Page from '../../components/Page.astro';
 import {getTranslationStaticPaths, useTranslation} from '../../lib/i18n';
+import sizeOf from 'image-size';
+import {join} from 'path';
+import {ProjectTooltip} from '../../components/preconfigured/projects/ProjectTooltip';
 
 export const getStaticPaths = getTranslationStaticPaths;
 
 const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 
 const t = useTranslation(lang);
+
+function aspectRatio({width, height}: {width: number; height: number}) {
+	return width / height;
+}
+
+function urlToPath(url: string) {
+	return join('public', ...url.split('/').filter(Boolean));
+}
+
+function aspectRatioOf(url: string) {
+	return aspectRatio(sizeOf(urlToPath(url)));
+}
+
+const partialProjects = [
+	/* {
+		name: '<redacted>',
+		description: {
+			it: ``,
+			en: ``,
+		},
+		url: 'https://journhey.com/',
+		urlText: 'Journhey',
+		imgUrl: '/assets/projects/journhey.jpg',
+		company: {
+			name: 'Journhey',
+			url: 'https://journhey.com/',
+			imgUrl: '/assets/projects/companies/journhey.jpg',
+		},
+	}, */
+	{
+		name: 'Journhey',
+		description: {
+			it: `Social Network sperimentale orientato al mondo dei viaggi. Ho sviluppato la web app a partire da un mock up grafico e configurato il motore di rendering server side per permettere una corretta indicizzazione dei contenuti.`,
+			en: `Experimental Social Network designed for travelers who want to share their experience. I developed the web app from a mockup of the UI and configured the server side rendering engine to let search engines crawl content effectively.`,
+		},
+		url: 'https://journhey.com/',
+		urlText: 'Journhey',
+		imgUrl: '/assets/projects/journhey.jpg',
+		company: {
+			name: 'Journhey',
+			url: 'https://journhey.com/',
+			imgUrl: '/assets/projects/companies/journhey.jpg',
+		},
+	},
+	{
+		name: 'Smart Parking',
+		description: {
+			it: `Piattaforma di monitoraggio delle aree di parcheggio basata sul rilevamento di veicoli tramite Computer Vision. Ho progettato l'infrastruttura di rete e integrato il servizio analisi remota del flusso video.`,
+			en: `Monitoring Platform that analyzes video streams coming from IP Cameras. I built the network infrastructure and integrated the video analysis service.`,
+		},
+		imgUrl: '/assets/projects/smart-parking.jpg',
+		company: {
+			name: 'Huna',
+			url: 'https://huna.io/',
+			imgUrl: '/assets/projects/companies/huna-small.jpg',
+		},
+	},
+	{
+		name: 'Edoco',
+		description: {
+			it: `Progressive Web Application per l'emissione di documenti commerciali. Invio telematico, integrazione con stampanti termiche e listino prodotti/servizi.`,
+			en: `Progressive Web Application that handles receipts. It provides a friendly user interface for creating and storing receipts online as well as an integration with thermal printers.`,
+		},
+		url: 'https://edoco.it/',
+		urlText: 'edoco.it',
+		imgUrl: '/assets/projects/edoco.jpg',
+		company: {
+			name: 'Edoco',
+			url: 'https://edoco.it/',
+			imgUrl: '/assets/projects/companies/edoco-small.jpg',
+		},
+	},
+	{
+		name: 'Cube H24 Web',
+		description: {
+			it: `Trasformazione di un'applicazione desktop in una Progressive Web App. Tra le funzionalità: visualizzazione di dati provenienti da sensori ambientali, mappa interattiva per la loro individuazione e visualizzazione di grafici con dati aggregati sull'andamento dei valori.`,
+			en: `Porting of a Desktop application to a Progressive Web App. The Web Application shows data from various sensors, it provides an interactive map to locate the sensors in a specific area and statistics based on historical data.`,
+		},
+		imgUrl: '/assets/projects/cube-h24.jpg',
+		company: {
+			name: 'Stonex',
+			url: 'https://www.stonex.it/',
+			imgUrl: '/assets/projects/companies/stonex-small.jpg',
+		},
+	},
+	{
+		name: 'Light Touch',
+		description: {
+			it: `Realizzazione di una sezione nell'applicativo Web Light Touch per la raccolta interattiva dei dati d'illuminazione stradale e la visualizzazione delle fotometrie.`,
+			en: 'Development of a portion of a Web App called Light Touch. The section I developed provides an interactive form to collect data about street lamps, showing a preview of the street and the heatmap of the photometry',
+		},
+		url: 'https://huna.io/light-touch/',
+		urlText: 'Huna - Light Touch',
+		imgUrl: '/assets/projects/light-touch.jpg',
+		company: {
+			url: 'https://huna.io/',
+			name: 'Huna',
+			imgUrl: '/assets/projects/companies/huna-small.jpg',
+		},
+	},
+	{
+		name: 'Booking TouchHair',
+		description: {
+			it: `Portale di prenotazioni rivolto a saloni e parrucchieri. Gestione degli appuntamenti lato negozio e prenotazione dei servizi lato cliente.`,
+			en: 'Booking platform targeting hairdressers and beauty centers. Shops can manage appointments through an interactive calendar, while customers can make reservations using a funnel that automatically scans for available time slots',
+		},
+		url: 'https://booking.touchhair.it/',
+		urlText: 'Booking TouchHair',
+		imgUrl: '/assets/projects/booking.jpg',
+		company: {
+			name: 'ICTec',
+			url: 'https://www.ictec.it/',
+			imgUrl: '/assets/projects/companies/ictec-small.jpg',
+		},
+	},
+];
+
+const projects = partialProjects.map((proj) => ({
+	...proj,
+	imgRatio: aspectRatioOf(proj.imgUrl),
+	company: {
+		...proj.company,
+		imgRatio: aspectRatioOf(proj.company.imgUrl),
+	},
+}));
 ---
 
-<Page lang={lang}>
-	<div class="w-full relative h-screen flex flex-col lg:flex-row items-center justify-center bg-gray-200 shadow-xl">
-		<div
-			class="max-w-xs md:max-w-xl lg:max-w-2xl w-full border border-gray-200 bg-gray-50 shadow-xl rounded-xl overflow-hidden z-0 relative -rotate-3"
-		>
-			<div class="py-6 px-6 md:py-8 md:px-10 lg:py-12 lg:px-12 lg:pr-16 h-full flex flex-col justify-between">
-				<div class="pb-4 md:pb-8 lg:pb-12">
-					<h1 class="text-2xl md:text-4xl lg:text-6xl font-title">
-						{t("Carlo Dell'Acqua")}
-					</h1>
-					<h2 class="pl-4 font-bold text-lg md:text-xl lg:text-2xl text-sky-600">
-						{t('Sviluppatore multipiattaforma')}
-					</h2>
-				</div>
-				<div class="text-4xl lg:text-6xl">
-					<div class="flex flex-row flex-wrap items-center justify-between">
-						<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
-							<i class="fa-solid fa-cloud text-sky-300"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Web')}</div>
+<Page title={t('Progetti')} description={t('Qui trovi alcuni dei progetti a cui ho lavorato')} lang={lang}>
+	<div class="w-full h-12 md:h-24"></div>
+	<div class="text-center mt-12 max-w-xs 2xs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-xl lg:max-w-4xl xl:max-w-6xl w-full mx-auto">
+		<h1 class="font-title text-3xl">
+			{t('Qui trovi alcuni dei progetti a cui ho lavorato')}
+		</h1>
+	</div>
+	{
+		projects.map((project) => (
+			<section class="w-full my-24 flex items-center relative">
+				<div class="relative max-w-xs 2xs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-xl lg:max-w-4xl xl:max-w-6xl w-full mx-auto">
+					<div class="w-full border border-gray-50 bg-gray-50 shadow-xl rounded-xl overflow-hidden z-0 relative mx-auto  flex flex-row">
+						<div class="hidden xl:block w-1/3 border-r border-gray-200">
+							<img class="w-full h-auto" alt={t('Anteprima progetto')} src={project.imgUrl} />
 						</div>
-						<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
-							<i class="fa-solid fa-server text-gray-400"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Server')}</div>
-						</div>
-						<div class="text-center w-1/2 md:w-1/4">
-							<i class="fa-solid fa-mobile-screen-button text-sky-600"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Mobile')}</div>
-						</div>
-						<div class="text-center w-1/2 md:w-1/4">
-							<i class="fa-solid fa-display text-slate-600"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Desktop')}</div>
+						<div class="xl:w-2/3 py-6 px-6 md:py-8 md:px-10 lg:py-12 lg:px-12 lg:pr-16 flex flex-col justify-between overflow-hidden">
+							<div class="pb-4 md:pb-8 lg:pb-12">
+								<h2 class="text-3xl mb-10 font-title">{project.name}</h2>
+								<p class="">{project.description[lang]}</p>
+							</div>
+							<div class="flex flex-row justify-end md:-mr-4 md:-mb-3 lg:-mr-10 lg:-mb-6">
+								{project.url && (
+									<div class="mr-8 xl:mr-0">
+										<a
+											class="hover:text-gray-600 text-gray-400 transition-colors"
+											href={project.url}
+											title={project.urlText}
+											rel="noreferrer noopener"
+											target="_blank"
+										>
+											<i class="fa-solid fa-arrow-up-right-from-square text-2xl" />
+										</a>
+									</div>
+								)}
+								<div class="xl:hidden">
+									<ProjectTooltip client:load img={project.imgUrl} />
+								</div>
+							</div>
 						</div>
 					</div>
+					<div class="absolute left-1/2 -translate-x-1/2 top-0 -translate-y-3/4 md:left-auto md:right-0 md:top-0 md:-translate-y-1/3 md:translate-x-1/3 shadow-xl">
+						<a
+							title={project.company.name}
+							class=""
+							target="_blank"
+							rel="noreferrer noopener"
+							href={project.company.url}
+						>
+							<img
+								alt={project.company.name}
+								src={project.company.imgUrl}
+								style={`height: 64px; width: ${project.company.imgRatio * 64}px; max-width: none`}
+								class="inline-block"
+							/>
+						</a>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div
-			class="shadow-xl border border-gray-200 overflow-hidden lg:-ml-8 rounded-xl p-2 z-10 relative rotate-3 h-52 lg:h-72 bg-white"
-		>
-			<div class="rounded-lg overflow-hidden h-full">
-				<img src="/assets/me.jpg" alt={t('Foto profilo')} width="700" height="700" class="w-auto h-full relative z-0" />
-			</div>
-		</div>
-	</div>
+			</section>
+		))
+	}
 </Page>

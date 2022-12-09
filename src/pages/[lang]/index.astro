@@ -13,7 +13,11 @@ const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
 ---
 
-<Page lang={lang}>
+<Page
+	title={t('Executable - Azienda informatica Reggio Emilia')}
+	description={t('Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia')}
+	lang={lang}
+>
 	<section class="h-screen w-full relative">
 		<div class="absolute bottom-2 right-4 z-10">
 			<VideoInfo client:load />
@@ -28,6 +32,7 @@ const t = useTranslation(lang);
 				playsinline=""
 			>
 				<source src="/assets/stars.mp4" type="video/mp4" />
+				<img src="/assets/stars-fallback.jpg" />
 			</video>
 		</div>
 		<div class="absolute inset-0 z-0 overflow-hidden">

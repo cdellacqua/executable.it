@@ -26,7 +26,9 @@ export function VideoInfo(): JSX.Element {
 				</div>
 			}
 		>
-			<i class="fa-solid fa-circle-info text-white hover:text-gray-200 transition-colors text-lg"></i>
+			<button type="button">
+				<i class="fa-solid fa-circle-info text-white hover:text-gray-200 transition-colors text-lg"></i>
+			</button>
 		</Tippy>
 	);
 }

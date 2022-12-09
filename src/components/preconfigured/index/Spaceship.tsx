@@ -71,13 +71,13 @@ export function Spaceship(): JSX.Element {
 				spring() / 10
 			}deg)`}
 		>
-			<img
+			{/* <img
 				src="/assets/executable-transparent-black-alt.svg"
 				class="min-w-full min-h-full max-w-full max-h-none -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 scale-75"
-			/>
+			/> */}
 			<img
 				src="/assets/executable-transparent-white-alt.svg"
-				style="animation: fadein 5s; animation-delay: 0.5s; animation-fill-mode: both; animation-timing-function: cubic-bezier(0.13, 0.7, 0.15, 0.86);"
+				style="/* animation: fadein 5s; animation-delay: 0.5s; animation-fill-mode: both; animation-timing-function: cubic-bezier(0.13, 0.7, 0.15, 0.86); */"
 				class="min-w-full min-h-full max-w-full max-h-none -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2 scale-75"
 			/>
 		</div>

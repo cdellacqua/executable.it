@@ -1,5 +1,33 @@
 ---
 import Page from '../components/Page.astro';
+import {SectionCard} from '../components/preconfigured/shared/SectionCard';
+import {getTranslationStaticPaths, useTranslation} from '../lib/i18n';
+
+export const getStaticPaths = getTranslationStaticPaths;
+
+const lang = Astro.url.pathname.startsWith('/en/') ? 'en' : 'it';
+
+const t = useTranslation(lang);
 ---
 
-<Page>Ops</Page>
+<Page robots="noindex,nofollow" title={t('404 | Pagina non trovata')} description={t('Pagina non trovata')} lang={lang}>
+	<section class="w-full flex items-center min-h-screen">
+		<SectionCard class="h-64 md:h-72">
+			<div class="w-full h-full">
+				<div class="relative z-0">
+					<i
+						class="fa-solid fa-circle-exclamation text-gray-200 opacity-85 text-[200px] absolute top-0 right-0 z-0"
+					></i>
+					<div class="z-10 relative">
+					<h2 class="text-3xl mb-10 font-title">
+						{t('404')}
+					</h2>
+					<p class="text-2xl">
+						{t('Ops! Pagina non trovata')}
+						<a href="/it/">{t('')}</a>
+					</p></div>
+				</div>
+			</div>
+		</SectionCard>
+	</section>
+</Page>

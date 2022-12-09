@@ -26,6 +26,7 @@ export function Tippy(props: {
 					placement: props.placement ?? 'top',
 					trigger: props.trigger,
 					interactive: true,
+					appendTo: document.body,
 				});
 			}
 		}

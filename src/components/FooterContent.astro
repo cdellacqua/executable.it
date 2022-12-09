@@ -1,14 +1,22 @@
 ---
 type Props = {
-	class?: string;
+	lang?: string;
 };
 
-const props = Astro.props;
+const lang = Astro.props.lang ?? 'it';
 ---
 
-<div class={`px-10 py-8 bg-gradient-to-t from-white to-gray-200 shadow-inner ${props.class ?? ''}`}>
-	<strong>Executable</strong><br />
-	di Carlo Dell'Acqua &ndash; P.IVA IT 11238940966<br />
-	Lun-Ven 10-12, 14-17 &ndash; Tel: +39 375 502 4577<br />
-	Reggio Emilia &ndash; © 2022 Privacy Policy
+<div class="px-10 pt-8 pb-2 bg-gray-800 text-white shadow-inner">
+	<div class="text-center">
+		<span class="font-title uppercase tracking-wider text-4xl">Executable</span><br />
+		di Carlo Dell'Acqua / 
+		<span title="P.IVA" class="text-sm">IT 11238940966</span>
+	</div>
+	<div class="mt-6 text-center">
+		<span title="Telefono">+39 375 502 4577</span><br />
+		<span title="Città">Reggio Emilia</span><br />
+	</div>
+	<div class="text-center text-sm mt-10 text-gray-200">
+		© 2022 | <a class="underline" href={`/${lang}/privacy`}>Privacy Policy</a>
+	</div>
 </div>

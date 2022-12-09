@@ -7,7 +7,7 @@ import {ContactForm} from './ContactForm';
 import {SectionCard} from './SectionCard';
 
 export function ContactFormSection(props: {lang: 'it' | 'en'}): JSX.Element {
-	const [success, setSuccess] = createSignal(true);
+	const [success, setSuccess] = createSignal(false);
 	const t = useTranslation(props.lang);
 	const plane$ = makeSpringStore(
 		{
