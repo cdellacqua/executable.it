@@ -15,17 +15,17 @@ const t = useTranslation(lang);
 		<SectionCard class="h-64 md:h-72">
 			<div class="w-full h-full">
 				<div class="relative z-0">
-					<i
-						class="fa-solid fa-circle-exclamation text-gray-200 opacity-85 text-[200px] absolute top-0 right-0 z-0"
+					<i class="fa-solid fa-circle-exclamation text-gray-200 opacity-85 text-[200px] absolute top-0 right-0 z-0"
 					></i>
 					<div class="z-10 relative">
-					<h2 class="text-3xl mb-10 font-title">
-						{t('404')}
-					</h2>
-					<p class="text-2xl">
-						{t('Ops! Pagina non trovata')}
-						<a href="/it/">{t('')}</a>
-					</p></div>
+						<h2 class="text-3xl mb-10 font-title">
+							{t('404')}
+						</h2>
+						<p class="text-2xl">
+							{t('Ops! Pagina non trovata')}
+							<a class="underline text-sky-600 block mt-2" href="/it/">{t("Torna all'homepage")}</a>
+						</p>
+					</div>
 				</div>
 			</div>
 		</SectionCard>

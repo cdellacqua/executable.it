@@ -85,6 +85,12 @@ export function ContactFormSection(props: {lang: 'it' | 'en'}): JSX.Element {
 						</div>
 					</div>
 				</SectionCard>
+				<div class="text-center mt-10">
+					<div class="my-5">{t('oppure, scrivi a')}</div>
+					<a class="underline text-sky-600" target="_blank" href={'mailto:info@executable.it'}>
+						info@executable.it
+					</a>
+				</div>
 			</div>
 		</section>
 	);

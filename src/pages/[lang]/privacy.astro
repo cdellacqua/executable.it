@@ -9,82 +9,208 @@ const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
 ---
 
-<Page title={t('Privacy Policy')} description={t("Privacy Policy")} lang={lang}>
-	<section class="w-full relative h-screen flex flex-col lg:flex-row items-center justify-center bg-gray-200">
-		<div
-			class="max-w-xs md:max-w-xl lg:max-w-2xl w-full border border-gray-200 bg-gray-100 shadow-xl rounded-xl overflow-hidden z-0 relative -rotate-3"
-		>
-			<div
-				class="py-6 px-6 md:py-8 md:px-10 lg:py-12 lg:px-12 lg:pr-16 flex flex-col justify-between bg-gray-50 shadow-xl rounded-xl overflow-hidden"
-			>
-				<div class="pb-4 md:pb-8 lg:pb-12">
-					<h1 class="text-2xl md:text-4xl lg:text-6xl font-title">
-						{t("Carlo Dell'Acqua")}
-					</h1>
-					<h2 class="pl-4 font-bold text-lg md:text-xl lg:text-2xl text-sky-600">
-						{t('Sviluppatore multipiattaforma')}
-					</h2>
-				</div>
-				<div class="text-4xl lg:text-6xl">
-					<div class="flex flex-row flex-wrap items-center justify-between">
-						<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
-							<i class="fa-solid fa-cloud text-sky-300"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Web')}</div>
-						</div>
-						<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
-							<i class="fa-solid fa-server text-gray-400"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Server')}</div>
-						</div>
-						<div class="text-center w-1/2 md:w-1/4">
-							<i class="fa-solid fa-mobile-screen-button text-sky-600"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Mobile')}</div>
-						</div>
-						<div class="text-center w-1/2 md:w-1/4">
-							<i class="fa-solid fa-display text-slate-600"></i>
-							<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Desktop')}</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="py-6 px-6 lg:px-12 lg:pr-16">
-				<div class="flex flex-row justify-center space-x-8">
-					<a class="" title={t('Profilo GitHub')} target="_blank" rel="noopener" href="https://github.com/cdellacqua"
-						><i class="text-gray-600 fa-brands fa-github"></i>&nbsp;&nbsp;<span class="hidden md:inline"
-							>{t('Profilo GitHub')}
-						</span><span class="md:hidden">{t('GitHub')}</span>
-					</a>
-					<a
-						class=""
-						title={t('Profilo LinkedIn')}
-						target="_blank"
-						rel="noopener"
-						href="https://www.linkedin.com/in/carlo-dell-acqua/"
-						><i class="text-gray-600 fa-brands fa-linkedin-in"></i>&nbsp;&nbsp;<span class="hidden md:inline"
-							>{t('Profilo LinkedIn')}
-						</span><span class="md:hidden">{t('LinkedIn')}</span>
-					</a>
-				</div>
-			</div>
-		</div>
-		<div
-			class="shadow-xl border border-gray-200 overflow-hidden lg:-ml-8 rounded-xl p-2 z-10 relative rotate-3 h-52 lg:h-72 bg-white"
-		>
-			<div class="rounded-lg overflow-hidden h-full">
-				<img src="/assets/me-transparent.png" alt={t('Foto profilo')} width="686" height="686" class="w-auto h-full relative z-0" />
-			</div>
-		</div>
-		<!-- <div
-			class="shadow-xl border border-gray-200 mt-8 lg:mt-0 lg:-ml-8 rounded-xl p-2 z-10 relative rotate-3 w-52 h-52 lg:w-72 lg:h-72 bg-white"
-		>
-			<div class="w-full h-[125%] absolute overflow-hidden inset-x-0 bottom-0 rounded-xl">
-				<img
-					src="/assets/me-transparent.png"
-					alt={t('Foto profilo')}
-					width="686"
-					height="686"
-					class="w-full h-auto scale-125 origin-bottom absolute bottom-0 inset-x-0"
-				/>
-			</div>
-		</div> -->
-	</section>
+<Page title={t('Privacy Policy')} description={t('Privacy Policy')} lang={lang}>
+	<div class="w-full h-12 md:h-24"></div>
+	<div class="max-w-xs 2xs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-xl lg:max-w-4xl xl:max-w-6xl w-full mx-auto">
+		<h1 class="text-3xl font-title">
+			{t('Privacy Policy')}
+		</h1>
+		<h2 class="text-2xl mt-4 mb-2">
+			{t('Titolare del Trattamento dei dati')}
+		</h2>
+		<p class="mt-2">
+			{
+				t(
+					"Il Titolare del Trattamento è Carlo Dell'Acqua, sede legale in via Martiri di Minozzo 26, CAP 42122, Reggio Emilia (RE), Partita IVA 11238940966.",
+				)
+			}
+			<br />
+			{t('Indirizzo e-mail:')}
+			<a class="underline text-sky-600" target="_blank" href={'mailto:info@executable.it'}>info@executable.it</a>
+		</p>
+		<h2 class="text-2xl mt-4 mb-2">
+			{t('Dati raccolti')}
+		</h2>
+		<p class="mt-2">{t('Questo sito web raccoglie in	modalità automatica i seguenti dati:')}</p>
+		<ul class="ml-3">
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('indirizzo IP')}</li>
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('data e ora di accesso alle pagine')}</li>
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('dati di navigazione trasmessi dal browser')}</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;
+				{
+					t(
+						"identificativo anonimo del dispositivo: generato automaticamente all'accesso al sito e salvato sul dispositivo nel c.d. localStorage del browser dell'utente",
+					)
+				}
+			</li>
+		</ul>
+		<p class="mt-2">
+			{
+				t(
+					"Previo inserimento e consenso esplicito da parte dell'utente il sito può inoltre raccogliere Dati Personali:",
+				)
+			}
+		</p>
+		<ul class="ml-3">
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('nome')}</li>
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('cognome')}</li>
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('indirizzo e-mail')}</li>
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('numero di telefono')}</li>
+		</ul>
+		<p class="mt-2">
+			{
+				t(
+					"L'utente si assume la responsabilità dei Dati Personali di terzi ottenuti, pubblicati o condivisi mediante questo sito e garantisce di avere il diritto di comunicarli e/o diffonderli, liberando il Titolare da qualsiasi responsabilità verso terzi.",
+				)
+			}
+		</p>
+		<h2 class="text-2xl mt-4 mb-2">
+			{t('Finalità dei dati raccolti')}
+		</h2>
+		<p class="mt-2">
+			{t('I dati raccolti verranno utilizzati per le seguenti finalità:')}
+		</p>
+		<table class="mt-2">
+			<tbody>
+				<tr>
+					<td class="font-bold pr-2 align-top">
+						{t('Contatto')}
+					</td>
+					<td
+						>{
+							t(
+								"I Dati Personali liberamente comunicati dall'utente verranno utilizzati per un successivo ricontatto telematico o telefonico da parte del Titolare del Trattamento dei dati.",
+							)
+						}
+					</td>
+				</tr>
+				<tr>
+					<td class="font-bold pr-2 align-top">
+						{t('Statistica')}
+					</td>
+					<td>
+						{
+							t(
+								"I dati di utilizzo anonimi degli utenti verranno utilizzati al fine di migliorare la qualità del servizio mediante analisi di carattere statistico riguardanti, a titolo esemplificativo e non esaustivo, i contenuti più visitati, i tempi medi delle sessioni di navigazione e i tempi medi di risposta del server. Le finalità espresse in questo punto non necessitano di esplicito consenso secondo quanto previsto dall'art. 6 lett. f del GDPR.",
+							)
+						}
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2 class="text-2xl mt-4 mb-2">
+			{t('Modalità del Trattamento')}
+		</h2>
+		<h3 class="text-xl mt-2 mb-2">{t('Conservazione e cancellazione')}</h3>
+		<p class="mt-2">
+			{
+				t(
+					"I Dati Personali saranno conservati per il periodo di tempo necessario al perseguimento delle finalità per cui tali dati sono stati raccolti e per l'assolvimento degli obblighi di Legge vigenti.",
+				)
+			}
+		</p>
+		<p class="mt-2">
+			{
+				t(
+					"Tali Trattamenti hanno luogo presso la sede del Titolare e/o presso i Responsabili Ulteriori del Trattamento che effettuano il Trattamento per conto del Titolare, all'interno dello Spazio Economico Europeo.",
+				)
+			}
+		</p>
+		<p class="mt-2">
+			{
+				t(
+					"In qualsiasi momento l'utente potrà richiedere la copia e/o la cancellazione dei propri Dati Personali dal sistema scrivendo una email di richiesta alla casella di posta elettronica indicata in questo documento. Con la medesima modalità di comunicazione l'utente può richiedere la revoca dei consensi per le finalità indicate.",
+				)
+			}
+		</p>
+		<p class="mt-2">
+			{
+				t(
+					"Al termine del periodo di conservazione, i Dati Personali saranno cancellati e conseguentemente il diritto di accesso, cancellazione, rettificazione ed il diritto alla portabilità dei dati non potranno più essere esercitati dall'utente.",
+				)
+			}
+		</p>
+		<h3 class="text-xl mt-2 mb-2">{t('Base giuridica del Trattamento')}</h3>
+		<p class="mt-2">
+			{t("Il Titolare tratta i Dati Personali relativi all'utente qualora sussista una delle seguenti condizioni:")}
+		</p>
+		<ul class="ml-3">
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;
+				{t("l'utente ha fornito consenso esplicito per una o più finalità indicate in fase di comunicazione dei dati")}
+			</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{
+					t('il Trattamento è necessario per adempiere un obbligo legale al quale è soggetto il Titolare')
+				}
+			</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{
+					t('il Trattamento è necessario per il perseguimento del legittimo interesse del Titolare')
+				}
+			</li>
+		</ul>
+		<h2 class="text-2xl mt-4 mb-2">
+			{t("Diritti dell'utente")}
+		</h2>
+		<p class="mt-2">
+			{t("L'utente ha il diritto di:")}
+		</p>
+		<ul class="ml-3">
+			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('revocare qualunque consenso precedentemente concesso')}</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;
+				{
+					t(
+						'opporsi al Trattamento dei dati qualora questo avvenisse su una base giuridica differente dai consensi espressi',
+					)
+				}
+			</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;
+				{
+					t(
+						'ricevere una copia dei propri Dati Personali in un formato strutturato per autoconsultazione e/o per il trasferimento presso altro Titolare',
+					)
+				}
+			</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{
+					t('verificare e richiedere la rettificazione dei Dati Personali comunicati')
+				}
+			</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{
+					t('richiedere la completa cancellazione dei propri Dati Personali')
+				}
+			</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;
+				{
+					t(
+						"proporre un reclamo presso l'autorità di controllo della protezione dei dati competente o agire in sede giudiziale",
+					)
+				}
+			</li>
+		</ul>
+		<p class="mt-2">
+			{
+				t(
+					"I diritti di cui sopra possono essere esercitati dall'utente inoltrando esplicita richiesta al Titolare agli estremi indicati in questo documento. Le richieste saranno evase dal Titolare entro un mese dalla ricezione della richiesta.",
+				)
+			}
+		</p>
+		<h4>{t('Modifiche alla Privacy Policy')}</h4>
+		<p class="mt-2">
+			{
+				t(
+					"Il Titolare si riserva il diritto di apportare modifiche alla presente Privacy Policy in qualunque momento notificandolo agli utenti su questa pagina e, se possibile, inviando una notifica agli utenti attraverso uno degli estremi di contatto di cui è in possesso. Qualora le modifiche interessino trattamenti la cui base giuridica è il consenso, il Titolare provvederà, se necessario, a raccogliere nuovamente il consenso dell'utente.",
+				)
+			}
+		</p>
+
+		<div class="text-right mt-2 pb-24">
+		<small>{t('Reggio Emilia, 13 Maggio 2021')}</small></div>
+	</div>
 </Page>
