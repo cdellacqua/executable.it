@@ -7,8 +7,13 @@ type Props = {
 	description?: string;
 	robots?: string;
 	ldJson?: string;
+	keywords?: string;
+	lang: 'it' | 'en';
 };
-const {title = '', description = '', robots, ldJson} = Astro.props;
+const {title = '', description = '', robots, ldJson, keywords, lang} = Astro.props;
+
+const altLang = lang === 'it' ? 'en' : 'it';
+const regex = /^\/[a-z]{2,2}/g;
 ---
 
 <meta charset="UTF-8" />
@@ -17,9 +22,16 @@ const {title = '', description = '', robots, ldJson} = Astro.props;
 <link rel="stylesheet" href="/fontawesome/all.css" />
 <meta name="generator" content={Astro.generator} />
 <meta name="robots" content={robots} />
+{keywords && <meta name="keywords" content={keywords} />}
 <title>{title}</title>
 
 <link rel="shortcut icon" href="/assets/favicon.ico" />
 <link rel="apple-touch-icon" href="/assets/favicon-128.png" />
 
-<script type="application/ld+json" set:html={ldJson}></script>
+{
+	(Astro.url.pathname.startsWith('/en/') || Astro.url.pathname.startsWith('/it/')) && (
+		<link rel="alternate" hreflang={altLang} href={Astro.url.pathname.replace(regex, `/${altLang}`)} />
+	)
+}
+
+{ldJson && <script type="application/ld+json" set:html={ldJson} />}

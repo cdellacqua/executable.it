@@ -7,6 +7,7 @@ type Props = {
 
 const lang = (Astro.props.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
+const altLang = lang === 'it' ? 'en' : 'it';
 ---
 
 <div class="px-10 pt-8 pb-2 bg-gray-800 text-white shadow-inner">
@@ -18,6 +19,25 @@ const t = useTranslation(lang);
 	<div class="mt-6 text-center">
 		<span title="Telefono">+39 375 502 4577</span><br />
 		<span title="Città">Reggio Emilia</span><br />
+	</div>
+	<div class="mt-6 text-center">
+		{
+			altLang === 'en' ? (
+				<>
+					<span>Looking for English? </span>
+					<a class="underline text-sky-300" href={`/${altLang}`}>
+						Click here!
+					</a>
+				</>
+			) : (
+				<>
+					<span>Stai cercando la versione italiana? </span>
+					<a class="underline text-sky-300" href={`/${altLang}`}>
+						Clicca qui!
+					</a>
+				</>
+			)
+		}
 	</div>
 	<div class="text-center text-sm mt-10 text-gray-200">
 		© 2022 | <a class="underline" href={`/${lang}/privacy`}>{t('Privacy Policy')}</a>
