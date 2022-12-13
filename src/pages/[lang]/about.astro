@@ -9,7 +9,7 @@ const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
 ---
 
-<Page title={t('Chi sono')} description={t("Carlo Dell'Acqua - Sviluppatore Multipiattaforma")} lang={lang}>
+<Page title={t('Chi sono')} description={t("Carlo Dell'Acqua - Sviluppatore multipiattaforma")} lang={lang}>
 	<section class="w-full relative h-screen flex flex-col lg:flex-row items-center justify-center bg-gray-200">
 		<div
 			class="max-w-xs md:max-w-xl lg:max-w-2xl w-full border border-gray-200 bg-gray-100 shadow-xl rounded-xl overflow-hidden z-0 relative -rotate-3"
@@ -18,9 +18,7 @@ const t = useTranslation(lang);
 				class="py-6 px-6 md:py-8 md:px-10 lg:py-12 lg:px-12 lg:pr-16 flex flex-col justify-between bg-gray-50 shadow-xl rounded-xl overflow-hidden"
 			>
 				<div class="pb-4 md:pb-8 lg:pb-12">
-					<h1 class="text-2xl md:text-4xl lg:text-6xl font-title">
-						{t("Carlo Dell'Acqua")}
-					</h1>
+					<h1 class="text-2xl md:text-4xl lg:text-6xl font-title">Carlo Dell'Acqua</h1>
 					<h2 class="pl-4 font-bold text-lg md:text-xl lg:text-2xl text-sky-600">
 						{t('Sviluppatore multipiattaforma')}
 					</h2>
@@ -70,7 +68,13 @@ const t = useTranslation(lang);
 			class="shadow-xl border border-gray-200 overflow-hidden lg:-ml-8 rounded-xl p-2 z-10 relative rotate-3 h-52 lg:h-72 bg-white"
 		>
 			<div class="rounded-lg overflow-hidden h-full">
-				<img src="/assets/me-transparent.png" alt={t('Foto profilo')} width="686" height="686" class="w-auto h-full relative z-0" />
+				<img
+					src="/assets/me-transparent.png"
+					alt={t('Foto profilo')}
+					width="686"
+					height="686"
+					class="w-auto h-full relative z-0"
+				/>
 			</div>
 		</div>
 		<!-- <div

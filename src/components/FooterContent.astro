@@ -1,15 +1,18 @@
 ---
+import {useTranslation} from '../lib/i18n';
+
 type Props = {
 	lang?: string;
 };
 
-const lang = Astro.props.lang ?? 'it';
+const lang = (Astro.props.lang ?? 'it') as 'it' | 'en';
+const t = useTranslation(lang);
 ---
 
 <div class="px-10 pt-8 pb-2 bg-gray-800 text-white shadow-inner">
 	<div class="text-center">
 		<span class="font-title uppercase tracking-wider text-4xl">Executable</span><br />
-		di Carlo Dell'Acqua / 
+		{t('di')} Carlo Dell'Acqua /
 		<span title="P.IVA" class="text-sm">IT 11238940966</span>
 	</div>
 	<div class="mt-6 text-center">
@@ -17,6 +20,6 @@ const lang = Astro.props.lang ?? 'it';
 		<span title="Città">Reggio Emilia</span><br />
 	</div>
 	<div class="text-center text-sm mt-10 text-gray-200">
-		© 2022 | <a class="underline" href={`/${lang}/privacy`}>Privacy Policy</a>
+		© 2022 | <a class="underline" href={`/${lang}/privacy`}>{t('Privacy Policy')}</a>
 	</div>
 </div>

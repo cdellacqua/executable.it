@@ -8,15 +8,16 @@ type Props = {
 	robots?: string;
 	title?: string;
 	description?: string;
+	ldJson?: string;
 };
 
-const {title = '', description = '', lang = 'it', robots} = Astro.props;
+const {title = '', description = '', lang = 'it', robots, ldJson} = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang={lang}>
 	<head>
-		<MainHead title={title} description={description} robots={robots} />
+		<MainHead title={title} description={description} robots={robots} ldJson={ldJson} />
 	</head>
 	<body class="relative min-h-screen z-0">
 		<Nav lang={lang} />

@@ -34,7 +34,7 @@ const links = [
 							class:list={[
 								'block uppercase whitespace-nowrap',
 								{
-									'first-letter:text-sky-600': Astro.url.pathname === pathname,
+									'nav-underline': Astro.url.pathname === pathname,
 								},
 							]}
 							href={pathname}

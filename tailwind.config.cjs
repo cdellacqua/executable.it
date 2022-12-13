@@ -55,7 +55,7 @@ module.exports = {
 				'"Noto Sans"',
 				'sans-serif',
 			],
-			digital: [
+			/* digital: [
 				'"Press Start 2P"',
 				'ui-monospace',
 				'SFMono-Regular',
@@ -65,7 +65,7 @@ module.exports = {
 				'"Liberation Mono"',
 				'"Courier New"',
 				'monospace',
-			],
+			], */
 		},
 	},
 	plugins: [],

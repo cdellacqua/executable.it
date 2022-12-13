@@ -7,8 +7,24 @@ export default {
 	'Tu sei qui': 'You are here',
 	Contatti: 'Contacts',
 
+	'Executable - Azienda informatica Reggio Emilia': 'Executable - IT Company in Reggio Emilia',
+	'Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia':
+		'IT Consulting and Web Development, based in Reggio Emilia',
+	di: 'by',
 	"di Carlo Dell'Acqua": "by Carlo Dell'Acqua",
 	'P.IVA IT 11238940966': 'VAT IT 11238940966',
+	'Voglia di automazione?': 'Want automation?',
+	'Per digitalizzare in maniera innovativa bisogna cercare soluzioni che superino le analogie e i limiti del mondo fisico.':
+		'To digitalise in an innovativa way, we need to find solutions that go beyond the analogies and the limits of the physical world.',
+
+	'Executable - che al momento conta una persona, <i>me medesimo ndr</i> - ha come obiettivo aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span>.':
+		'Executable - that at the moment is a <i>one man band</i> - has a mission: help companies that <span class="font-semibold">want to automate their processes</span>.',
+
+	'Collaboriamo!': 'Work with me!',
+	'finalità di contatto.': 'contact purposes',
+	Invia: 'Send',
+	'Grazie!': 'Thank You!',
+	'oppure, scrivi a': 'or send me an email at',
 
 	'Automazione digitale': 'Digital automation',
 	per: 'for',
@@ -27,11 +43,10 @@ export default {
 	'Ogni cliente ha necessità, budget e tempistiche differenti, per questo è importante studiare una soluzione su misura.':
 		"Each client has their own needs, budget and time limits, that's why it's important to plan a solution that fits these requirements.",
 	"Hai un'idea?": 'Do you have an idea?',
-	"Se hai un'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un'email all'indirizzo riportato di seguito.":
-		'If you have an idea that you want to discuss, contact me by filling in this form or send me an email at the address indicated below.',
 
 	'Chi sono?': 'Who am I?',
-	"Carlo Dell'Acqua: sviluppatore multipiattaforma": "Carlo Dell'Acqua: multiplatform developer",
+	"Carlo Dell'Acqua - Sviluppatore multipiattaforma": "Carlo Dell'Acqua - Multiplatform Developer",
+	'Sviluppatore multipiattaforma': 'Multiplatform Developer',
 	'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.':
 		"As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now a Full-Stack Web Developer.",
 	'Sviluppo soluzioni valutando la piattaforma e lo stack tecnologico più adatto per ogni progetto.': `I develop solutions based on the technologies and platforms that are most suitable for each project.`,
@@ -83,7 +98,7 @@ export default {
 	'Titolare del Trattamento dei dati': 'Owner and Data Controller',
 	"Il Titolare del Trattamento è Carlo Dell'Acqua, sede legale in via Martiri di Minozzo 26, CAP 42122, Reggio Emilia (RE), Partita IVA 11238940966.":
 		"The Data Owner is Carlo Dell'Acqua, legal address via Martiri di Minozzo 26, CAP 42122, Reggio Emilia (RE), VAT 11238940966.",
-	'Indirizzo e-mail': 'E-mail address',
+	'Indirizzo e-mail:': 'E-mail address:',
 	'Dati raccolti': 'Collected data',
 	'Questo sito web raccoglie in modalità automatica i seguenti dati:':
 		'This website automatically collects the following data from any visitor:',
@@ -108,8 +123,8 @@ export default {
 	"I Dati Personali liberamente comunicati dall'utente verranno utilizzati per un successivo ricontatto telematico o telefonico da parte del Titolare del Trattamento dei dati.":
 		'Personal data willingly transmitted by the user will be used by the owner to contact them by e-mail or phone call.',
 	Statistica: 'Statistics',
-	"I dati di utilizzo anonimi degli utenti verranno utilizzati al fine di migliorare la qualità del servizio mediante analisi di carattere statistico riguardanti, a titolo esemplificativo e non esaustivo, i contenuti più visitati, i tempi medi delle sessioni di navigazione e i tempi medi di risposta del server. Le finalità espresse in questo punto non necessitano di esplicito consenso secondo quanto previsto dall'art. 6 lett. f del GDPR":
-		'Anonymous usage data provided by the devices of the user will be used to improve the service by statistically analyzing them. For example, the website can collect anonymous data about most visited pages and mean response time by the server. This data processing does not require explicit consent in accordance with art. 6, letter f GDPR',
+	"I dati di utilizzo anonimi degli utenti verranno utilizzati al fine di migliorare la qualità del servizio mediante analisi di carattere statistico riguardanti, a titolo esemplificativo e non esaustivo, i contenuti più visitati, i tempi medi delle sessioni di navigazione e i tempi medi di risposta del server. Le finalità espresse in questo punto non necessitano di esplicito consenso secondo quanto previsto dall'art. 6 lett. f del GDPR.":
+		'Anonymous usage data provided by the devices of the user will be used to improve the service by statistically analyzing them. For example, the website can collect anonymous data about most visited pages and mean response time by the server. This data processing does not require explicit consent in accordance with art. 6, letter f GDPR.',
 	'Modalità del Trattamento': 'Processing methods',
 	'Conservazione e cancellazione': 'Data retention and deletion',
 	"I Dati Personali saranno conservati per il periodo di tempo necessario al perseguimento delle finalità per cui tali dati sono stati raccolti e per l'assolvimento degli obblighi di Legge vigenti.":
@@ -223,4 +238,21 @@ export default {
 		'Software improves productivity by automating repetitive tasks. IT Consulting helps finding an appropriate solution for your business.',
 	'Se vuoi capire se la tua attività possa trarre vantaggio da applicazioni su misura non esitare a <a href="#contacts" title="Contattami">contattarmi</a>.':
 		'If you think your business can benefit from a custom application, <a href="#contacts" title="Contact me">contact me</a>.',
+	Web: 'Web',
+	Server: 'Server',
+	Mobile: 'Mobile',
+	Desktop: 'Desktop',
+	'Foto profilo': 'Profile picture',
+	'Anteprima progetto': 'Project preview',
+	'Mostra anteprima': 'Show preview',
+	'consulenza specialistica': 'consulting',
+	integrazioni: 'integrations',
+	programmazione: 'programming',
+	'analisi e progettazione': 'analysis',
+	'Video di sfondo di': 'Background video by',
+	da: 'from',
+	'Campo obbligatorio': 'Mandatory field',
+	'Consenso necessario': 'Consent required',
+	"Al momento non è possibile raccogliere il contatto, ma puoi comunque contattarmi all'email sotto indicata!":
+		'Unable to collect contact information. You can still reach out to me by sending an email at the address below!',
 };

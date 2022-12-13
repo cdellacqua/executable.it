@@ -71,3 +71,21 @@ body {
 *::before {
 	backface-visibility: hidden;
 }
+
+
+.nav-underline {
+	position: relative;
+}
+.nav-underline::after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: rgb(2, 132, 199);
+	width: 20px;
+	height: 2px;
+}
+.nav-underline::after {
+	bottom: -2px;
+}

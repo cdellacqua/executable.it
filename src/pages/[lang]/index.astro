@@ -11,16 +11,51 @@ export const getStaticPaths = getTranslationStaticPaths;
 const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 
 const t = useTranslation(lang);
+
+const title = t('Executable - Azienda informatica Reggio Emilia');
+const description = t('Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia');
 ---
 
 <Page
-	title={t('Executable - Azienda informatica Reggio Emilia')}
-	description={t('Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia')}
+	title={title}
+	description={description}
 	lang={lang}
+	ldJson={JSON.stringify({
+		'@context': 'https://schema.org',
+		'@id': 'https://www.executable.it/',
+		'@type': 'LocalBusiness',
+		openingHoursSpecification: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].flatMap(
+			(dayOfWeek) => [
+				{
+					'@type': 'OpeningHoursSpecification',
+					dayOfWeek: 'https://schema.org/' + dayOfWeek,
+					opens: '10:00:00',
+					closes: '12:00:00',
+				},
+				{
+					'@type': 'OpeningHoursSpecification',
+					dayOfWeek: 'https://schema.org/' + dayOfWeek,
+					opens: '14:00:00',
+					closes: '17:00:00',
+				},
+			],
+		),
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: 'Reggio Emilia',
+			addressRegion: 'RE',
+			postalCode: '42122',
+			addressCountry: 'IT',
+		},
+		url: 'https://www.executable.it/',
+		description: description,
+		name: title,
+		telephone: '+39 375 502 4577',
+	})}
 >
 	<section class="h-screen w-full relative">
 		<div class="absolute bottom-2 right-4 z-10">
-			<VideoInfo client:load />
+			<VideoInfo lang={lang} client:load />
 		</div>
 		<div class="w-full h-full overflow-hidden flex items-center justify-center relative z-0">
 			<video
@@ -48,30 +83,43 @@ const t = useTranslation(lang);
 				<h2 class="text-3xl mb-10 font-title">
 					{t('Voglia di automazione?')}
 				</h2>
-				<p class="">
-					Executable - che al momento conta una persona, <i>me medesimo ndr</i> - ha come obiettivo aiutare le aziende che
-					hanno
-					<span class="font-semibold">voglia di automazione</span>.
+				<p class="mb-2">
+					{
+						t(
+							'Per digitalizzare in maniera innovativa bisogna cercare soluzioni che superino le analogie e i limiti del mondo fisico.',
+						)
+					}
+				</p>
+				<p
+					class=""
+					set:html={t(
+						'Executable - che al momento conta una persona, <i>me medesimo ndr</i> - ha come obiettivo aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span>.',
+					)}
+				>
 				</p>
 				<div class="ml-5 mb-10 flex flex-row flex-wrap">
 					{
 						[
-							['fa-solid fa-chart-pie', 'text-sky-400', 'consulenza specialistica'],
-							['fa-solid fa-circle-nodes', 'text-yellow-400', 'integrazioni'],
-							['fa-solid fa-code', 'text-red-400', 'programmazione'],
-							['fa-solid fa-microscope', 'text-gray-400', 'analisi e progettazione'],
-						].map(([icon, color, text]) => (
-							<div class="w-full md:w-1/2 mt-10 flex flex-row items-center relative">
-								<i class={`${icon} block text-4xl relative z-0 opacity-80 mt-0.5 mr-3 ${color}`} />
+							['fa-solid fa-chart-pie', 'text-sky-400', t('consulenza specialistica')],
+							['fa-solid fa-circle-nodes', 'text-yellow-400', t('integrazioni')],
+							['fa-solid fa-code', 'text-red-400', t('programmazione')],
+							['fa-solid fa-microscope', 'text-gray-400', t('analisi e progettazione')],
+						].map(([icon, color, text], i) => (
+							<div
+								class={`w-full md:w-1/2 mt-10 flex flex-row items-center relative ${
+									i % 2 !== 0 ? 'md:flex-row-reverse' : ''
+								}`}
+							>
+								<i
+									class={`${icon} block text-4xl relative z-0 opacity-80 mt-0.5 mr-3 ${color} ${
+										i % 2 !== 0 ? 'md:mr-0 md:ml-3' : ''
+									}`}
+								/>
 								<span class="block relative z-10 text-lg md:text-xl align-baseline">{text}</span>
 							</div>
 						))
 					}
 				</div>
-				<p class="">
-					Per digitalizzare in maniera innovativa bisogna uscire dai vincoli del mondo fisico e cercare soluzioni
-					all'infuori delle analogie.
-				</p>
 			</div>
 		</SectionCard>
 	</section>

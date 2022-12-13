@@ -20,7 +20,7 @@ function urlToPath(url: string) {
 }
 
 function aspectRatioOf(url: string) {
-	return aspectRatio(sizeOf(urlToPath(url)));
+	return aspectRatio(sizeOf(urlToPath(url)) as any);
 }
 
 const partialProjects = [
@@ -139,7 +139,9 @@ const projects = partialProjects.map((proj) => ({
 
 <Page title={t('Progetti')} description={t('Qui trovi alcuni dei progetti a cui ho lavorato')} lang={lang}>
 	<div class="w-full h-12 md:h-24"></div>
-	<div class="text-center mt-12 max-w-xs 2xs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-xl lg:max-w-4xl xl:max-w-6xl w-full mx-auto">
+	<div
+		class="text-center mt-12 max-w-xs 2xs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-xl lg:max-w-4xl xl:max-w-6xl w-full mx-auto"
+	>
 		<h1 class="font-title text-3xl">
 			{t('Qui trovi alcuni dei progetti a cui ho lavorato')}
 		</h1>
@@ -172,7 +174,7 @@ const projects = partialProjects.map((proj) => ({
 									</div>
 								)}
 								<div class="xl:hidden">
-									<ProjectTooltip client:load img={project.imgUrl} />
+									<ProjectTooltip lang={lang} client:load img={project.imgUrl} />
 								</div>
 							</div>
 						</div>

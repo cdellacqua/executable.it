@@ -1,13 +1,16 @@
+import type {JSX} from 'solid-js/jsx-runtime';
+import {useTranslation} from '../../../lib/i18n';
 import {Tippy} from '../../Tippy';
 
-export function VideoInfo(): JSX.Element {
+export function VideoInfo(props: {lang: 'it' | 'en'}): JSX.Element {
+	const t = useTranslation(props.lang);
 	return (
 		<Tippy
 			placement="top"
 			trigger="click"
 			tooltip={
 				<div class="bg-white px-3 py-2 whitespace-nowrap">
-					Background video by <br />
+					{t('Video di sfondo di')} <br />
 					<a
 						class="underline"
 						rel="noreferrer noopener"
@@ -15,7 +18,7 @@ export function VideoInfo(): JSX.Element {
 					>
 						Christian Bodhi
 					</a>{' '}
-					from{' '}
+					{t('da')}{' '}
 					<a
 						class="underline"
 						rel="noreferrer noopener"

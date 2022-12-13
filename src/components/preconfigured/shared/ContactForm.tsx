@@ -7,6 +7,12 @@ import {useTranslation} from '../../../lib/i18n';
 
 type AnimatedSpanReveal = 'bottom' | 'left' | 'right';
 
+class ValidationError extends Error {
+	constructor(msg?: string) {
+		super(msg);
+	}
+}
+
 function AnimatedSpan(
 	props: {
 		show: boolean;
@@ -75,7 +81,7 @@ function LabelWithError<TErrors extends Partial<Record<string, string | undefine
 		<label for={props.fieldName as string} class="inline-block relative">
 			<span class="relative z-10">{props.content}</span>
 			<AnimatedSpan
-				class={`z-0 ${(props.reveal ?? 'left') === 'left' ? 'right-0' : 'left-0'}`}
+				class={`z-0 ${(props.reveal ?? 'left') === 'left' ? 'right-1' : 'left-0'}`}
 				show={Boolean(props.validationErrors[props.fieldName])}
 				reveal={props.reveal ?? 'left'}
 			>
@@ -95,6 +101,10 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 	});
 	const tremble = useReadonlyStore(tremble$);
 	const [formState, setFormState] = createSignal<'initial' | 'submitting' | 'success' | 'error'>('initial');
+	const [apiError, setApiError] = createSignal(false);
+	const apiErrorText = t(
+		"Al momento non è possibile raccogliere il contatto, ma puoi comunque contattarmi all'email sotto indicata!",
+	);
 	const messageConstraints = {
 		maxLength: 50,
 	};
@@ -135,6 +145,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 		}
 		try {
 			e.preventDefault();
+			setApiError(false);
 			const newValidationErrors = {} as ReturnType<typeof validationErrors>;
 			for (const key in validations) {
 				const inputElement = formRef.querySelector(`[name="${key}"]`) as HTMLInputElement | HTMLTextAreaElement;
@@ -153,16 +164,19 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 					tremble$.target$.set(0);
 					await tremble$.idle();
 				})().catch(console.warn);
-				throw new Error('validation error');
+				throw new ValidationError();
 			}
 			setFormState('submitting');
 			// TODO: actually submit data.
-			await sleep(1000);
+			await sleep(1000).then(() => Promise.reject('ops'));
 			setFormState('success');
 			props.onSuccess?.();
 			formRef.reset();
 		} catch (err) {
 			setFormState('error');
+			if (!(err instanceof ValidationError)) {
+				setApiError(true);
+			}
 		} finally {
 			clearFormStateTimeout = setTimeout(() => {
 				setFormState('initial');
@@ -193,30 +207,30 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 
 			<input type="hidden" name="lang" value={props.lang} />
 			<div class="form-group">
-				<LabelWithError fieldName="firstName" content="Nome" validationErrors={validationErrors()} />
+				<LabelWithError fieldName="firstName" content={t('Nome')} validationErrors={validationErrors()} />
 				<input onFocus={onFocusResetError} id="firstName" type="text" name="firstName" autocomplete="given-name" />
 			</div>
 			<div class="form-group">
-				<LabelWithError fieldName="lastName" content="Cognome" validationErrors={validationErrors()} />
+				<LabelWithError fieldName="lastName" content={t('Cognome')} validationErrors={validationErrors()} />
 				<input onFocus={onFocusResetError} id="lastName" type="text" name="lastName" autocomplete="family-name" />
 			</div>
 			<div class="form-group">
-				<LabelWithError fieldName="email" content="Email" validationErrors={validationErrors()} />
+				<LabelWithError fieldName="email" content={t('Email')} validationErrors={validationErrors()} />
 				<input onFocus={onFocusResetError} id="email" type="email" name="email" autocomplete="email" />
 			</div>
 			<div class="form-group">
-				<LabelWithError fieldName="phone" content="Telefono" validationErrors={validationErrors()} />
+				<LabelWithError fieldName="phone" content={t('Telefono')} validationErrors={validationErrors()} />
 				<input onFocus={onFocusResetError} id="phone" type="tel" name="phone" autocomplete="tel" />
 			</div>
 			<div class="form-group">
-				<LabelWithError fieldName="message" content="Messaggio" validationErrors={validationErrors()} />
+				<LabelWithError fieldName="message" content={t('Messaggio')} validationErrors={validationErrors()} />
 				<textarea
 					onFocus={onFocusResetError}
 					onInput={(e) => setMessageLength(e.currentTarget.value.length)}
 					class="resize-y max-h-96"
-					placeholder={
-						"In quest'area puoi illustrarmi brevemente ciò di cui hai bisogno, sarà mia cura ricontattarti appena possibile per poter approfondire il progetto che vuoi realizzare"
-					}
+					placeholder={t(
+						"In quest'area puoi illustrarmi brevemente ciò di cui hai bisogno, sarà mia cura ricontattarti appena possibile per poter approfondire il progetto che vuoi realizzare",
+					)}
 					rows="8"
 					name="message"
 				/>
@@ -252,9 +266,9 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 								value="true"
 								class="mr-1 ml-1 scale-125"
 							/>{' '}
-							Acconsento al trattamento dei dati personali per la{' '}
+							{t('Acconsento al trattamento dei dati personali per la')}{' '}
 							<a class="underline text-sky-600" href={`/${props.lang}/privacy`} title="Privacy Policy" target="_blank">
-								finalità di contatto.
+								{t('finalità di contatto.')}
 							</a>
 						</>
 					}
@@ -263,7 +277,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 					reveal="bottom"
 				/>
 			</div>
-			<div class="text-right mt-2">
+			<div class="text-right mt-2 relative z-10">
 				<button
 					disabled={formState() === 'submitting'}
 					type="submit"
@@ -300,9 +314,19 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 							formState() === 'initial' || formState() === 'success' ? 0 : 4
 						}px); opacity: ${formState() === 'success' ? 0 : 1}`}
 					>
-						Invia
+						{t('Invia')}
 					</span>
 				</button>
+			</div>
+			<div class="relative z-0 pointer-events-none" classList={{'max-h-0': !apiError()}}>
+				<AnimatedSpan
+					transform={(show) => (show ? 'translateY(0%)' : 'translateY(100%)')}
+					class="bottom-0 text-red-500"
+					show={apiError()}
+				>
+					{apiErrorText}
+				</AnimatedSpan>
+				<div class="invisible pt-2">{apiErrorText}</div>
 			</div>
 		</form>
 	);
