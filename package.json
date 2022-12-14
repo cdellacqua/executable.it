@@ -4,11 +4,11 @@
   "private": true,
   "main": "src/api/index.cjs",
   "scripts": {
-    "dev": "astro dev --port 5000",
-    "dev:host": "astro dev --host --port 5000",
+    "dev": "astro dev",
+    "dev:host": "astro dev --host",
     "start": "node .",
     "build": "astro build",
-    "preview": "astro preview --port 5000",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
