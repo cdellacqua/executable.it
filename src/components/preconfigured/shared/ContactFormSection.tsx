@@ -6,7 +6,7 @@ import {useTranslation} from '../../../lib/i18n';
 import {ContactForm} from './ContactForm';
 import {SectionCard} from './SectionCard';
 
-export function ContactFormSection(props: {lang: 'it' | 'en'}): JSX.Element {
+export function ContactFormSection(props: {lang: 'it' | 'en'; useH1: boolean}): JSX.Element {
 	const [success, setSuccess] = createSignal(false);
 	const t = useTranslation(props.lang);
 	const plane$ = makeSpringStore(
@@ -55,7 +55,11 @@ export function ContactFormSection(props: {lang: 'it' | 'en'}): JSX.Element {
 				>
 					<i class="fa-solid fa-address-book text-gray-200 opacity-85 text-[400px] absolute top-1/2 right-0 z-0 translate-x-1/2 -translate-y-1/2"></i>
 					<div class="relative z-10">
-						<h2 class="text-3xl mb-10 font-title">{t('Collaboriamo!')}</h2>
+						{props.useH1 ? (
+							<h1 class="text-3xl mb-10 font-title">{t('Collaboriamo!')}</h1>
+						) : (
+							<h2 class="text-3xl mb-10 font-title">{t('Collaboriamo!')}</h2>
+						)}
 						<ContactForm lang={props.lang} onSuccess={() => setTimeout(() => setSuccess(true), 150)} />
 					</div>
 				</SectionCard>

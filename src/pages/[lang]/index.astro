@@ -98,9 +98,9 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 				class="fa-solid fa-robot text-gray-200 opacity-85 text-[400px] absolute top-1/2 right-0 z-0 translate-x-1/2 -translate-y-1/2"
 			></i>
 			<div class="relative z-10">
-				<h2 class="text-3xl mb-10 font-title">
+				<h1 class="text-3xl mb-10 font-title">
 					{t('Voglia di automazione?')}
-				</h2>
+				</h1>
 				<p class="mb-2">
 					{
 						t(
@@ -142,7 +142,7 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 		</SectionCard>
 	</section>
 
-	<ContactFormSection lang={lang} client:load />
+	<ContactFormSection lang={lang} useH1={false} client:load />
 
 	<!-- <Section>
 		<i
