@@ -14,15 +14,15 @@ export function Spaceship(): JSX.Element {
 			return;
 		}
 		(async () => {
+			let canUseTilt = false;
 			if (window.DeviceOrientationEvent && !window.matchMedia('(pointer: fine)').matches) {
-				let hasPermission = true;
 				if (!('requestPermission' in window.DeviceOrientationEvent)) {
-					hasPermission = true;
+					canUseTilt = true;
 				} else {
 					await new Promise<void>((res) => {
 						function handleTouch() {
 							(async () => {
-								hasPermission = await (window.DeviceOrientationEvent as any).requestPermission().then(
+								canUseTilt = await (window.DeviceOrientationEvent as any).requestPermission().then(
 									() => true,
 									() => false,
 								);
@@ -33,20 +33,20 @@ export function Spaceship(): JSX.Element {
 						window.addEventListener('touchstart', handleTouch);
 					});
 				}
-				if (hasPermission) {
-					window.addEventListener('deviceorientation', (e) => {
-						const gamma = e.gamma;
-						if (!gamma) {
-							return;
-						}
-						const phiDeg = gamma * 10;
-						spring$.target$.update((currentDeg) => {
-							const delta = (phiDeg - currentDeg) % 360;
-							const deltaMin = Math.abs(delta) >= 180 ? -Math.sign(delta) * (360 - Math.abs(delta)) : delta;
-							return currentDeg + deltaMin;
-						});
+			}
+			if (canUseTilt) {
+				window.addEventListener('deviceorientation', (e) => {
+					const gamma = e.gamma;
+					if (!gamma) {
+						return;
+					}
+					const phiDeg = gamma * 10;
+					spring$.target$.update((currentDeg) => {
+						const delta = (phiDeg - currentDeg) % 360;
+						const deltaMin = Math.abs(delta) >= 180 ? -Math.sign(delta) * (360 - Math.abs(delta)) : delta;
+						return currentDeg + deltaMin;
 					});
-				}
+				});
 			} else {
 				currentRef.addEventListener('mousemove', (e) => {
 					const x = e.clientX - window.innerWidth / 2;
