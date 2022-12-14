@@ -176,6 +176,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
+						'X-Requested-With': 'XMLHttpRequest',
 					},
 				}).then((response) => (response.ok ? Promise.resolve() : Promise.reject(response)));
 			}

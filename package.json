@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev --port 5000",
     "dev:host": "astro dev --host --port 5000",
-    "start": "astro dev --port 5000",
+    "start": "node .",
     "build": "astro build",
     "preview": "astro preview --port 5000",
     "astro": "astro"
