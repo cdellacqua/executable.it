@@ -8,6 +8,7 @@ type Props = {
 const lang = (Astro.props.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
 const altLang = lang === 'it' ? 'en' : 'it';
+const regex = /^\/[a-z]{2,2}/g;
 ---
 
 <div class="px-10 pt-8 pb-2 bg-gray-800 text-white shadow-inner">
@@ -25,14 +26,14 @@ const altLang = lang === 'it' ? 'en' : 'it';
 			altLang === 'en' ? (
 				<>
 					<span>Looking for English? </span>
-					<a class="underline text-sky-300" href={`/${altLang}`}>
+					<a class="underline text-sky-300" href={Astro.url.pathname.replace(regex, `/${altLang}`)}>
 						Click here!
 					</a>
 				</>
 			) : (
 				<>
 					<span>Stai cercando la versione italiana? </span>
-					<a class="underline text-sky-300" href={`/${altLang}`}>
+					<a class="underline text-sky-300" href={Astro.url.pathname.replace(regex, `/${altLang}`)}>
 						Clicca qui!
 					</a>
 				</>
