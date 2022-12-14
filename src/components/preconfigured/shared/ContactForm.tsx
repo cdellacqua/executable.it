@@ -106,7 +106,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 		"Al momento non è possibile raccogliere il contatto, ma puoi comunque contattarmi all'email sotto indicata!",
 	);
 	const messageConstraints = {
-		maxLength: 50,
+		maxLength: 5000,
 	};
 
 	const validations = {
