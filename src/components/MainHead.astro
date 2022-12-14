@@ -13,7 +13,7 @@ type Props = {
 const {title = '', description = '', robots, ldJson, keywords, lang} = Astro.props;
 
 const altLang = lang === 'it' ? 'en' : 'it';
-const regex = /^\/[a-z]{2,2}/g;
+const regex = /^\/[a-z]{2,2}\//g;
 ---
 
 <meta charset="UTF-8" />
@@ -30,7 +30,7 @@ const regex = /^\/[a-z]{2,2}/g;
 
 {
 	(Astro.url.pathname.startsWith('/en/') || Astro.url.pathname.startsWith('/it/')) && (
-		<link rel="alternate" hreflang={altLang} href={Astro.url.pathname.replace(regex, `/${altLang}`)} />
+		<link rel="alternate" hreflang={altLang} href={Astro.url.pathname.replace(regex, `/${altLang}/`)} />
 	)
 }
 

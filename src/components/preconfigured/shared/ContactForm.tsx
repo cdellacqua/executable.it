@@ -146,34 +146,55 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 		try {
 			e.preventDefault();
 			setApiError(false);
+
+			const inputs = [...formRef.querySelectorAll<HTMLInputElement>('input[name],textarea[name],select[name]')];
+			const data = inputs.reduce((acc: Record<string, string>, inputElement) => {
+				acc[inputElement.name] =
+					inputElement.type !== 'checkbox'
+						? inputElement.value
+						: String((inputElement as {checked: boolean}).checked).trim();
+				return acc;
+			}, {});
+
 			const newValidationErrors = {} as ReturnType<typeof validationErrors>;
 			for (const key in validations) {
-				const inputElement = formRef.querySelector(`[name="${key}"]`) as HTMLInputElement | HTMLTextAreaElement;
 				newValidationErrors[key as keyof typeof validations] = validations[key as keyof typeof validations](
-					inputElement.type !== 'checkbox' ? inputElement.value : String((inputElement as {checked: boolean}).checked),
+					data[key] as string,
 				);
 			}
 			setValidationErrors(newValidationErrors);
 			if (hasValidationErrors(newValidationErrors)) {
-				(async () => {
-					tremble$.target$.set(0);
-					await tremble$.skip();
-					await sleep(100);
-					tremble$.target$.set(10);
-					await tremble$.skip();
-					tremble$.target$.set(0);
-					await tremble$.idle();
-				})().catch(console.warn);
 				throw new ValidationError();
 			}
 			setFormState('submitting');
-			// TODO: actually submit data.
-			await sleep(1000).then(() => Promise.reject('ops'));
+
+			if (window.location.hostname === 'localhost') {
+				await sleep(1000);
+			} else {
+				await fetch('/api/contact', {
+					body: JSON.stringify(data),
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+				}).then((response) => (response.ok ? Promise.resolve() : Promise.reject(response)));
+			}
+
 			setFormState('success');
 			props.onSuccess?.();
 			formRef.reset();
 		} catch (err) {
+			console.error(err);
 			setFormState('error');
+			(async () => {
+				tremble$.target$.set(0);
+				await tremble$.skip();
+				await sleep(100);
+				tremble$.target$.set(10);
+				await tremble$.skip();
+				tremble$.target$.set(0);
+				await tremble$.idle();
+			})().catch(console.warn);
 			if (!(err instanceof ValidationError)) {
 				setApiError(true);
 			}

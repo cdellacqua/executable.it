@@ -42,7 +42,12 @@ export function ContactFormSection(props: {lang: 'it' | 'en'}): JSX.Element {
 		}
 	});
 	return (
-		<section class="w-full flex items-center my-24 relative">
+		<section class="w-full flex items-center py-24 min-h-screen relative">
+			{/* <div class="absolute inset-x-0 top-1/3 bottom-1/3 overflow-hidden z-0">
+				<svg viewBox="0 0 1 1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+					<path class="fill-sky-300" d="M0,0.5 L0,1 L1,0.5 L1,0 Z"></path>
+				</svg>
+			</div> */}
 			<div class="relative w-full" style="perspective: 150vw">
 				<SectionCard
 					class={`transition-transform duration-500 ${success() ? 'pointer-events-none' : 'pointer-events-auto'}`}
