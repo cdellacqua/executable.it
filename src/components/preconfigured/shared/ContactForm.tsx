@@ -188,6 +188,13 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 			console.error(err);
 			setFormState('error');
 			(async () => {
+				if ('vibrate' in navigator) {
+					try {
+						navigator.vibrate([100]);
+					} catch {
+						// ignored
+					}
+				}
 				tremble$.target$.set(0);
 				await tremble$.skip();
 				await sleep(100);
