@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /fonts/*
+Disallow: /fontawesome/*
+Disallow: /chunks/*
+Disallow: /card
+Disallow: /card-bw
+Disallow: */404.html
+Disallow: */privacy.html
+
+Sitemap: https://www.executable.it/sitemap-index.xml

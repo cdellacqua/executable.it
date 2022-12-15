@@ -40,6 +40,17 @@ const regex = /^\/[a-z]{2,2}/g;
 			)
 		}
 	</div>
+	<div data-nosnippet class="flex flex-col items-center my-8">
+		&mdash; Business Card &mdash;
+		<code>curl -sL executable.it/card</code>
+		<code>Invoke-RestMethod executable.it/card</code>
+		<button
+			class="underline"
+			type="button"
+			onclick="window.open('/card-bw', '', 'width=500,height=400,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
+			>[{t('anteprima per browser')}]</button
+		>
+	</div>
 	<div class="text-center text-sm mt-10 text-gray-200">
 		© 2022 | <a class="underline" href={`/${lang}/privacy`}>{t('Privacy Policy')}</a>
 	</div>
