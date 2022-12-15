@@ -68,7 +68,6 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 				height="1440"
 				muted
 				autoplay
-				controls
 				playsinline
 				loop
 				poster="/assets/stars-fallback.jpg"
@@ -84,6 +83,7 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 						if (!video) {
 							return;
 						}
+						video.muted = true;
 						video.play().catch(console.warn);
 						window.removeEventListener('click', startVideo);
 					}
