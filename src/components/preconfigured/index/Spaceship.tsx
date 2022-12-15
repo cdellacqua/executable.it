@@ -41,14 +41,14 @@ export function Spaceship(): JSX.Element {
 						return currentDeg + deltaMin;
 					});
 				});
-			} else {
+			}/*  else {
 				spring$.target$.update((currentDeg) => currentDeg + Math.random() * 450 * (currentDeg > 0 ? -1 : 1));
 				setInterval(() => {
 					if (document.visibilityState === 'visible') {
 						spring$.target$.update((currentDeg) => currentDeg + Math.random() * 450 * (currentDeg > 0 ? -1 : 1));
 					}
 				}, 3000);
-			}
+			} */
 		})().catch(console.warn);
 	});
 	return (
