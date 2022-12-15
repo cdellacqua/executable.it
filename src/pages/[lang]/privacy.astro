@@ -9,8 +9,8 @@ const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
 ---
 
-<Page title={t('Privacy Policy')} description={t('Privacy Policy')} lang={lang}>
-	<div class="w-full h-12 md:h-24"></div>
+<Page title={t('Privacy Policy')} keywords={t('privacy,policy')} description={t('Privacy Policy')} lang={lang}>
+	<div class="w-full h-24"></div>
 	<div class="max-w-xs 2xs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-xl lg:max-w-4xl xl:max-w-6xl w-full mx-auto">
 		<h1 class="text-3xl font-title">
 			{t('Privacy Policy')}
@@ -34,8 +34,14 @@ const t = useTranslation(lang);
 		<p class="mt-2">{t('Questo sito web raccoglie in modalità automatica i seguenti dati:')}</p>
 		<ul class="ml-3">
 			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('indirizzo IP')}</li>
-			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('data e ora di accesso alle pagine')}</li>
-			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('dati di navigazione trasmessi dal browser')}</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('data e ora di accesso alle pagine')}
+			</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{
+					t('dati di navigazione trasmessi dal browser')
+				}
+			</li>
 			<li>
 				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;
 				{
@@ -158,7 +164,11 @@ const t = useTranslation(lang);
 			{t("L'utente ha il diritto di:")}
 		</p>
 		<ul class="ml-3">
-			<li><i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{t('revocare qualunque consenso precedentemente concesso')}</li>
+			<li>
+				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;{
+					t('revocare qualunque consenso precedentemente concesso')
+				}
+			</li>
 			<li>
 				<i class="fa-solid fa-circle-dot inline-block scale-50"></i>&nbsp;
 				{
@@ -211,6 +221,7 @@ const t = useTranslation(lang);
 		</p>
 
 		<div class="text-right mt-2 pb-24">
-		<small>{t('Reggio Emilia, 13 Maggio 2021')}</small></div>
+			<small>{t('Reggio Emilia, 13 Maggio 2021')}</small>
+		</div>
 	</div>
 </Page>

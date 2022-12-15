@@ -255,4 +255,8 @@ export default {
 	'Consenso necessario': 'Consent required',
 	"Al momento non è possibile raccogliere il contatto, ma puoi comunque contattarmi all'email sotto indicata!":
 		'Unable to collect contact information. You can still reach out to me by sending an email at the address below!',
+	'chi,sono,informazioni,io': 'who,am,I,info',
+	'progetti,lavori': 'projects,work',
+	'contattami,contatti,informazioni,di,contatto': 'contact,me,contacts',
+	'privacy,policy': 'privacy,policy',
 };
