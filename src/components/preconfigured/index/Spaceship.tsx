@@ -14,40 +14,8 @@ export function Spaceship(): JSX.Element {
 			return;
 		}
 		(async () => {
-			let canUseTilt = false;
-			if (window.DeviceOrientationEvent && !window.matchMedia('(pointer: fine)').matches) {
-				if (!('requestPermission' in window.DeviceOrientationEvent)) {
-					canUseTilt = true;
-				} else {
-					await new Promise<void>((res) => {
-						function handleTouch() {
-							(async () => {
-								canUseTilt = await (window.DeviceOrientationEvent as any).requestPermission().then(
-									() => true,
-									() => false,
-								);
-								res();
-								window.removeEventListener('touchstart', handleTouch);
-							})().catch(console.warn);
-						}
-						window.addEventListener('touchstart', handleTouch);
-					});
-				}
-			}
-			if (canUseTilt) {
-				window.addEventListener('deviceorientation', (e) => {
-					const gamma = e.gamma;
-					if (!gamma) {
-						return;
-					}
-					const phiDeg = gamma * 10;
-					spring$.target$.update((currentDeg) => {
-						const delta = (phiDeg - currentDeg) % 360;
-						const deltaMin = Math.abs(delta) >= 180 ? -Math.sign(delta) * (360 - Math.abs(delta)) : delta;
-						return currentDeg + deltaMin;
-					});
-				});
-			} else {
+			const mouseAvailable = window.matchMedia('(pointer: fine)').matches;
+			if (mouseAvailable) {
 				currentRef.addEventListener('mousemove', (e) => {
 					const x = e.clientX - window.innerWidth / 2;
 					const y = e.clientY - window.innerHeight / 2;
@@ -60,6 +28,26 @@ export function Spaceship(): JSX.Element {
 						return currentDeg + deltaMin;
 					});
 				});
+			} else if (window.DeviceOrientationEvent && !('requestPermission' in window.DeviceOrientationEvent)) {
+				window.addEventListener('deviceorientation', (e) => {
+					const gamma = e.gamma;
+					if (!gamma) {
+						return;
+					}
+					const phiDeg = gamma * 30;
+					spring$.target$.update((currentDeg) => {
+						const delta = (phiDeg - currentDeg) % 360;
+						const deltaMin = Math.abs(delta) >= 180 ? -Math.sign(delta) * (360 - Math.abs(delta)) : delta;
+						return currentDeg + deltaMin;
+					});
+				});
+			} else {
+				spring$.target$.update((currentDeg) => currentDeg + Math.random() * 450 * (currentDeg > 0 ? -1 : 1));
+				setInterval(() => {
+					if (document.visibilityState === 'visible') {
+						spring$.target$.update((currentDeg) => currentDeg + Math.random() * 450 * (currentDeg > 0 ? -1 : 1));
+					}
+				}, 3000);
 			}
 		})().catch(console.warn);
 	});
