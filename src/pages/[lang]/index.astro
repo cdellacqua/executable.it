@@ -76,20 +76,6 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 				<source src="/assets/stars-h264.webm" type="video/webm" />
 				<source src="/assets/stars-h264.mp4" type="video/mp4" />
 			</video>
-			<script>
-				window.addEventListener('load', function () {
-					function startVideo() {
-						const video = document.getElementById('spaceship-background-1354125') as HTMLVideoElement | null;
-						if (!video) {
-							return;
-						}
-						video.muted = true;
-						video.play().catch(console.warn);
-						window.removeEventListener('click', startVideo);
-					}
-					window.addEventListener('click', startVideo);
-				});
-			</script>
 		</div>
 		<div class="absolute inset-0 z-0 overflow-hidden">
 			<Spaceship client:load />
