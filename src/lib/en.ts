@@ -17,8 +17,8 @@ export default {
 	'Per digitalizzare in maniera innovativa bisogna cercare soluzioni che superino le analogie e i limiti del mondo fisico.':
 		'To digitalise in an innovativa way, we need to find solutions that go beyond the analogies and the limits of the physical world.',
 
-	'Executable - che al momento conta una persona, <i>me medesimo ndr</i> - ha come obiettivo aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span>.':
-		'Executable - that at the moment is a <i>one man band</i> - has a mission: help companies that <span class="font-semibold">want to automate their processes</span>.',
+	'Executable - che al momento conta una persona, <i>me medesimo ndr</i> - ha come obiettivo aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span>, realizzando prodotti software che spaziano dalle applicazioni di alto livello - <i>app per telefono, web o desktop</i> - a quelle di basso livello - <i>applicazioni embedded per microcontrollori</i>.':
+		'Executable - that is currently a <i>one man band</i> - has a mission: help companies that <span class="font-semibold">want to automate their processes</span>. Executable develops software products that span from high-level applications - <i>mobile, web or desktop apps</i> - to low-level ones - <i>embedded applications running on microcontrollers</i>.',
 
 	'Collaboriamo!': 'Work with me!',
 	'finalità di contatto.': 'contact purposes',
