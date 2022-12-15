@@ -73,21 +73,18 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 				<source src="/assets/stars.mp4" type="video/mp4" />
 			</video>
 			<script>
-				document.addEventListener('DOMContentLoaded', function () {
-					const video = document.getElementById('spaceship-background-1354125') as HTMLVideoElement | null;
-					if (!video) {
-						return;
-					}
+				window.addEventListener('load', function () {
 					function startVideo() {
+						const video = document.getElementById('spaceship-background-1354125') as HTMLVideoElement | null;
 						if (!video) {
 							return;
 						}
 						video.play().catch(console.warn);
-						video.removeEventListener('click', startVideo);
-						video.removeEventListener('mousemove', startVideo);
+						window.removeEventListener('click', startVideo);
+						window.removeEventListener('mousemove', startVideo);
 					}
-					video.addEventListener('click', startVideo);
-					video.addEventListener('mousemove', startVideo);
+					window.addEventListener('click', startVideo);
+					window.addEventListener('mousemove', startVideo);
 				});
 			</script>
 		</div>
