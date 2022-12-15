@@ -6,6 +6,6 @@ Disallow: /chunks/*
 Disallow: /card
 Disallow: /card-bw
 Disallow: */404.html
-Disallow: */privacy.html
+Disallow: */privacy
 
 Sitemap: https://www.executable.it/sitemap-index.xml
