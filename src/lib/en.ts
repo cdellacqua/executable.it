@@ -186,14 +186,14 @@ export default {
 
 	immagine: 'image',
 	"Torna all'homepage": 'Go to the homepage',
-	'Non autorizzato': 'Unauthorized',
+	'Non autorizzato': 'Unauthorised',
 	'Accesso negato': 'Forbidden',
 	'Pagina non trovata': 'Not Found',
 	'Pagina scaduta': 'Page Expired',
 	'Troppe richieste': 'Too Many Requests',
 	'Errore Server': 'Server Error',
 	'Servizio non disponibile': 'Service Unavailable',
-	'Non sei autorizzato a visualizzare questa pagina.': 'You are not authorized to see this page.',
+	'Non sei autorizzato a visualizzare questa pagina.': 'You are not authorised to see this page.',
 	"L'accesso a questa pagina è stato negato.": 'Access to this page is forbidden.',
 	"La pagina non è stata trovata, l'URL potrebbe essere errato o relativo ad un contenuto non più disponibile.":
 		"The page you requested couldn't be found, the specified URL might be expired or referring to a resource no longer available.",
