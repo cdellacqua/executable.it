@@ -16,7 +16,6 @@ module.exports = {
 				'2xs': '10px',
 			},
 		},
-
 		fontFamily: {
 			sans: [
 				'Figtree',
