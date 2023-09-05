@@ -262,6 +262,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 					)}
 					rows="8"
 					name="message"
+					id="message"
 				/>
 				<div
 					class="transition-colors mt-1 relative z-0"
@@ -312,8 +313,8 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 					type="submit"
 					style={`transform: translateX(${tremble()}px); padding-left: ${
 						formState() === 'submitting' || formState() === 'error' ? '32px' : '16px'
-					}; background-color: ${
-						formState() === 'error' ? 'rgb(239 68 68)' : formState() === 'success' ? 'rgb(34 197 94)' : ''
+					}; ${
+						formState() === 'error' ? 'background-color: rgb(239 68 68)' : formState() === 'success' ? 'background-color: rgb(34 197 94)' : ''
 					}`}
 					class="px-4 py-2 inline-block will-change-transform transition-[padding-left,background-color] hover:bg-sky-500 bg-sky-400 disabled:bg-sky-400 text-white rounded-xl overflow-hidden font-title uppercase relative"
 				>
