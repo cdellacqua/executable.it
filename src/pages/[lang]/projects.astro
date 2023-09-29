@@ -40,6 +40,22 @@ const partialProjects: Array<{
 }> = [
 	{
 		name: {
+			it: 'Piattaforma di investimenti',
+			en: 'Investment platform',
+		},
+		description: {
+			it: `Piattaforma per investitori istituzionali basata su AI. All'interno del team di frontend, ho aiutato a prendere decisioni tecniche e strategiche e ho realizzato diverse parti dell'applicativivo, tra cui il flusso di creazione dei portafogli e il chatbot. L'intera piattaforma frontend è sviluppata con React.`,
+			en: `Investment platform for institutional investors powered by AI. I joined the frontend team, helping with technical and strategical decisions. I developed several sections of the application, including the portfolio creation funnel and the chatbot. The frontend is developed using React.`,
+		},
+		imgUrl: '/assets/projects/investment-platform.jpg',
+		company: {
+			name: 'BindingFuture',
+			url: 'https://www.bindingfuture.com/',
+			imgUrl: '/assets/projects/companies/binding-future-small.jpg',
+		},
+	},
+	{
+		name: {
 			it: 'App white label per istituti di vigilanza',
 			en: 'White label app for private security companies',
 		},
@@ -76,8 +92,8 @@ const partialProjects: Array<{
 			en: 'Dashboard for managing industrial breakers'
 		},
 		description: {
-			it: `Web App sviluppata con React che permette a personale tecnico di visualizzare dati storici e correnti provenienti dai sensori presenti in diversi modelli di interruttori industriali smart.`,
-			en: `Web App developed with React used by technicians to monitor and visualise aggregated and current sensor data provided by different families of smart industrial circuit breakers.`,
+			it: `Web app sviluppata con React che permette a personale tecnico di visualizzare dati storici e correnti provenienti dai sensori presenti in diversi modelli di interruttori industriali smart.`,
+			en: `Web app developed with React used by technicians to monitor and visualise aggregated and current sensor data provided by different families of smart industrial circuit breakers.`,
 		},
 		imgUrl: '/assets/projects/dashboard-for-breakers.jpg',
 		company: {
@@ -89,8 +105,8 @@ const partialProjects: Array<{
 	{
 		name: 'Journhey',
 		description: {
-			it: `Social Network sperimentale orientato al mondo dei viaggi. Ho sviluppato la web app a partire da un mock up grafico e configurato il motore di rendering server side per permettere una corretta indicizzazione dei contenuti.`,
-			en: `Experimental Social Network designed for travelers who want to share their experience. I developed the web app from a mockup of the UI and configured the server side rendering engine to let search engines crawl content effectively.`,
+			it: `Social Network sperimentale orientato al mondo dei viaggi. Ho sviluppato la web app tramite SvelteKit.`,
+			en: `Experimental Social Network designed for travelers who want to share their experience. I developed the web app using SvelteKit.`,
 		},
 		url: 'https://journhey.com/',
 		urlText: 'Journhey',
@@ -104,8 +120,8 @@ const partialProjects: Array<{
 	{
 		name: 'Smart Parking',
 		description: {
-			it: `Piattaforma di monitoraggio delle aree di parcheggio basata sul rilevamento di veicoli tramite Computer Vision. Ho progettato l'infrastruttura di rete e integrato il servizio analisi remota del flusso video.`,
-			en: `Monitoring Platform that analyzes video streams coming from IP Cameras. I built the network infrastructure and integrated the video analysis service.`,
+			it: `Piattaforma di monitoraggio delle aree di parcheggio che analizza video provenienti da telecamere di rete. Ho costruito l'infrastruttura di rete e integrato il servizio di analisi remota del flusso video. Per questo progetto ho realizzato una serie di applicazioni e script per Linux, sia per il server centrale, sia per i singoli dispositivi installati nelle sedi di monitoraggio.`,
+			en: `Monitoring Platform for parking lots that analyzes video streams coming from IP Cameras. I built the network infrastructure and integrated the video analysis service. For this project, I developed several applications and scripts targeting Linux, both for the main server and for the devices installed in the parking lots.`,
 		},
 		imgUrl: '/assets/projects/smart-parking.jpg',
 		company: {
@@ -117,8 +133,8 @@ const partialProjects: Array<{
 	{
 		name: 'Edoco',
 		description: {
-			it: `Progressive Web Application per l'emissione di documenti commerciali. Invio telematico, integrazione con stampanti termiche e listino prodotti/servizi.`,
-			en: `Progressive Web Application that handles receipts. It provides a friendly user interface for creating and storing receipts online as well as an integration with thermal printers.`,
+			it: `Progressive Web App per l'emissione di documenti commerciali. Ho realizzato il backend con Express.js e il frontend con Svelte. L'applicazione gestisce invio telematico, integrazione con stampanti termiche e listino prodotti/servizi.`,
+			en: `Progressive Web App that handles receipts. I developed both the backend and the frontend using Express.js and Svelte. The app provides a friendly user interface for creating and storing receipts online as well as an integration with thermal printers.`,
 		},
 		url: 'https://edoco.it/',
 		urlText: 'edoco.it',
@@ -132,8 +148,8 @@ const partialProjects: Array<{
 	{
 		name: 'Cube H24 Web',
 		description: {
-			it: `Trasformazione di un'applicazione desktop in una Progressive Web App. Tra le funzionalità: visualizzazione di dati provenienti da sensori ambientali, mappa interattiva per la loro individuazione e visualizzazione di grafici con dati aggregati sull'andamento dei valori.`,
-			en: `Porting of a Desktop application to a Progressive Web App. The Web Application shows data from various sensors, it provides an interactive map to locate the sensors in a specific area and statistics based on historical data.`,
+			it: `Applicativo che aggrega dati provenienti da diversi sensori. Mi sono occupato di realizzare un Proof of Concept convertendo alcune sezioni dell'applicazione desktop esistente in una Progressive Web App basata su Svelte. Tra le funzionalità troviamo la visualizzazione di dati provenienti da sensori ambientali, mappa interattiva per la loro individuazione e visualizzazione di grafici con dati aggregati sull'andamento dei valori.`,
+			en: `Application that aggregates data coming for a variety of sensors. I developed a Proof of Concept, porting some sections of the existing Desktop application to a Progressive Web App using Svelte. The web application shows data from various sensors, it provides an interactive map to locate the sensors in a specific area and statistics based on historical data.`,
 		},
 		imgUrl: '/assets/projects/cube-h24.jpg',
 		company: {
@@ -145,8 +161,8 @@ const partialProjects: Array<{
 	{
 		name: 'Light Touch',
 		description: {
-			it: `Realizzazione di una sezione nell'applicativo Web Light Touch per la raccolta interattiva dei dati d'illuminazione stradale e la visualizzazione delle fotometrie.`,
-			en: 'Development of a portion of a Web App called Light Touch. The section I developed provides an interactive form to collect data about street lamps, showing a preview of the street and the heatmap of the photometry',
+			it: `Portale per addetti all'installazione di impianti d'illuminazione pubblica. Ho realizzato una nuova sezione nell'applicativo Web Light Touch basato su Angular per la raccolta dei dati d'illuminazione stradale e la visualizzazione delle analisi fotometriche.`,
+			en: 'Web portal for professionals who work in street lighting systems. I developed a new section of an Angular web app called Light Touch. This section provides a form that collects data about street lamps, showing a preview of the street and a heatmap based on a photometric analysis.',
 		},
 		url: 'https://huna.io/light-touch/',
 		urlText: 'Huna - Light Touch',
@@ -160,8 +176,8 @@ const partialProjects: Array<{
 	{
 		name: 'Booking TouchHair',
 		description: {
-			it: `Portale di prenotazioni rivolto a saloni e parrucchieri. Gestione degli appuntamenti lato negozio e prenotazione dei servizi lato cliente.`,
-			en: 'Booking platform targeting hairdressers and beauty centers. Shops can manage appointments through an interactive calendar, while customers can make reservations using a funnel that automatically scans for available time slots',
+			it: `Portale di prenotazioni rivolto a saloni e parrucchieri. Ho realizzato il backend utilizzando Laravel e il frontend utilizzando Svelte. Tra le funzionalità principali troviamo la gestione degli appuntamenti lato negozio e la prenotazione dei servizi lato cliente con funnel intelligente che trova gli incastri per le prestazioni richieste.`,
+			en: 'Booking platform targeting hairdressers and beauty centers. I developed the backend using Laravel and the frontend using Svelte. Using this application, shops can manage appointments through an interactive calendar and customers can make reservations using a funnel that automatically scans for available time slots.',
 		},
 		url: 'https://booking.touchhair.it/',
 		urlText: 'Booking TouchHair',
