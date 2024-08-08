@@ -2,10 +2,8 @@
 
 :root {
 	--color: rgb(31 41 55);
-	--background-color: rgb(226 226 226);
 
 	color: var(--color);
-	background-color: var(--background-color);
 	@apply bg-gray-200;
 }
 
