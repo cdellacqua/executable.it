@@ -11,47 +11,54 @@ const altLang = lang === 'it' ? 'en' : 'it';
 const regex = /^\/[a-z]{2,2}/g;
 ---
 
-<div class="px-10 pt-8 pb-2 bg-gray-800 text-white shadow-inner">
-	<div class="text-center">
-		<span class="font-title uppercase tracking-wider text-4xl">Executable</span><br />
-		{t('di')} Carlo Dell'Acqua /
-		<span title="P.IVA" class="text-sm">IT 11238940966</span>
+<div class="p-8 bg-gray-800 text-white text-sm">
+	<div class="flex flex-col md:flex-row md:justify-between">
+		<div class="text-center md:text-left">
+			<span class="font-title uppercase tracking-wider text-4xl">Executable</span><br />
+			{t('di')} Carlo Dell'Acqua /
+			<span title="P.IVA">IT 11238940966</span>
+
+			<div class="text-center md:text-left mt-4">
+				{t('Telefono')}:
+				<span title={t('Telefono')}>+39 375 502 4577</span><br />
+				{t('Email')}:
+				<span title={t('Email')}>info@executable.it</span>
+			</div>
+		</div>
+		<div data-nosnippet class="mt-10 md:mt-1 text-center md:text-right">
+			&mdash; Business Card &mdash;<br />
+			<code class="text-xs">curl -sL executable.it/card</code><br />
+			<code class="text-xs">Invoke-RestMethod executable.it/card</code><br />
+			<button
+				class="underline mt-3"
+				type="button"
+				onclick="window.open('/card-bw', '', 'width=500,height=400,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
+				>[{t('anteprima per browser')}]</button
+			>
+		</div>
 	</div>
-	<div class="mt-6 text-center">
-		<span title="Telefono">+39 375 502 4577</span><br />
-		<span title="Città">Reggio Emilia</span><br />
-	</div>
-	<div class="mt-6 text-center">
-		{
-			altLang === 'en' ? (
-				<>
-					<span>Looking for English? </span>
-					<a class="underline text-sky-300" href={Astro.url.pathname.replace(regex, `/${altLang}`)}>
-						Click here!
-					</a>
-				</>
-			) : (
-				<>
-					<span>Stai cercando la versione italiana? </span>
-					<a class="underline text-sky-300" href={Astro.url.pathname.replace(regex, `/${altLang}`)}>
-						Clicca qui!
-					</a>
-				</>
-			)
-		}
-	</div>
-	<div data-nosnippet class="my-8 text-center">
-		&mdash; Business Card &mdash;<br />
-		<code>curl -sL executable.it/card</code><br />
-		<code>Invoke-RestMethod executable.it/card</code><br />
-		<button
-			class="underline"
-			type="button"
-			onclick="window.open('/card-bw', '', 'width=500,height=400,status=yes,toolbar=no,menubar=no,resizable=yes,scrollbars=yes')"
-			>[{t('anteprima per browser')}]</button
-		>
-	</div>
-	<div class="text-center text-sm mt-10 text-gray-200">
-		© 2022 | <a class="underline" href={`/${lang}/privacy`}>{t('Privacy Policy')}</a>
+	<div class="flex flex-col md:flex-row md:justify-between mt-10">
+		<div class="text-center md:text-left">
+			{
+				altLang === 'en' ? (
+					<>
+						<span>Looking for English? </span>
+						<a class="underline text-sky-300" href={Astro.url.pathname.replace(regex, `/${altLang}`)}>
+							Click here!
+						</a>
+					</>
+				) : (
+					<>
+						<span>Stai cercando la versione italiana? </span>
+						<a class="underline text-sky-300" href={Astro.url.pathname.replace(regex, `/${altLang}`)}>
+							Clicca qui!
+						</a>
+					</>
+				)
+			}
+		</div>
+		<div class="text-center md:text-right text-gray-200 mt-12 md:mt-0">
+			© 2024 | Reggio Emilia | <a class="underline" href={`/${lang}/privacy`}>{t('Privacy Policy')}</a>
+		</div>
 	</div>
 </div>
