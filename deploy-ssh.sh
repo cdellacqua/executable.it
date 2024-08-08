@@ -15,7 +15,7 @@ if [ -d "$BASEDIR/tmp" ]; then
 fi
 
 echo "Cloning main branch HEAD into tmp..."
-	git clone "$(git config --get remote.origin.url)" "$BASEDIR/tmp" 2> /dev/null
+	git clone --depth=1 "$(git config --get remote.origin.url)" "$BASEDIR/tmp" 2> /dev/null
 echo "[  OK  ]"
 
 echo "Downloading .env file from target server..."
