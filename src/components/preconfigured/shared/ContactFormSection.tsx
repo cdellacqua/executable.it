@@ -58,7 +58,7 @@ export function ContactFormSection(props: {lang: 'it' | 'en'; useH1: boolean}): 
 						{props.useH1 ? (
 							<h1 class="text-3xl mb-10 font-title">{t('Collaboriamo!')}</h1>
 						) : (
-							<h2 class="text-3xl mb-10 font-title">{t('Collaboriamo!')}</h2>
+							<div class="text-3xl mb-10 font-title">{t('Collaboriamo!')}</div>
 						)}
 						<ContactForm lang={props.lang} onSuccess={() => setTimeout(() => setSuccess(true), 150)} />
 					</div>
