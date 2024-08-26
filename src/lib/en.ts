@@ -7,18 +7,15 @@ export default {
 	'Tu sei qui': 'You are here',
 	Contatti: 'Contacts',
 
-	'Executable - Azienda informatica Reggio Emilia': 'Executable - IT Company in Reggio Emilia',
+	'Executable - Carlo Dell\'Acqua, Freelance Software Engineer': 'Executable - Carlo Dell\'Acqua, Freelance Software Engineer',
 	'Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia':
 		'IT Consulting and Web Development, based in Reggio Emilia',
 	di: 'by',
 	"di Carlo Dell'Acqua": "by Carlo Dell'Acqua",
 	'P.IVA IT 11238940966': 'VAT IT 11238940966',
-	'Voglia di automazione?': 'Want automation?',
-	'Per digitalizzare in maniera innovativa bisogna cercare soluzioni che superino le analogie e i limiti del mondo fisico.':
-		'To digitalise in an innovativa way, we need to find solutions that go beyond the analogies and the limits of the physical world.',
-
-	'Executable - che al momento conta una persona, <i>me medesimo ndr</i> - ha come obiettivo aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span>, realizzando prodotti software che spaziano dalle applicazioni di alto livello - <i>app per smartphone, web o desktop</i> - a quelle di basso livello - <i>applicazioni embedded per microcontrollori</i>.':
-		'Executable - that is currently a <i>one man band</i> - has a mission: help companies that <span class="font-semibold">want to automate their processes</span>. Executable develops software products that span from high-level applications - <i>mobile, web or desktop apps</i> - to low-level ones - <i>embedded applications running on microcontrollers</i>.',
+	'Di cosa mi occupo': 'What I do',
+	'Come consulente, il mio obiettivo è aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span> a realizzare prodotti che spaziano dalle applicazioni di alto livello - <i>app per smartphone, web o desktop</i> - a quelle di basso livello - <i>applicazioni embedded per microcontrollori</i>.':
+		'As a consultant, my mission is to help companies that <span class="font-semibold">want automation</span> build products that span from high-level applications - <i>mobile, web or desktop apps</i> - to low-level ones - <i>embedded applications running on microcontrollers</i>.',
 
 	'Collaboriamo!': 'Work with me!',
 	'finalità di contatto.': 'contact purposes',
@@ -45,8 +42,8 @@ export default {
 	"Hai un'idea?": 'Do you have an idea?',
 
 	'Chi sono?': 'Who am I?',
-	"Carlo Dell'Acqua - Sviluppatore multipiattaforma": "Carlo Dell'Acqua - Multiplatform Developer",
-	'Sviluppatore multipiattaforma': 'Multiplatform Developer',
+	"Carlo Dell'Acqua - Freelance Software Engineer": "Carlo Dell'Acqua - Freelance Software Engineer",
+	'Freelance Software Engineer': 'Freelance Software Engineer',
 	'Ho avuto esperienze in ambito di applicativi Desktop e Mobile, ho sperimentato con dispositivi embedded e ho sviluppato progetti basati su microcontrollori, fino ad arrivare alle Web App moderne.':
 		"As a developer I've written Desktop and Android utility applications, I've experimented embedded development during school and as a hobby and I've developed applications targeting microcontrollers. I'm now a Full-Stack Web Developer.",
 	'Sviluppo soluzioni valutando la piattaforma e lo stack tecnologico più adatto per ogni progetto.': `I develop solutions based on the technologies and platforms that are most suitable for each project.`,

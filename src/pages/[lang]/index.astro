@@ -1,4 +1,5 @@
 ---
+import AboutMeCard from '../../components/AboutMeCard.astro';
 import Page from '../../components/Page.astro';
 import {Spaceship} from '../../components/preconfigured/index/Spaceship';
 import {VideoInfo} from '../../components/preconfigured/index/VideoInfo';
@@ -12,7 +13,7 @@ const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 
 const t = useTranslation(lang);
 
-const title = t('Executable - Azienda informatica Reggio Emilia');
+const title = t("Executable - Carlo Dell'Acqua, Freelance Software Engineer");
 const description = t('Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia');
 ---
 
@@ -81,44 +82,24 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 			<Spaceship client:load />
 		</div>
 	</section>
+	<section class="min-h-screen flex items-center justify-center">
+		<AboutMeCard lang={lang} />
+	</section>
 	<section class="w-full flex items-center pt-24 relative">
-		{/* <div class="absolute inset-0 top-1/2 overflow-hidden z-0">
-			<svg viewBox="0 0 1 1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-				<path class="fill-red-200" d="M0,0 L1,1 L0,1"></path>
-			</svg>
-		</div> */}
-		{/* <div class="absolute inset-0 bottom-1/2 overflow-hidden z-0">
-			<svg viewBox="0 0 1 1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-				<path class="fill-gray-200" d="M0,0 L1,0 L1,1"></path>
-			</svg>
-		</div> */}
-		{/* <div class="absolute inset-0 overflow-hidden z-0">
-			<svg viewBox="0 0 1 1" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-				<path class="fill-sky-300" d="M0,0 L0,0.5 L1,1 L1,0.5 Z"></path>
-			</svg>
-		</div> */}
 		<SectionCard>
 			<i
 				class="fa-solid fa-robot text-gray-200 opacity-85 text-[400px] absolute top-1/2 right-0 z-0 translate-x-1/2 -translate-y-1/2"
 			></i>
 			<div class="relative z-10">
 				<h1 class="text-3xl mb-10 font-title">
-					{t('Voglia di automazione?')}
+					{t('Di cosa mi occupo')}
 				</h1>
-				<p class="mb-2">
-					{
-						t(
-							'Per digitalizzare in maniera innovativa bisogna cercare soluzioni che superino le analogie e i limiti del mondo fisico.',
-						)
-					}
-				</p>
 				<p
 					class=""
 					set:html={t(
-						'Executable - che al momento conta una persona, <i>me medesimo ndr</i> - ha come obiettivo aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span>, realizzando prodotti software che spaziano dalle applicazioni di alto livello - <i>app per smartphone, web o desktop</i> - a quelle di basso livello - <i>applicazioni embedded per microcontrollori</i>.',
+						'Come consulente, il mio obiettivo è aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span> a realizzare prodotti che spaziano dalle applicazioni di alto livello - <i>app per smartphone, web o desktop</i> - a quelle di basso livello - <i>applicazioni embedded per microcontrollori</i>.',
 					)}
-				>
-				</p>
+				/>
 				<div class="ml-5 mb-10 flex flex-row flex-wrap">
 					{
 						[
@@ -147,16 +128,4 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 	</section>
 
 	<ContactFormSection lang={lang} useH1={false} client:load />
-
-	{/*<Section>
-		<i
-			class="fa-solid fa-address-book text-gray-200 opacity-85 text-[400px] absolute top-1/2 right-0 z-0 translate-x-1/2 -translate-y-1/2"
-		></i>
-		<div class="relative z-10">
-			<h2 class="text-3xl mb-10 font-title">
-				{t('Collaboriamo!')}
-			</h2>
-			<ContactForm lang={lang} client:load />
-		</div>
-	</Section>*/}
 </Page>
