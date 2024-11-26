@@ -11,7 +11,7 @@ export function useTranslation(lang: 'it' | 'en') {
 	return function (text: string, replace: Record<string, string | number> = {}): string {
 		const candidate = translations[lang]?.[text];
 		if (candidate === undefined && lang !== defaultLang) {
-			console.warn(`missing translation for string "${text}"`);
+			throw new Error(`missing translation for string "${text}"`);
 		}
 		let result = candidate ?? text;
 		Object.keys(replace)
