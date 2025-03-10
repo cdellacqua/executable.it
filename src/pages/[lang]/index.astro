@@ -1,8 +1,6 @@
 ---
 import AboutMeCard from '../../components/AboutMeCard.astro';
 import Page from '../../components/Page.astro';
-import {Spaceship} from '../../components/preconfigured/index/Spaceship';
-import {VideoInfo} from '../../components/preconfigured/index/VideoInfo';
 import {ContactFormSection} from '../../components/preconfigured/shared/ContactFormSection';
 import {SectionCard} from '../../components/preconfigured/shared/SectionCard';
 import {getTranslationStaticPaths, useTranslation} from '../../lib/i18n';
@@ -57,29 +55,10 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 		telephone: '+39 375 502 4577',
 	})}
 >
-	<section class="h-screen w-full relative">
-		<div class="absolute bottom-2 right-4 z-10">
-			<VideoInfo lang={lang} client:load />
-		</div>
-		<div class="w-full h-full overflow-hidden flex items-center justify-center relative z-0">
-			<video
-				id="spaceship-background-1354125"
-				class="min-w-full min-h-full max-w-none max-h-none -translate-x-1/2 -translate-y-1/2 absolute top-1/2 left-1/2"
-				width="2560"
-				height="1440"
-				muted
-				autoplay
-				playsinline
-				loop
-				poster="/assets/stars-fallback.jpg"
-				style="background-image: url('/assets/stars-fallback.jpg'); background-size: auto"
-			>
-				<source src="/assets/stars-h264.webm" type="video/webm" />
-				<source src="/assets/stars-h264.mp4" type="video/mp4" />
-			</video>
-		</div>
-		<div class="absolute inset-0 z-0 overflow-hidden">
-			<Spaceship client:load />
+	<section class="h-screen w-full relative flex flex-col items-center justify-center">
+		<div class="font-title text-4xl 2xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-widest">EXECUTABLE</div>
+		<div class="font-sans text-lg sm:text-xl lg:text-2xl pt-6 sm:pt-12 lg:pt-14 uppercase text-center min-w-0 max-w-[220px] lg:max-w-none">
+			Consulting, Coaching, Training
 		</div>
 	</section>
 	<section class="min-h-screen flex items-center justify-center">
