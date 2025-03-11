@@ -269,9 +269,9 @@ export default {
 	'Tramite affiancamento individuale o lezioni di gruppo, aiuto i team a espandere la loro expertise e a incorporare nuovi talenti.':
 		'Through individual mentoring or group sessions, I help teams expand their expertise and incorporate new talents.',
 	Digitalizzazione: 'Digitalization',
-	'Aiuto le aziende ad efficientare i processi, creando appositi accelleratori o tracciando vie alternative per lo scambio di informazioni tra i diversi reparti.':
+	'Aiuto le aziende ad efficientare i processi, creando appositi acceleratori o tracciando vie alternative per lo scambio di informazioni tra i diversi reparti.':
 		'I help companies increase their efficiency by developing ad-hoc accelerators or by mapping out alternative pathways for information exchange between departments.',
 	Ammodernamento: 'Modernization',
-	"Manetenere tecnologie al passo coi tempi permette maggiori integrazioni, garantisce l'accesso a un mercato del lavoro più vasto e consente di adottare soluzioni già collaudate da altri. Per questo, ove necessario, applico processi di ri-digializzazione.":
+	"Manetenere tecnologie al passo coi tempi permette maggiori integrazioni, garantisce l'accesso a un mercato del lavoro più vasto e consente di adottare soluzioni già collaudate da altri. Per questo, ove necessario, applico processi di ri-digitalizzazione.":
 		'Maintaining a tech stack up to date creates more integration opportunities, ensures access to a larger pool of candidates in the workforce, and enables adopting solutions already tested by others. For this reason, when necessary, I re-digitalize existing solutions.',
 };
