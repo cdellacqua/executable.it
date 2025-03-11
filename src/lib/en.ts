@@ -7,7 +7,8 @@ export default {
 	'Tu sei qui': 'You are here',
 	Contatti: 'Contacts',
 
-	'Executable - Carlo Dell\'Acqua, Freelance Software Engineer': 'Executable - Carlo Dell\'Acqua, Freelance Software Engineer',
+	"Executable - Carlo Dell'Acqua, Freelance Software Engineer":
+		"Executable - Carlo Dell'Acqua, Freelance Software Engineer",
 	'Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia':
 		'IT Consulting and Web Development, based in Reggio Emilia',
 	di: 'by',
@@ -22,6 +23,9 @@ export default {
 	Invia: 'Send',
 	'Grazie!': 'Thank You!',
 	'oppure, scrivi a': 'or send me an email at',
+	'404': '404',
+	'404 | Pagina non trovata': '404 | Page not found',
+	'Ops! Pagina non trovata': 'Ops! Page not found',
 
 	'Automazione digitale': 'Digital automation',
 	per: 'for',
@@ -256,4 +260,18 @@ export default {
 	'progetti,lavori': 'projects,work',
 	'contattami,contatti,informazioni,di,contatto': 'contact,me,contacts',
 	'privacy,policy': 'privacy,policy',
+
+	Servizi: 'Services',
+	Consulenza: 'Consulting',
+	'Offro consulenza strategica per proporre e validare possibili soluzioni, nonché supporto tecnico e operativo ai team interni.':
+		'I offer strategic consulting to evaluate possible solutions, as well as technical and operational support to internal teams.',
+	Formazione: 'Training',
+	'Tramite affiancamento individuale o lezioni di gruppo, aiuto i team a espandere la loro expertise e a incorporare nuovi talenti.':
+		'Through individual mentoring or group sessions, I help teams expand their expertise and incorporate new talents.',
+	Digitalizzazione: 'Digitalization',
+	'Aiuto le aziende ad efficientare i processi, creando appositi accelleratori o tracciando vie alternative per lo scambio di informazioni tra i diversi reparti.':
+		'I help companies increase their efficiency by developing ad-hoc accelerators or by mapping out alternative pathways for information exchange between departments.',
+	Ammodernamento: 'Modernization',
+	"Manetenere tecnologie al passo coi tempi permette maggiori integrazioni, garantisce l'accesso a un mercato del lavoro più vasto e consente di adottare soluzioni già collaudate da altri. Per questo, ove necessario, applico processi di ri-digializzazione.":
+		'Maintaining a tech stack up to date creates more integration opportunities, ensures access to a larger pool of candidates in the workforce, and enables adopting solutions already tested by others. For this reason, when necessary, I re-digitalize existing solutions.',
 };

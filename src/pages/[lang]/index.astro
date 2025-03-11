@@ -55,12 +55,14 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 		telephone: '+39 375 502 4577',
 	})}
 >
-	<section class="h-screen w-full relative flex flex-col items-center justify-center">
+	<h1 class="h-screen w-full relative flex flex-col items-center justify-center">
 		<div class="font-title text-4xl 2xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-widest">EXECUTABLE</div>
-		<div class="font-sans text-lg sm:text-xl lg:text-2xl pt-6 sm:pt-12 lg:pt-14 uppercase text-center min-w-0 max-w-[220px] lg:max-w-none">
+		<div
+			class="font-sans text-lg sm:text-xl lg:text-2xl pt-6 sm:pt-12 lg:pt-14 uppercase text-center min-w-0 max-w-[220px] lg:max-w-none"
+		>
 			Consulting, Coaching, Training
 		</div>
-	</section>
+	</h1>
 	<section class="min-h-screen flex items-center justify-center">
 		<AboutMeCard lang={lang} />
 	</section>
@@ -69,38 +71,49 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 			<i
 				class="fa-solid fa-robot text-gray-200 opacity-85 text-[400px] absolute top-1/2 right-0 z-0 translate-x-1/2 -translate-y-1/2"
 			></i>
-			<div class="relative z-10">
-				<h2 class="text-3xl mb-10 font-title">
-					{t('Di cosa mi occupo')}
+			<div class="relative z-10 flex flex-col gap-6">
+				<h2 class="text-3xl mb-2 font-title">
+					{t('Servizi')}
 				</h2>
-				<p
-					class=""
-					set:html={t(
-						'Come consulente, il mio obiettivo è aiutare le aziende che hanno <span class="font-semibold">voglia di automazione</span> a realizzare prodotti che spaziano dalle applicazioni di alto livello - <i>app per smartphone, web o desktop</i> - a quelle di basso livello - <i>applicazioni embedded per microcontrollori</i>.',
-					)}
-				/>
-				<div class="ml-5 mb-10 flex flex-row flex-wrap">
-					{
-						[
-							['fa-solid fa-chart-pie', 'text-sky-400', t('Consulenza specialistica')],
-							['fa-solid fa-circle-nodes', 'text-yellow-400', t('Integrazioni')],
-							['fa-solid fa-code', 'text-red-400', t('Programmazione')],
-							['fa-solid fa-microscope', 'text-gray-400', t('Analisi e progettazione')],
-						].map(([icon, color, text], i) => (
-							<div
-								class={`w-full md:w-1/2 mt-10 flex flex-row items-center relative ${
-									i % 2 !== 0 ? 'md:flex-row-reverse' : ''
-								}`}
-							>
-								<i
-									class={`${icon} block text-4xl relative z-0 opacity-80 mt-0.5 mr-3 ${color} ${
-										i % 2 !== 0 ? 'md:mr-0 md:ml-3' : ''
-									}`}
-								/>
-								<span class="block relative z-10 text-lg md:text-xl align-baseline">{text}</span>
-							</div>
-						))
-					}
+				<div>
+					<h3 class="font-medium">{t('Consulenza')}</h3>
+					<p>
+						{
+							t(
+								'Offro consulenza strategica per proporre e validare possibili soluzioni, nonché supporto tecnico e operativo ai team interni.',
+							)
+						}
+					</p>
+				</div>
+				<div>
+					<h3 class="font-medium">{t('Formazione')}</h3>
+					<p>
+						{
+							t(
+								'Tramite affiancamento individuale o lezioni di gruppo, aiuto i team a espandere la loro expertise e a incorporare nuovi talenti.',
+							)
+						}
+					</p>
+				</div>
+				<div>
+					<h3 class="font-medium">{t('Digitalizzazione')}</h3>
+					<p>
+						{
+							t(
+								"Aiuto le aziende ad efficientare i processi, creando appositi accelleratori o tracciando vie alternative per lo scambio di informazioni tra i diversi reparti.",
+							)
+						}
+					</p>
+				</div>
+				<div>
+					<h3 class="font-medium">{t('Ammodernamento')}</h3>
+					<p>
+						{
+							t(
+								"Manetenere tecnologie al passo coi tempi permette maggiori integrazioni, garantisce l'accesso a un mercato del lavoro più vasto e consente di adottare soluzioni già collaudate da altri. Per questo, ove necessario, applico processi di ri-digializzazione.",
+							)
+						}
+					</p>
 				</div>
 			</div>
 		</SectionCard>
