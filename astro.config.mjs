@@ -15,6 +15,9 @@ export default defineConfig({
 				if (/about-me/.test(item.url)) {
 					return undefined;
 				}
+				if (/privacy/.test(item.url)) {
+					return undefined;
+				}
 				return item;
 			},
 		}),
