@@ -183,6 +183,7 @@ export function ContactForm(props: {lang: 'it' | 'en'; onSuccess?(): void}): JSX
 
 			setFormState('success');
 			props.onSuccess?.();
+			setMessageLength(0);
 			formRef.reset();
 		} catch (err) {
 			console.error(err);
