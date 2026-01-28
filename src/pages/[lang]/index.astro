@@ -12,7 +12,7 @@ const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
 
 const title = t("Executable - Carlo Dell'Acqua, Freelance Software Engineer");
-const description = t('Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia');
+const description = t('Servizi di consulenza informatica e realizzazione di applicativi Web a Milano');
 ---
 
 <Page
@@ -44,9 +44,8 @@ const description = t('Servizi di consulenza informatica e realizzazione di appl
 		),
 		address: {
 			'@type': 'PostalAddress',
-			addressLocality: 'Reggio Emilia',
-			addressRegion: 'RE',
-			postalCode: '42122',
+			addressLocality: 'Milano',
+			addressRegion: 'MI',
 			addressCountry: 'IT',
 		},
 		url: 'https://www.executable.it/',

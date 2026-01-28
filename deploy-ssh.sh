@@ -16,6 +16,7 @@ fi
 
 echo "Cloning main branch HEAD into tmp..."
 	git clone --depth=1 "$(git config --get remote.origin.url)" "$BASEDIR/tmp" 2> /dev/null
+	rm -rf "$BASEDIR/tmp/.git"
 echo "[  OK  ]"
 
 echo "Downloading .env file from target server..."

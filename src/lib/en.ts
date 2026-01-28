@@ -9,8 +9,8 @@ export default {
 
 	"Executable - Carlo Dell'Acqua, Freelance Software Engineer":
 		"Executable - Carlo Dell'Acqua, Freelance Software Engineer",
-	'Servizi di consulenza informatica e realizzazione di applicativi Web a Reggio Emilia':
-		'IT Consulting and Web Development, based in Reggio Emilia',
+	'Servizi di consulenza informatica e realizzazione di applicativi Web a Milano':
+		'IT Consulting and Web Development, based in Milano',
 	di: 'by',
 	"di Carlo Dell'Acqua": "by Carlo Dell'Acqua",
 	'P.IVA IT 11238940966': 'VAT IT 11238940966',
@@ -97,8 +97,8 @@ export default {
 
 	'Privacy Policy': 'Privacy Policy',
 	'Titolare del Trattamento dei dati': 'Owner and Data Controller',
-	"Il Titolare del Trattamento è Carlo Dell'Acqua, sede legale in via Martiri di Minozzo 26, CAP 42122, Reggio Emilia (RE), Partita IVA 11238940966.":
-		"The Data Owner is Carlo Dell'Acqua, legal address via Martiri di Minozzo 26, CAP 42122, Reggio Emilia (RE), VAT 11238940966.",
+	"Il Titolare del Trattamento è Carlo Dell'Acqua, sede legale in Piazza Margherita Hack, 3, CAP 20096, Pioltello (MI), Partita IVA 11238940966.":
+		"The Data Owner is Carlo Dell'Acqua, legal address Piazza Margherita Hack, 3, CAP 20096, Pioltello (MI), VAT 11238940966.",
 	'Indirizzo e-mail:': 'E-mail address:',
 	'Dati raccolti': 'Collected data',
 	'Questo sito web raccoglie in modalità automatica i seguenti dati:':
@@ -207,11 +207,8 @@ export default {
 	'Il sito è in manutenzione, si consiglia di riprovare più tardi.':
 		'The website is under maintenance, you can try again later',
 	'È necessario abilitare JavaScript per utilizzare questo form': 'JavaScript is required for the following form',
-	'aprile 2020': 'April 2020',
-	'settembre 2019': 'September 2019',
 	'Inizia la mia avventura imprenditoriale': 'I started my own business',
 	'Laurea Triennale in Ingegneria Informatica': "Bachelor's degree in Computer Science",
-	'marzo 2018': 'March 2018',
 	'Assunzione presso TCommunication Srl': 'Employed at TCommunication Srl',
 	'Parallelamente alla carriera accademica vengo assunto come sviluppatore IT, iniziando ad applicare le conoscenze acquisite negli anni per la realizzazione di prodotti digitali.':
 		'During my academic studies I find a job as IT developer. Here I start applying my knowledge to build digital products.',
@@ -220,12 +217,12 @@ export default {
 	"Se hai un'idea che richiede una consulenza specialistica puoi contattarmi senza impegno compilando il seguente form o inviandomi un'email all'indirizzo riportato di seguito.":
 		'If you have an idea that you want to discuss, contact me by filling in this form or send me an email at the address indicated below.',
 	'Nasce EXECUTABLE': 'EXECUTABLE is founded',
-	'Reggio Emilia': 'Reggio Emilia',
+	Milano: 'Milano',
 	Home: 'Home',
 	Blog: 'Blog',
 	GitHub: 'GitHub',
 	LinkedIn: 'LinkedIn',
-	'Reggio Emilia, 13 Maggio 2021': 'Reggio Emilia, 13 May 2021',
+	'Pioltello, 28 Gennaio 2026': 'Pioltello, 28 January 2026',
 	"CarloDev - a developer's journey": "CarloDev - a developer's journey",
 	'anteprima per browser': 'browser preview',
 	'Lun-Ven 10-12, 14-17': 'Mon-Fri 10-12, 14-17',
