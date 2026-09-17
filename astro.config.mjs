@@ -1,5 +1,4 @@
 import {defineConfig} from 'astro/config';
-import solidJs from '@astrojs/solid-js';
 import tailwind from '@astrojs/tailwind';
 
 import sitemap from '@astrojs/sitemap';
@@ -8,14 +7,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://www.executable.it',
 	integrations: [
-		solidJs(),
 		tailwind(),
 		sitemap({
 			serialize(item) {
-				if (/about-me/.test(item.url)) {
-					return undefined;
-				}
-				if (/privacy/.test(item.url)) {
+				if (/about-me|privacy|projects|contacts/.test(item.url)) {
 					return undefined;
 				}
 				return item;

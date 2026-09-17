@@ -4,8 +4,6 @@ Allow: /assets/favicon*
 Allow: /assets/og-*
 Disallow: /assets/*
 Disallow: /fonts/*
-Disallow: /fontawesome/*
-Disallow: /chunks/*
 Disallow: /card
 Disallow: /card-bw
 Disallow: */404.html

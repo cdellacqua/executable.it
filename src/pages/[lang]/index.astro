@@ -1,8 +1,6 @@
 ---
 import AboutMeCard from '../../components/AboutMeCard.astro';
 import Page from '../../components/Page.astro';
-import {ContactFormSection} from '../../components/preconfigured/shared/ContactFormSection';
-import {SectionCard} from '../../components/preconfigured/shared/SectionCard';
 import {getTranslationStaticPaths, useTranslation} from '../../lib/i18n';
 
 export const getStaticPaths = getTranslationStaticPaths;
@@ -11,112 +9,25 @@ const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
 
 const t = useTranslation(lang);
 
-const title = t("Executable - Carlo Dell'Acqua, Freelance Software Engineer");
-const description = t('Servizi di consulenza informatica e realizzazione di applicativi Web a Milano');
+const title = "Carlo Dell'Acqua";
+const description = t("Profilo personale di Carlo Dell'Acqua, Software Engineer.");
 ---
 
 <Page
 	title={title}
 	description={description}
 	lang={lang}
-	keywords={t(
-		'consulenza,software,sviluppo,development,developer,siti,web,webapp,informatica,landing,page,form,programmazione,programmatore',
-	)}
+	keywords={t('software,engineer,sviluppo,developer,github,linkedin')}
 	ldJson={JSON.stringify({
 		'@context': 'https://schema.org',
-		'@id': 'https://www.executable.it/',
-		'@type': 'LocalBusiness',
-		openingHoursSpecification: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].flatMap(
-			(dayOfWeek) => [
-				{
-					'@type': 'OpeningHoursSpecification',
-					dayOfWeek: 'https://schema.org/' + dayOfWeek,
-					opens: '10:00:00',
-					closes: '12:00:00',
-				},
-				{
-					'@type': 'OpeningHoursSpecification',
-					dayOfWeek: 'https://schema.org/' + dayOfWeek,
-					opens: '14:00:00',
-					closes: '17:00:00',
-				},
-			],
-		),
-		address: {
-			'@type': 'PostalAddress',
-			addressLocality: 'Milano',
-			addressRegion: 'MI',
-			addressCountry: 'IT',
-		},
+		'@type': 'Person',
+		name: "Carlo Dell'Acqua",
 		url: 'https://www.executable.it/',
-		description: description,
-		name: title,
-		telephone: '+39 375 502 4577',
+		jobTitle: t('Software Engineer'),
+		sameAs: ['https://github.com/cdellacqua', 'https://www.linkedin.com/in/carlo-dell-acqua/'],
 	})}
 >
-	<h1 class="h-screen w-full relative flex flex-col items-center justify-center">
-		<div class="font-title text-4xl 2xs:text-5xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-widest">EXECUTABLE</div>
-		<div
-			class="font-sans text-lg sm:text-xl lg:text-2xl pt-6 sm:pt-12 lg:pt-14 uppercase text-center min-w-0 max-w-[220px] lg:max-w-none"
-		>
-			Consulting, Coaching, Training
-		</div>
-	</h1>
-	<section class="min-h-screen flex items-center justify-center">
+	<section class="flex-1 w-full flex flex-col items-center justify-center px-4 py-12 sm:py-16">
 		<AboutMeCard lang={lang} />
 	</section>
-	<section class="w-full flex items-center pt-24 relative">
-		<SectionCard>
-			<i
-				class="fa-solid fa-robot text-gray-200 opacity-85 text-[400px] absolute top-1/2 right-0 z-0 translate-x-1/2 -translate-y-1/2"
-			></i>
-			<div class="relative z-10 flex flex-col gap-6">
-				<h2 class="text-3xl mb-2 font-title">
-					{t('Servizi')}
-				</h2>
-				<div>
-					<h3 class="font-medium">{t('Consulenza')}</h3>
-					<p>
-						{
-							t(
-								'Offro consulenza strategica per proporre e validare possibili soluzioni, nonché supporto tecnico e operativo ai team interni.',
-							)
-						}
-					</p>
-				</div>
-				<div>
-					<h3 class="font-medium">{t('Formazione')}</h3>
-					<p>
-						{
-							t(
-								'Tramite affiancamento individuale o lezioni di gruppo, aiuto i team a espandere la loro expertise e a incorporare nuovi talenti.',
-							)
-						}
-					</p>
-				</div>
-				<div>
-					<h3 class="font-medium">{t('Digitalizzazione')}</h3>
-					<p>
-						{
-							t(
-								"Aiuto le aziende ad efficientare i processi, creando appositi acceleratori o tracciando vie alternative per lo scambio di informazioni tra i diversi reparti.",
-							)
-						}
-					</p>
-				</div>
-				<div>
-					<h3 class="font-medium">{t('Ammodernamento')}</h3>
-					<p>
-						{
-							t(
-								"Manetenere tecnologie al passo coi tempi permette maggiori integrazioni, garantisce l'accesso a un mercato del lavoro più vasto e consente di adottare soluzioni già collaudate da altri. Per questo, ove necessario, applico processi di ri-digitalizzazione.",
-							)
-						}
-					</p>
-				</div>
-			</div>
-		</SectionCard>
-	</section>
-
-	<ContactFormSection lang={lang} useH1={false} client:load />
 </Page>

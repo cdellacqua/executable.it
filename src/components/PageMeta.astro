@@ -1,0 +1,22 @@
+---
+import LangLinks from './LangLinks.astro';
+import {useTranslation} from '../lib/i18n';
+
+type Props = {
+	lang: 'it' | 'en';
+	to?: 'privacy' | 'home';
+};
+
+const {lang, to = 'privacy'} = Astro.props;
+const t = useTranslation(lang);
+const href = to === 'home' ? `/${lang}` : `/${lang}/privacy`;
+const label = to === 'home' ? t("Torna all'homepage") : t('Privacy Policy');
+---
+
+<div class="w-full flex justify-center py-8 text-xs text-gray-500">
+	<p class="inline-flex items-center gap-2">
+		<LangLinks lang={lang} class="[&_a]:text-sky-600 [&_a]:hover:underline" />
+		<span aria-hidden="true" class="px-1">·</span>
+		<a class="underline hover:text-gray-700" href={href}>{label}</a>
+	</p>
+</div>

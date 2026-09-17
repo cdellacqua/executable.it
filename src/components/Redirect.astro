@@ -1,0 +1,30 @@
+---
+import {useTranslation} from '../lib/i18n';
+
+type Props = {
+	lang: 'it' | 'en';
+};
+
+const {lang} = Astro.props;
+const t = useTranslation(lang);
+const dest = `/${lang}`;
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="refresh" content={`0;url=${dest}`} />
+		<link rel="canonical" href={dest} />
+		<meta name="robots" content="noindex,nofollow" />
+		<title>{t("Torna all'homepage")}</title>
+		<script is:inline define:vars={{dest}}>
+			window.location.replace(dest);
+		</script>
+	</head>
+	<body>
+		<p>
+			<a href={dest}>{t("Torna all'homepage")}</a>
+		</p>
+	</body>
+</html>

@@ -2,40 +2,20 @@
   "name": "@example/portfolio",
   "version": "0.0.1",
   "private": true,
-  "main": "src/api/index.cjs",
   "scripts": {
     "dev": "astro dev",
     "dev:host": "astro dev --host",
-    "start": "node .",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "@cdellacqua/express-async-wrapper": "^1.0.6",
-    "@cdellacqua/sleep": "^5.0.0",
-    "@universal-stores/solid-adapter": "^2.1.0",
-    "@universal-stores/spring": "^4.0.0",
-    "body-parser": "^1.20.1",
-    "color": "^4.2.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "nodemailer": "^6.8.0",
-    "solid-js": "^1.7.11",
-    "solid-styled-components": "^0.28.4",
-    "tippy.js": "^6.3.7"
-  },
   "devDependencies": {
     "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/solid-js": "^1.2.3",
     "@astrojs/tailwind": "^2.1.3",
-    "@types/color": "^3.0.3",
     "astro": "^1.9.2",
     "autoprefixer": "^10.4.8",
     "cssnano": "^5.1.13",
     "eslint": "^8.23.0",
-    "image-size": "^1.0.2",
     "prettier": "^2.7.1",
     "sass": "^1.54.9"
   }

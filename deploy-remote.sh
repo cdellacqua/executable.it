@@ -8,12 +8,6 @@ echo "Extracting archive..."
 echo "[  OK  ]"
 cd _archive_
 
-if [ "${SYSTEMD_SERVICE:-}" != "" ]; then
-	echo "Stopping systemd service..."
-		sudo systemctl stop "$SYSTEMD_SERVICE"
-	echo "[  OK  ]"
-fi
-
 echo "Cleaning up old version..."
 	find . -maxdepth 1 -mindepth 1 -exec sh -c '
 		rm -rf "$2/$1"
@@ -23,12 +17,6 @@ echo "[  OK  ]"
 echo "Moving new version..."
 	find . -maxdepth 1 -mindepth 1 -exec mv {} "$TARGET_DIRECTORY" \;
 echo "[  OK  ]"
-
-if [ "${SYSTEMD_SERVICE:-}" != "" ]; then
-	echo "Restarting systemd service..."
-		sudo systemctl start "$SYSTEMD_SERVICE"
-	echo "[  OK  ]"
-fi
 
 echo "Cleaning up /tmp..."
 	rm -rf /tmp/_archive_

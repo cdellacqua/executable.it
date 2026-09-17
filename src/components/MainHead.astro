@@ -1,7 +1,6 @@
 ---
 import '../styles/fonts.css';
 import '../styles/global.scss';
-// import '../styles/neumrphism.scss';
 type Props = {
 	title?: string;
 	description?: string;
@@ -35,8 +34,6 @@ const trailingSlashRegex = /\/$/g;
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="author" content="Carlo Dell'Acqua" />
 
-<link rel="stylesheet" href="/fontawesome/all.css" />
-
 <meta name="theme-color" content="#e2e2e2" />
 <meta name="apple-mobile-web-app-status-bar" content="#e2e2e2" />
 
@@ -50,10 +47,3 @@ const trailingSlashRegex = /\/$/g;
 }
 
 {ldJson && <script is:inline type="application/ld+json" set:html={ldJson} />}
-
-<script is:inline>
-	window.anonylytics = {
-		g: '7a4c47be-128b-468f-8814-808a3dddca25',
-	};
-</script>
-<script is:inline src="/anonylytics.js"></script>

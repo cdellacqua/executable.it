@@ -19,25 +19,10 @@ echo "Cloning main branch HEAD into tmp..."
 	rm -rf "$BASEDIR/tmp/.git"
 echo "[  OK  ]"
 
-echo "Downloading .env file from target server..."
-	set +e
-	scp -P "$SSH_PORT" "$TARGET_USER@$SSH_HOST:$TARGET_DIRECTORY/.env" "$BASEDIR/tmp/.env" > /dev/null
-	RETCODE="$?"
-	set -e
-	if [ "$RETCODE" -ne 0 ]; then
-		echo "[ WARN ] ----------------------------------------------------------------------"
-		echo "[ WARN ] Unable to retrieve .env file for root, using .env.example in 2 seconds"
-		echo "[ WARN ] ----------------------------------------------------------------------"
-		sleep 2
-		cp "$BASEDIR/tmp/.env.example" "$BASEDIR/tmp/.env"
-	fi
-echo "[  OK  ]"
-
 echo "Building..."
 	cd tmp
 		npm ci > /dev/null
 		npm run build > /dev/null
-		npm prune --production > /dev/null
 	cd ..
 echo "[  OK  ]"
 

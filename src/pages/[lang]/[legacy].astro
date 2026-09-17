@@ -1,0 +1,15 @@
+---
+import Redirect from '../../components/Redirect.astro';
+
+export function getStaticPaths() {
+	return (['it', 'en'] as const).flatMap((lang) =>
+		['projects', 'contacts', 'about-me'].map((legacy) => ({
+			params: {lang, legacy},
+		})),
+	);
+}
+
+const lang = String(Astro.params.lang ?? 'it') as 'it' | 'en';
+---
+
+<Redirect lang={lang} />
