@@ -46,7 +46,4 @@ export default {
 	'Il Titolare si riserva il diritto di apportare modifiche alla presente Privacy Policy in qualunque momento notificandolo agli utenti su questa pagina.':
 		'The data owner can change this Privacy Policy at any time, notifying the users of the changes on this page.',
 	'Pioltello, 17 Settembre 2026': 'Pioltello, 17 September 2026',
-
-	'Clicca per copiare': 'Click to copy',
-	'Copiato!': 'Copied!',
 };

@@ -15,3 +15,142 @@ body {
 	background-position: center center;
 	background-repeat: no-repeat;
 }
+
+.card-scene {
+	perspective: 80rem;
+}
+
+.card-rotator {
+	--photo-size: 13rem;
+	--photo-overlap-x: 0px;
+	--photo-overlap-y: 1rem;
+	--rest-x: 0px;
+	--rest-y: 0px;
+	transform: translate(var(--rest-x), var(--rest-y)) rotateY(0deg);
+	transform-style: preserve-3d;
+}
+
+@media (min-width: 1024px) {
+	.card-rotator {
+		--photo-size: 18rem;
+		--photo-overlap-x: 2rem;
+		--photo-overlap-y: 0px;
+		--rest-x: calc((var(--photo-size) - var(--photo-overlap-x)) / -2);
+		--rest-y: 0px;
+	}
+}
+
+.card-rotator.is-open {
+	animation: rotator-open 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.card-rotator.is-closed {
+	animation: rotator-close 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.card-face {
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.card-front {
+	transform: rotateY(0deg);
+	pointer-events: auto;
+}
+
+.card-rotator.is-open .card-front {
+	pointer-events: none;
+}
+
+.card-back {
+	transform: rotateY(180deg);
+	pointer-events: none;
+}
+
+.card-rotator.is-open .card-back {
+	pointer-events: auto;
+}
+
+.card-photo {
+	--rest-left: 50%;
+	--rest-top: 0px;
+	--rest-tx: -50%;
+	--rest-ty: calc(-100% + var(--photo-overlap-y));
+	position: absolute;
+	left: var(--rest-left);
+	top: var(--rest-top);
+	transform: translate(var(--rest-tx), var(--rest-ty));
+	z-index: 20;
+}
+
+@media (min-width: 1024px) {
+	.card-photo {
+		--rest-left: 100%;
+		--rest-top: 2.5rem;
+		--rest-tx: calc(var(--photo-overlap-x) * -1);
+		--rest-ty: 0px;
+	}
+}
+
+.card-rotator.is-open .card-photo {
+	animation: photo-to-center 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.card-rotator.is-closed .card-photo {
+	animation: photo-from-center 0.45s 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes photo-to-center {
+	to {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
+@keyframes photo-from-center {
+	from {
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+	to {
+		left: var(--rest-left);
+		top: var(--rest-top);
+		transform: translate(var(--rest-tx), var(--rest-ty));
+	}
+}
+
+@keyframes rotator-open {
+	0% {
+		transform: translate(var(--rest-x), var(--rest-y)) rotateY(0deg);
+	}
+	45% {
+		transform: translate(0, 0) rotateY(0deg);
+	}
+	100% {
+		transform: translate(0, 0) rotateY(180deg);
+	}
+}
+
+@keyframes rotator-close {
+	0% {
+		transform: translate(0, 0) rotateY(180deg);
+	}
+	55% {
+		transform: translate(0, 0) rotateY(0deg);
+	}
+	100% {
+		transform: translate(var(--rest-x), var(--rest-y)) rotateY(0deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.card-rotator.is-open,
+	.card-rotator.is-closed,
+	.card-rotator.is-open .card-photo,
+	.card-rotator.is-closed .card-photo {
+		animation-duration: 0.01ms;
+		animation-delay: 0s;
+	}
+}

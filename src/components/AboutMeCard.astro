@@ -1,4 +1,5 @@
 ---
+import {readFileSync} from 'node:fs';
 import Icon from './Icon.astro';
 import LangLinks from './LangLinks.astro';
 import {useTranslation} from '../lib/i18n';
@@ -10,126 +11,210 @@ type Props = {
 
 const lang = (Astro.props.lang ?? 'it') as 'it' | 'en';
 const t = useTranslation(lang);
-const className = `w-full relative flex flex-col-reverse lg:flex-row items-center justify-center ${
-	Astro.props.className ?? ''
-}`.trim();
 const curlCommand = 'curl -sL executable.it/card';
+
+const ansiFg: Record<number, string> = {
+	31: '#ef2929',
+	33: '#fce94f',
+	36: '#34e2e2',
+	37: '#eeeeec',
+};
+
+function escapeHtml(value: string) {
+	return value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+/** Render the SGR sequences in public/card. Bold uses the real mono face so columns stay aligned. */
+function ansiToHtml(input: string) {
+	let bold = false;
+	let underline = false;
+	let color: string | null = null;
+	let html = '';
+	let buf = '';
+
+	const flush = () => {
+		if (!buf) return;
+		const text = escapeHtml(buf);
+		buf = '';
+		const style = [
+			color ? `color:${color}` : '',
+			bold ? 'font-weight:700' : '',
+			underline ? 'text-decoration:underline' : '',
+		]
+			.filter(Boolean)
+			.join(';');
+		html += style ? `<span style="${style}">${text}</span>` : text;
+	};
+
+	const apply = (codes: number[]) => {
+		for (const code of codes.length ? codes : [0]) {
+			if (code === 0) {
+				bold = false;
+				underline = false;
+				color = null;
+			} else if (code === 1) bold = true;
+			else if (code === 4) underline = true;
+			else if (code === 22) bold = false;
+			else if (code === 24) underline = false;
+			else if (code === 39) color = null;
+			else if (ansiFg[code]) color = ansiFg[code];
+		}
+	};
+
+	const pattern = /\u001b\[([0-9;]*)m/g;
+	let last = 0;
+	for (const match of input.matchAll(pattern)) {
+		buf += input.slice(last, match.index);
+		flush();
+		const raw = match[1];
+		apply(raw ? raw.split(';').map((part) => Number(part)) : [0]);
+		last = (match.index ?? 0) + match[0].length;
+	}
+	buf += input.slice(last);
+	flush();
+	return html;
+}
+
+const asciiCard = ansiToHtml(readFileSync('public/card', 'utf8'));
+const stripe =
+	'background-color:#111827;background-image:repeating-linear-gradient(-55deg,rgba(255,255,255,0.04) 0 1px,transparent 1px 5px)';
 ---
 
-<div class={className}>
-	<div
-		class="max-w-xs md:max-w-xl lg:max-w-2xl w-full border border-gray-300 bg-gray-100 rounded-xl overflow-hidden z-0 relative"
-	>
-		<div
-			class="py-6 px-6 md:py-8 md:px-10 lg:py-12 lg:px-12 lg:pr-16 flex flex-col justify-between bg-gray-50 rounded-xl overflow-hidden"
-		>
-			<div class="pb-4 md:pb-8 lg:pb-12 text-center lg:text-left">
-				<h1 class="text-2xl md:text-4xl lg:text-6xl font-title">Carlo Dell'Acqua</h1>
-				<p class="lg:pl-4 font-bold text-lg md:text-xl lg:text-2xl text-sky-600">
-					{t('Software Engineer')}
-				</p>
+<div class:list={['card-scene w-full max-w-xs md:max-w-xl lg:max-w-2xl mx-auto', Astro.props.className]}>
+	<div class="card-rotator relative w-full" data-card-rotator>
+		<div class="card-front card-face relative w-full">
+			<div
+				class="w-full border border-gray-300 bg-gray-100 rounded-xl overflow-hidden z-0 relative"
+			>
+				<div
+					class="py-6 px-6 md:py-8 md:px-10 lg:py-12 lg:px-12 lg:pr-16 flex flex-col justify-between bg-gray-50 rounded-xl overflow-hidden"
+				>
+					<div class="pb-4 md:pb-8 lg:pb-12 text-center lg:text-left">
+						<h1 class="text-2xl md:text-4xl lg:text-6xl font-title">Carlo Dell'Acqua</h1>
+						<p class="lg:pl-4 font-bold text-lg md:text-xl lg:text-2xl text-sky-600">
+							{t('Software Engineer')}
+						</p>
+					</div>
+					<div class="text-4xl lg:text-6xl">
+						<div class="flex flex-row flex-wrap items-center justify-between">
+							<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
+								<Icon name="cloud" class="text-sky-300" />
+								<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Web')}</div>
+							</div>
+							<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
+								<Icon name="server" class="text-gray-400" />
+								<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Server')}</div>
+							</div>
+							<div class="text-center w-1/2 md:w-1/4">
+								<Icon name="mobile" class="text-sky-600" />
+								<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Mobile')}</div>
+							</div>
+							<div class="text-center w-1/2 md:w-1/4">
+								<Icon name="desktop" class="text-slate-600" />
+								<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Desktop')}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="py-6 px-6 lg:px-12 lg:pr-16 shadow-inner">
+					<div class="flex flex-row justify-center gap-4 sm:gap-6">
+						<a
+							class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white hover:bg-gray-100 transition-colors"
+							title={t('Profilo GitHub')}
+							target="_blank"
+							rel="noopener"
+							href="https://github.com/cdellacqua"
+							><Icon name="github" class="text-gray-700" /><span class="hidden md:inline"
+								>{t('Profilo GitHub')}
+							</span><span class="md:hidden">{t('GitHub')}</span>
+						</a>
+						<a
+							class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white hover:bg-gray-100 transition-colors"
+							title={t('Profilo LinkedIn')}
+							target="_blank"
+							rel="noopener"
+							href="https://www.linkedin.com/in/carlo-dell-acqua/"
+							><Icon name="linkedin" class="text-gray-700" /><span class="hidden md:inline"
+								>{t('Profilo LinkedIn')}
+							</span><span class="md:hidden">{t('LinkedIn')}</span>
+						</a>
+					</div>
+				</div>
+				<div class="relative px-6 py-3 lg:px-12 text-gray-300" style={stripe}>
+					<LangLinks
+						lang={lang}
+						class="absolute top-1/2 right-6 lg:right-12 -translate-y-1/2 text-xs [&_a]:text-sky-300 [&_a]:hover:underline"
+					/>
+					<button
+						type="button"
+						class="font-mono text-xs text-left cursor-pointer hover:text-white transition-colors pr-16"
+						data-card-flip
+					>
+						<span class="text-sky-400">$</span>
+						{' '}{curlCommand}
+					</button>
+				</div>
+				<div class="px-6 py-2 lg:px-12 text-center sm:text-left text-xs text-gray-500">
+					© 2026 · Milano · <a class="underline hover:text-gray-700" href={`/${lang}/privacy`}
+						>{t('Privacy Policy')}</a
+					>
+				</div>
 			</div>
-			<div class="text-4xl lg:text-6xl">
-				<div class="flex flex-row flex-wrap items-center justify-between">
-					<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
-						<Icon name="cloud" class="text-sky-300" />
-						<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Web')}</div>
-					</div>
-					<div class="text-center w-1/2 mb-6 md:mb-0 md:w-1/4">
-						<Icon name="server" class="text-gray-400" />
-						<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Server')}</div>
-					</div>
-					<div class="text-center w-1/2 md:w-1/4">
-						<Icon name="mobile" class="text-sky-600" />
-						<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Mobile')}</div>
-					</div>
-					<div class="text-center w-1/2 md:w-1/4">
-						<Icon name="desktop" class="text-slate-600" />
-						<div class="text-base md:text-lg lg:text-xl mt-1 font-bold">{t('Desktop')}</div>
+			<a
+				title={t('Profilo LinkedIn')}
+				target="_blank"
+				rel="noopener"
+				href="https://www.linkedin.com/in/carlo-dell-acqua/"
+				class="card-photo shrink-0 shadow-xl border border-gray-300 overflow-hidden rounded-xl p-2 h-52 w-52 lg:h-72 lg:w-72 bg-white"
+			>
+				<div class="rounded-lg overflow-hidden h-full w-full">
+					<img
+						src="/assets/me-transparent.png?h=ce60d20"
+						alt={t('Foto profilo')}
+						width="686"
+						height="686"
+						class="w-full h-full max-w-none object-cover relative z-0"
+					/>
+				</div>
+			</a>
+		</div>
+		<div class="card-back card-face absolute inset-0">
+			<div class="h-full rounded-xl border border-gray-300 overflow-hidden text-gray-200" style={stripe}>
+				<button
+					type="button"
+					class="absolute inset-0 z-10 cursor-pointer"
+					data-card-flip
+					aria-label={curlCommand}
+				>
+				</button>
+				<div class="relative z-0 h-full flex flex-col px-4 py-3 sm:px-6">
+					<p class="font-mono text-xs shrink-0">
+						<span class="text-sky-400">$</span>
+						{' '}{curlCommand}
+					</p>
+					<div class="flex-1 min-h-0 overflow-auto flex items-center justify-center">
+						<pre class="font-mono text-[8px] leading-[1.15] sm:text-[10px] md:text-xs" set:html={asciiCard}></pre>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="py-6 px-6 lg:px-12 lg:pr-16 shadow-inner">
-			<div class="flex flex-row justify-center gap-4 sm:gap-6">
-				<a
-					class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white hover:bg-gray-100 transition-colors"
-					title={t('Profilo GitHub')}
-					target="_blank"
-					rel="noopener"
-					href="https://github.com/cdellacqua"
-					><Icon name="github" class="text-gray-700" /><span class="hidden md:inline"
-						>{t('Profilo GitHub')}
-					</span><span class="md:hidden">{t('GitHub')}</span>
-				</a>
-				<a
-					class="inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-gray-300 bg-white hover:bg-gray-100 transition-colors"
-					title={t('Profilo LinkedIn')}
-					target="_blank"
-					rel="noopener"
-					href="https://www.linkedin.com/in/carlo-dell-acqua/"
-					><Icon name="linkedin" class="text-gray-700" /><span class="hidden md:inline"
-						>{t('Profilo LinkedIn')}
-					</span><span class="md:hidden">{t('LinkedIn')}</span>
-				</a>
-			</div>
-		</div>
-		<div
-			class="px-6 py-3 lg:px-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-gray-300"
-			style="background-color:#111827;background-image:repeating-linear-gradient(-55deg,rgba(255,255,255,0.04) 0 1px,transparent 1px 5px)"
-		>
-			<button
-				type="button"
-				class="font-mono text-xs text-left hover:text-white transition-colors"
-				title={t('Clicca per copiare')}
-				data-copy={curlCommand}
-				data-copied={t('Copiato!')}
-			>
-				<span class="text-sky-400">$</span>
-				{' '}{curlCommand}
-			</button>
-			<LangLinks lang={lang} class="text-xs [&_a]:text-sky-300 [&_a]:hover:underline" />
-		</div>
-		<div class="px-6 py-2 lg:px-12 text-center sm:text-left text-xs text-gray-500">
-			© 2026 · Milano · <a class="underline hover:text-gray-700" href={`/${lang}/privacy`}>{t('Privacy Policy')}</a>
-		</div>
 	</div>
-	<a
-		title={t('Profilo LinkedIn')}
-		target="_blank"
-		rel="noopener"
-		href="https://www.linkedin.com/in/carlo-dell-acqua/"
-		class="block shadow-xl border border-gray-300 overflow-hidden -mb-4 lg:mb-0 lg:-mt-20 lg:-ml-8 rounded-xl p-2 z-10 relative h-52 lg:h-72 bg-white"
-	>
-		<div class="rounded-lg overflow-hidden h-full">
-			<img
-				src="/assets/me-transparent.png?h=ce60d20"
-				alt={t('Foto profilo')}
-				width="686"
-				height="686"
-				class="w-auto h-full relative z-0"
-			/>
-		</div>
-	</a>
 </div>
 
 <script is:inline>
-	document.querySelectorAll('[data-copy]').forEach(function (el) {
-		el.addEventListener('click', function () {
-			var command = el.getAttribute('data-copy');
-			var copied = el.getAttribute('data-copied');
-			var idle = el.innerHTML;
-			function done() {
-				el.innerHTML = copied;
-				setTimeout(function () {
-					el.innerHTML = idle;
-				}, 1200);
-			}
-			if (navigator.clipboard && navigator.clipboard.writeText) {
-				navigator.clipboard.writeText(command).then(done).catch(done);
-			} else {
-				done();
-			}
+	(function () {
+		var rotator = document.querySelector('[data-card-rotator]');
+		if (!rotator) return;
+		document.querySelectorAll('[data-card-flip]').forEach(function (el) {
+			el.addEventListener('click', function () {
+				if (rotator.classList.contains('is-open')) {
+					rotator.classList.remove('is-open');
+					rotator.classList.add('is-closed');
+				} else {
+					rotator.classList.remove('is-closed');
+					rotator.classList.add('is-open');
+				}
+			});
 		});
-	});
+	})();
 </script>
