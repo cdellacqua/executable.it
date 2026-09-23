@@ -10,8 +10,11 @@ const ASCII_LINKS = [
 const resolutions = [
 	// Playwright's iPhone 13 descriptor is 390×664 (Safari chrome). 390×844 is the full logical screen.
 	{ name: 'iPhone 13', viewport: { width: 390, height: 844 } },
+	{ name: 'iPhone 13 landscape', viewport: { width: 844, height: 390 } },
 	{ name: 'Pixel 5', viewport: devices['Pixel 5'].viewport },
+	{ name: 'Pixel 5 landscape', viewport: devices['Pixel 5 landscape'].viewport },
 	{ name: 'iPad Mini', viewport: devices['iPad Mini'].viewport },
+	{ name: 'iPad Mini landscape', viewport: devices['iPad Mini landscape'].viewport },
 	{ name: 'Desktop Chrome', viewport: devices['Desktop Chrome'].viewport },
 ] as const;
 
@@ -69,6 +72,21 @@ test('magstripe stays above the iPhone unsafe bottom inset', async ({ page }) =>
 for (const resolution of resolutions) {
 	test.describe(resolution.name, () => {
 		test.use({ viewport: resolution.viewport });
+
+		test('profile photo stays fully on screen', async ({ page }) => {
+			await page.goto('/it');
+			const photo = page.locator('.card-photo');
+			await expect(photo).toBeVisible();
+
+			const box = await photo.boundingBox();
+			expect(box, 'profile photo should occupy space on screen').toBeTruthy();
+
+			const viewport = page.viewportSize()!;
+			expect(box!.x).toBeGreaterThanOrEqual(-1);
+			expect(box!.y).toBeGreaterThanOrEqual(-1);
+			expect(box!.x + box!.width).toBeLessThanOrEqual(viewport.width + 1);
+			expect(box!.y + box!.height).toBeLessThanOrEqual(viewport.height + 1);
+		});
 
 		test('flipped ascii links stay on screen and receive clicks', async ({ page }) => {
 			const rotator = await openAsciiCard(page);

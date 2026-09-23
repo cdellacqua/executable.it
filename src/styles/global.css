@@ -150,10 +150,12 @@ main {
 	--photo-size: 13rem;
 	--photo-overlap-x: 0px;
 	--photo-overlap-y: 1rem;
+	--photo-hang-y: calc(var(--photo-size) - var(--photo-overlap-y));
 	--rest-x: 0px;
-	--rest-y: calc((var(--photo-size) - var(--photo-overlap-y)) / 2);
+	--rest-y: 0px;
 	position: relative;
 	width: 100%;
+	margin-top: var(--photo-hang-y);
 	transform: translate(var(--rest-x), var(--rest-y)) rotateY(0deg);
 	transform-style: preserve-3d;
 }
@@ -163,12 +165,14 @@ main {
 		--photo-size: 18rem;
 		--photo-overlap-x: 2rem;
 		--photo-overlap-y: 0px;
+		--photo-hang-y: 0px;
 		--rest-x: calc((var(--photo-size) - var(--photo-overlap-x)) / -2);
 		--rest-y: 0px;
 	}
 }
 
 .card-rotator.is-open {
+	margin-top: 0;
 	animation: rotator-open 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -328,6 +332,7 @@ main {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
+	row-gap: 1.5rem;
 }
 
 .skill {
@@ -335,14 +340,9 @@ main {
 	text-align: center;
 }
 
-.skill:nth-child(-n + 2) {
-	margin-bottom: 1.5rem;
-}
-
 @media (min-width: 768px) {
 	.skill {
 		width: 25%;
-		margin-bottom: 0;
 	}
 }
 
@@ -681,24 +681,30 @@ main {
 @keyframes rotator-open {
 	0% {
 		transform: translate(var(--rest-x), var(--rest-y)) rotateY(0deg);
+		margin-top: var(--photo-hang-y);
 	}
 	45% {
 		transform: translate(0, 0) rotateY(0deg);
+		margin-top: 0;
 	}
 	100% {
 		transform: translate(0, 0) rotateY(180deg);
+		margin-top: 0;
 	}
 }
 
 @keyframes rotator-close {
 	0% {
 		transform: translate(0, 0) rotateY(180deg);
+		margin-top: 0;
 	}
 	55% {
 		transform: translate(0, 0) rotateY(0deg);
+		margin-top: 0;
 	}
 	100% {
 		transform: translate(var(--rest-x), var(--rest-y)) rotateY(0deg);
+		margin-top: var(--photo-hang-y);
 	}
 }
 
