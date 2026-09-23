@@ -29,9 +29,7 @@ for (const path of routes) {
 	test(`${path} has no WCAG A/AA axe violations`, async ({ page }) => {
 		await page.goto(path);
 		const results = await new AxeBuilder({ page })
-			.withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
-			// maximum-scale=1 is intentional so iOS can paint into the safe area.
-			.disableRules(['meta-viewport'])
+			.withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
 			.analyze();
 		const details = results.violations
 			.map((violation) => `${violation.id}: ${violation.help}\n${violation.nodes.map((node) => `  ${node.target.join(' ')}`).join('\n')}`)

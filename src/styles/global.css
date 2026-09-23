@@ -17,6 +17,7 @@
 	--font-title: 'Fredoka One', var(--font-sans);
 	--radius-lg: 0.5rem;
 	--radius-xl: 0.75rem;
+	--tap-min: 1.5rem;
 	--bg-image-light: radial-gradient(circle at -4% -734%, #bababa07 60%, transparent 60.05%),
 		radial-gradient(circle at 68% 64%, #00000006 50%, transparent 50.05%),
 		radial-gradient(circle at -33% 150%, #00000005 43%, transparent 43.05%),
@@ -145,6 +146,15 @@ main {
 	gap: 0.5rem;
 }
 
+.lang-links a,
+.lang-links .lang-current {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: var(--tap-min);
+	min-height: var(--tap-min);
+}
+
 .lang-current {
 	font-weight: 600;
 }
@@ -159,6 +169,12 @@ main {
 	font-size: 0.75rem;
 	line-height: 1rem;
 	color: var(--text-muted);
+}
+
+.page-meta-link {
+	display: inline-flex;
+	align-items: center;
+	min-height: var(--tap-min);
 }
 
 .page-meta .lang-links a,
@@ -538,6 +554,8 @@ main {
 
 .card-prompt {
 	min-width: 0;
+	min-height: var(--tap-min);
+	line-height: var(--tap-min);
 	text-align: left;
 	transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -557,7 +575,16 @@ main {
 }
 
 .card-legal > span {
+	display: inline-flex;
+	align-items: center;
 	min-width: 0;
+	min-height: var(--tap-min);
+}
+
+.card-legal a {
+	display: inline-flex;
+	align-items: center;
+	min-height: var(--tap-min);
 }
 
 .theme-toggle {
@@ -572,6 +599,8 @@ main {
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
+	min-width: var(--tap-min);
+	min-height: var(--tap-min);
 	line-height: 0;
 	border-radius: var(--radius-lg);
 }
