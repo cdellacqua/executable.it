@@ -71,6 +71,18 @@ body {
 	pointer-events: auto;
 }
 
+.card-back .ascii-link {
+	color: inherit;
+	text-decoration: none;
+	pointer-events: auto;
+	cursor: pointer;
+}
+
+.card-back .ascii-link:hover,
+.card-back .ascii-link:focus-visible {
+	text-decoration: underline;
+}
+
 .card-photo {
 	--rest-left: 50%;
 	--rest-top: 0px;

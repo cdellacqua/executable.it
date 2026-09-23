@@ -1,0 +1,96 @@
+import { test, expect, devices, type Page, type Locator } from '@playwright/test';
+
+const ASCII_LINKS = [
+	{ href: 'https://www.executable.it/', text: 'https://www.executable.it/' },
+	{ href: 'mailto:carlo.dellacqua@executable.it', text: 'carlo.dellacqua@executable.it' },
+	{ href: 'https://github.com/cdellacqua', text: 'https://github.com/cdellacqua' },
+	{ href: 'https://linkedin.com/in/carlo-dell-acqua', text: 'linkedin.com/in/carlo-dell-acqua' },
+] as const;
+
+const resolutions = [
+	{ name: 'iPhone 13', viewport: devices['iPhone 13'].viewport },
+	{ name: 'Pixel 5', viewport: devices['Pixel 5'].viewport },
+	{ name: 'iPad Mini', viewport: devices['iPad Mini'].viewport },
+	{ name: 'Desktop Chrome', viewport: devices['Desktop Chrome'].viewport },
+] as const;
+
+async function openAsciiCard(page: Page) {
+	await page.emulateMedia({ reducedMotion: 'reduce' });
+	await page.goto('/it');
+	await page.locator('[data-card-flip]').first().click();
+	const rotator = page.locator('[data-card-rotator]');
+	await expect(rotator).toHaveClass(/is-open/);
+	await rotator.evaluate((el) =>
+		Promise.all(el.getAnimations({ subtree: true }).map((animation) => animation.finished.catch(() => {}))),
+	);
+	return rotator;
+}
+
+async function hrefAtCenter(page: Page, link: Locator) {
+	const box = await link.boundingBox();
+	expect(box, 'link should occupy space on screen').toBeTruthy();
+	expect(box!.width).toBeGreaterThan(20);
+	expect(box!.height).toBeGreaterThan(4);
+	return page.evaluate(
+		({ x, y }) => {
+			const el = document.elementFromPoint(x, y);
+			return el?.closest('a.ascii-link')?.getAttribute('href') ?? el?.nodeName ?? null;
+		},
+		{ x: box!.x + box!.width / 2, y: box!.y + box!.height / 2 },
+	);
+}
+
+for (const resolution of resolutions) {
+	test.describe(resolution.name, () => {
+		test.use({ viewport: resolution.viewport });
+
+		test('flipped ascii links stay on screen and receive clicks', async ({ page }) => {
+			const rotator = await openAsciiCard(page);
+			const links = page.locator('.ascii-link');
+			await expect(links).toHaveCount(ASCII_LINKS.length);
+
+			const cardBack = page.locator('.card-back');
+			const cardBox = await cardBack.boundingBox();
+			expect(cardBox).toBeTruthy();
+
+			for (const { href, text } of ASCII_LINKS) {
+				const link = page.locator('.ascii-link', { hasText: text });
+				await expect(link).toBeVisible();
+				await expect(link).toHaveAttribute('href', href);
+
+				const box = await link.boundingBox();
+				expect(box).toBeTruthy();
+				expect(box!.x).toBeGreaterThanOrEqual(cardBox!.x - 1);
+				expect(box!.y).toBeGreaterThanOrEqual(cardBox!.y - 1);
+				expect(box!.x + box!.width).toBeLessThanOrEqual(cardBox!.x + cardBox!.width + 1);
+				expect(box!.y + box!.height).toBeLessThanOrEqual(cardBox!.y + cardBox!.height + 1);
+
+				expect(await hrefAtCenter(page, link)).toBe(href);
+			}
+
+			await links.nth(0).evaluate((el) => {
+				el.addEventListener('click', (event) => event.preventDefault(), { once: true });
+			});
+			await links.nth(0).click();
+			await expect(rotator).toHaveClass(/is-open/);
+		});
+
+		test('http ascii links open in a new tab and leave the card open', async ({ page }) => {
+			const rotator = await openAsciiCard(page);
+			const github = page.locator('.ascii-link', { hasText: 'https://github.com/cdellacqua' });
+
+			const popupPromise = page.waitForEvent('popup');
+			await github.click();
+			const popup = await popupPromise;
+			await expect(popup).toHaveURL(/https:\/\/github\.com\/cdellacqua/);
+			await expect(rotator).toHaveClass(/is-open/);
+			await popup.close();
+		});
+
+		test('clicking the flipped card away from links still closes it', async ({ page }) => {
+			const rotator = await openAsciiCard(page);
+			await page.locator('.card-back [data-card-flip]').click({ position: { x: 12, y: 12 } });
+			await expect(rotator).toHaveClass(/is-closed/);
+		});
+	});
+}
