@@ -8,7 +8,8 @@ const ASCII_LINKS = [
 ] as const;
 
 const resolutions = [
-	{ name: 'iPhone 13', viewport: devices['iPhone 13'].viewport },
+	// Playwright's iPhone 13 descriptor is 390×664 (Safari chrome). 390×844 is the full logical screen.
+	{ name: 'iPhone 13', viewport: { width: 390, height: 844 } },
 	{ name: 'Pixel 5', viewport: devices['Pixel 5'].viewport },
 	{ name: 'iPad Mini', viewport: devices['iPad Mini'].viewport },
 	{ name: 'Desktop Chrome', viewport: devices['Desktop Chrome'].viewport },
@@ -39,6 +40,31 @@ async function hrefAtCenter(page: Page, link: Locator) {
 		{ x: box!.x + box!.width / 2, y: box!.y + box!.height / 2 },
 	);
 }
+
+test('viewport meta lets the layout fill the screen', async ({ page }) => {
+	await page.goto('/it');
+	await expect(page.locator('meta[name="viewport"]')).toHaveAttribute(
+		'content',
+		/width=device-width.*viewport-fit=cover/,
+	);
+});
+
+test('magstripe stays above the iPhone unsafe bottom inset', async ({ page }) => {
+	const insets = { top: 47, left: 0, bottom: 34, right: 0 };
+	await page.setViewportSize({ width: 390, height: 844 });
+	const session = await page.context().newCDPSession(page);
+	await session.send('Emulation.setSafeAreaInsetsOverride', { insets });
+	await page.goto('/it');
+
+	await expect(page.locator('body')).toHaveCSS('padding-top', `${insets.top}px`);
+	await expect(page.locator('body')).toHaveCSS('padding-bottom', `${insets.bottom}px`);
+
+	const magstripe = page.locator('[data-magstripe]');
+	const box = await magstripe.boundingBox();
+	expect(box).toBeTruthy();
+	expect(box!.y).toBeGreaterThanOrEqual(insets.top);
+	expect(box!.y + box!.height).toBeLessThanOrEqual(844 - insets.bottom);
+});
 
 for (const resolution of resolutions) {
 	test.describe(resolution.name, () => {
