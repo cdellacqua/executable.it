@@ -14,9 +14,7 @@ const label = to === 'home' ? t("Torna all'homepage") : t('Privacy Policy');
 ---
 
 <div class="page-meta">
-	<p class="page-meta-row">
-		<LangLinks lang={lang} />
-		<span aria-hidden="true" class="page-meta-dot">·</span>
-		<a class="page-meta-link" href={href}>{label}</a>
-	</p>
+	<LangLinks lang={lang} />
+	<span aria-hidden="true" class="page-meta-dot">·</span>
+	<a class="page-meta-link" href={href}>{label}</a>
 </div>
