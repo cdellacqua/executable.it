@@ -1,19 +1,18 @@
 ---
 type Props = {
 	lang: 'it' | 'en';
-	class?: string;
 };
 
-const {lang, class: className = ''} = Astro.props;
+const {lang} = Astro.props;
 const altLang = lang === 'it' ? 'en' : 'it';
 const path = Astro.url.pathname;
 const altHref = /^\/[a-z]{2}(\/|$)/.test(path) ? path.replace(/^\/[a-z]{2}/, `/${altLang}`) : `/${altLang}`;
 ---
 
-<nav class:list={['inline-flex items-center gap-2', className]} aria-label="Language">
+<nav class="lang-links" aria-label="Language">
 	{
 		lang === 'en' ? (
-			<span class="font-semibold">EN</span>
+			<span class="lang-current">EN</span>
 		) : (
 			<a href={altHref} hreflang="en" lang="en">
 				EN
@@ -23,7 +22,7 @@ const altHref = /^\/[a-z]{2}(\/|$)/.test(path) ? path.replace(/^\/[a-z]{2}/, `/$
 	<span aria-hidden="true">·</span>
 	{
 		lang === 'it' ? (
-			<span class="font-semibold">IT</span>
+			<span class="lang-current">IT</span>
 		) : (
 			<a href={altHref} hreflang="it" lang="it">
 				IT

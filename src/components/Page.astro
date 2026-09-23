@@ -19,11 +19,10 @@ const {title = '', description = '', lang = 'it', robots, ldJson, keywords} = As
 		<MainHead lang={lang} title={title} description={description} robots={robots} ldJson={ldJson} keywords={keywords} />
 	</head>
 	<body
-		class="relative w-full z-0 flex flex-col"
 		style="background-color: #fafafa;
 background-image: radial-gradient(circle at -4% -734%, #bababa07 60%, transparent 60.05%),radial-gradient(circle at 68% 64%, #00000006 50%, transparent 50.05%),radial-gradient(circle at -33% 150%, #00000005 43%, transparent 43.05%),linear-gradient(-144deg, #00000007 59%, transparent 59.05%),radial-gradient(circle at 164% 573%, #00000005 68%, transparent 68.05%),radial-gradient(circle at 163% -68%, #0000000b 50%, transparent 50.05%);"
 	>
-		<main class="flex-1 relative z-10 flex flex-col w-full">
+		<main>
 			<slot />
 		</main>
 	</body>

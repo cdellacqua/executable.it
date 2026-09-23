@@ -11,44 +11,43 @@ const t = useTranslation(lang);
 ---
 
 <Page title={t('Privacy Policy')} keywords={t('privacy,policy')} description={t('Privacy Policy')} lang={lang}>
-	<div class="w-full h-12 md:h-16"></div>
-	<div class="max-w-xs 2xs:max-w-md xs:max-w-lg sm:max-w-xl md:max-w-xl lg:max-w-4xl xl:max-w-6xl w-full mx-auto">
-		<h1 class="text-3xl font-title">
+	<div class="privacy">
+		<h1 class="privacy-title">
 			{t('Privacy Policy')}
 		</h1>
-		<h2 class="text-2xl mt-4 mb-2">
+		<h2 class="privacy-heading">
 			{t('Titolare del Trattamento dei dati')}
 		</h2>
-		<p class="mt-2">
+		<p class="privacy-copy">
 			{t("Il Titolare del Trattamento è Carlo Dell'Acqua.")}
 			<br />
 			{t('Indirizzo e-mail:')}
-			<a class="underline text-sky-600" target="_blank" href={'mailto:info@executable.it'}>info@executable.it</a>
+			<a class="privacy-mail" target="_blank" href={'mailto:info@executable.it'}>info@executable.it</a>
 		</p>
-		<h2 class="text-2xl mt-4 mb-2">
+		<h2 class="privacy-heading">
 			{t('Dati raccolti')}
 		</h2>
-		<p class="mt-2">
+		<p class="privacy-copy">
 			{
 				t(
 					'Questo sito non utilizza cookie, non include strumenti di analisi e non raccoglie dati personali tramite le pagine.',
 				)
 			}
 		</p>
-		<p class="mt-2">
+		<p class="privacy-copy">
 			{
 				t(
 					'Il server che ospita il sito può registrare automaticamente log tecnici (indirizzo IP, data e ora, URL richiesto, dati trasmessi dal browser) per il funzionamento e la sicurezza del servizio.',
 				)
 			}
 		</p>
-		<h2 class="text-2xl mt-4 mb-2">
+		<h2 class="privacy-heading">
 			{t("Diritti dell'utente")}
 		</h2>
-		<p class="mt-2">
+		<p class="privacy-copy">
 			{t("L'utente ha il diritto di:")}
 		</p>
-		<ul class="list-disc ml-6 mt-2">
+		<ul class="privacy-list">
 			<li>
 				{
 					t(
@@ -66,15 +65,15 @@ const t = useTranslation(lang);
 				}
 			</li>
 		</ul>
-		<p class="mt-2">
+		<p class="privacy-copy">
 			{
 				t(
 					"I diritti di cui sopra possono essere esercitati dall'utente inoltrando esplicita richiesta al Titolare agli estremi indicati in questo documento. Le richieste saranno evase dal Titolare entro un mese dalla ricezione della richiesta.",
 				)
 			}
 		</p>
-		<h2 class="text-2xl mt-4 mb-2">{t('Modifiche alla Privacy Policy')}</h2>
-		<p class="mt-2">
+		<h2 class="privacy-heading">{t('Modifiche alla Privacy Policy')}</h2>
+		<p class="privacy-copy">
 			{
 				t(
 					'Il Titolare si riserva il diritto di apportare modifiche alla presente Privacy Policy in qualunque momento notificandolo agli utenti su questa pagina.',
@@ -82,7 +81,7 @@ const t = useTranslation(lang);
 			}
 		</p>
 
-		<div class="text-right mt-2">
+		<div class="privacy-date">
 			<small>{t('Pioltello, 17 Settembre 2026')}</small>
 		</div>
 		<PageMeta lang={lang} to="home" />
