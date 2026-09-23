@@ -22,6 +22,7 @@ export default {
 	'Foto profilo': 'Profile picture',
 
 	'Privacy Policy': 'Privacy Policy',
+	'Cambia tema': 'Switch theme',
 	'privacy,policy': 'privacy,policy',
 	'Titolare del Trattamento dei dati': 'Owner and Data Controller',
 	"Il Titolare del Trattamento è Carlo Dell'Acqua.": "The Data Owner is Carlo Dell'Acqua.",

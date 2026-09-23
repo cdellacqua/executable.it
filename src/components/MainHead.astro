@@ -21,6 +21,28 @@ const trailingSlashRegex = /\/$/g;
 <meta charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#e2e2e2" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0f172a" />
+<meta name="apple-mobile-web-app-status-bar" content="#e2e2e2" />
+<script is:inline>
+	(function () {
+		try {
+			var theme = localStorage.getItem('theme');
+			if (theme !== 'light' && theme !== 'dark') return;
+			var root = document.documentElement;
+			root.setAttribute('data-theme', theme);
+			root.style.colorScheme = theme;
+			var color = theme === 'dark' ? '#0f172a' : '#e2e2e2';
+			document
+				.querySelectorAll('meta[name="theme-color"], meta[name="apple-mobile-web-app-status-bar"]')
+				.forEach(function (meta) {
+					meta.setAttribute('content', color);
+					meta.removeAttribute('media');
+				});
+		} catch (e) {}
+	})();
+</script>
 <meta name="description" property="og:description" content={description} />
 {keywords && <meta name="keywords" content={keywords} />}
 {robots && <meta name="robots" content={robots} />}
@@ -34,9 +56,6 @@ const trailingSlashRegex = /\/$/g;
 <meta property="og:image:height" content="720" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="author" content="Carlo Dell'Acqua" />
-
-<meta name="theme-color" content="#e2e2e2" />
-<meta name="apple-mobile-web-app-status-bar" content="#e2e2e2" />
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 <link rel="apple-touch-icon" href="/assets/favicon-128.png" />

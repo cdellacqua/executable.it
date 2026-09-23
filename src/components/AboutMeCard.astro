@@ -2,6 +2,7 @@
 import {readFileSync} from 'node:fs';
 import Icon from './Icon.astro';
 import LangLinks from './LangLinks.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import {useTranslation} from '../lib/i18n';
 
 type Props = {
@@ -154,7 +155,8 @@ const stripe =
 					</button>
 				</div>
 				<div class="card-legal">
-					© 2026 · Milano · <a href={`/${lang}/privacy`}>{t('Privacy Policy')}</a>
+					<span>© 2026 · Milano · <a href={`/${lang}/privacy`}>{t('Privacy Policy')}</a></span>
+					<ThemeToggle lang={lang} />
 				</div>
 			</div>
 			<a

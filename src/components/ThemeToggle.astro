@@ -1,0 +1,69 @@
+---
+import Icon from './Icon.astro';
+import {useTranslation} from '../lib/i18n';
+
+type Props = {
+	lang: 'it' | 'en';
+};
+
+const {lang} = Astro.props;
+const t = useTranslation(lang);
+---
+
+<button type="button" class="theme-toggle" data-theme-toggle aria-label={t('Cambia tema')}>
+	<Icon name="sun" class="theme-icon theme-icon--sun" />
+	<Icon name="moon" class="theme-icon theme-icon--moon" />
+</button>
+
+<script is:inline>
+	(function () {
+		var root = document.documentElement;
+		var lightColor = '#e2e2e2';
+		var darkColor = '#0f172a';
+
+		function systemTheme() {
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+
+		function currentTheme() {
+			return root.getAttribute('data-theme') || systemTheme();
+		}
+
+		function applyChrome(theme) {
+			var color = theme === 'dark' ? darkColor : lightColor;
+			document
+				.querySelectorAll('meta[name="theme-color"], meta[name="apple-mobile-web-app-status-bar"]')
+				.forEach(function (meta) {
+					meta.setAttribute('content', color);
+					meta.removeAttribute('media');
+				});
+			document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+				btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+			});
+		}
+
+		function setTheme(theme) {
+			root.setAttribute('data-theme', theme);
+			root.style.colorScheme = theme;
+			try {
+				localStorage.setItem('theme', theme);
+			} catch (e) {}
+			applyChrome(theme);
+		}
+
+		document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+			btn.addEventListener('click', function () {
+				setTheme(currentTheme() === 'dark' ? 'light' : 'dark');
+			});
+		});
+
+		var media = window.matchMedia('(prefers-color-scheme: dark)');
+		if (typeof media.addEventListener === 'function') {
+			media.addEventListener('change', function () {
+				if (!root.getAttribute('data-theme')) applyChrome(systemTheme());
+			});
+		}
+
+		applyChrome(currentTheme());
+	})();
+</script>
