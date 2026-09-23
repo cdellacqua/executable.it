@@ -25,7 +25,7 @@ body {
 	--photo-overlap-x: 0px;
 	--photo-overlap-y: 1rem;
 	--rest-x: 0px;
-	--rest-y: 0px;
+	--rest-y: calc((var(--photo-size) - var(--photo-overlap-y)) / 2);
 	transform: translate(var(--rest-x), var(--rest-y)) rotateY(0deg);
 	transform-style: preserve-3d;
 }
