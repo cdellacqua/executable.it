@@ -1,29 +1,24 @@
-# Astro Starter Kit: Portfolio
+[![Deploy to GitHub Pages](https://github.com/cdellacqua/executable.it/actions/workflows/pages.yml/badge.svg)](https://github.com/cdellacqua/executable.it/actions/workflows/pages.yml)
 
-```
-npm init astro -- --template portfolio
-```
+# executable.it
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
+Source of [www.executable.it](https://www.executable.it), the personal website of Carlo Dell'Acqua, Software Engineer.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+It's a single business-card page in Italian and English, with a flippable ASCII card (also available in the terminal via `curl -sL executable.it/card`), a light/dark theme following the system preference, and a privacy page.
 
-![portfolio](https://user-images.githubusercontent.com/4677417/186189473-03dda103-65d3-4220-8b60-180ccaee5939.png)
+## Tech stack
 
+- [Astro](https://astro.build) static site generator, with no client framework
+- Plain CSS, processed with PostCSS (autoprefixer, cssnano) on top of modern-normalize
+- [Playwright](https://playwright.dev) tests covering layout, theming, WCAG A/AA accessibility (axe-core) and HTML validity (html-validate)
+- GitHub Actions builds every push to `main` and deploys it to GitHub Pages
 
-## 🧞 Commands
+## Commands
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+| Command           | Action                                        |
+| :---------------- | :-------------------------------------------- |
+| `npm ci`          | Install dependencies                          |
+| `npm run dev`     | Start the dev server at `localhost:3000`      |
+| `npm run build`   | Build the static site into `./dist/`          |
+| `npm run preview` | Preview the production build locally          |
+| `npm test`        | Run the Playwright test suite                 |
