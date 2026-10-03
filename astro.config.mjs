@@ -16,4 +16,8 @@ export default defineConfig({
 		}),
 	],
 	trailingSlash: 'never',
+	// Emit it.html instead of it/index.html so GitHub Pages serves /it without redirecting to /it/
+	build: {
+		format: 'file',
+	},
 });
